@@ -1,5 +1,12 @@
 //creating a class
 //syntax:class name()
+//we cannot delete an object in java the object will be moved in garbage collector
+/*In java
+  class data --> method area --> static blocks/static variables/references
+  object data --> heap area --> instance variables
+  every memory will store in different stacks --> stack memory -->method calls local variables
+  these will get store in PC registers(variable data will be stored) and native method stacks (value of variable will be stored)
+ */
 class employee{
     int id;        //attribute1
     String name;   //attribute2
@@ -12,7 +19,7 @@ class employee{
 
 public class _22_Classes_in_java {
     public static void main(String[] args) {
-        //we can creating any number of objects in the class
+        //we can create any number of objects in the class
         //object 1
         employee sadiq=new employee();  //here we are creating an object of an class
         sadiq.id=12;
