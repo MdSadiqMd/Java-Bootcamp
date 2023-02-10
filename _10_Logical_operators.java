@@ -39,6 +39,23 @@ public class _10_Logical_operators {
         //if,else if and else in ternary operator
         int result2=(c<d)?((d<e)?c:e):(d<e)?d:e;
         System.out.println(result2);
+        
+         //Relational operators
+
+            int c=4;
+            int d=5;
+            int e=6;
+            boolean result1=c>d;
+            boolean result2=c<d;
+            boolean result3=c>=d;
+            boolean result4=c<=d;
+            boolean result5=c!=d;
+            System.out.println(result1);
+            System.out.println(result2);
+            System.out.println(result3);
+            System.out.println(result4);
+            System.out.println(result5);
+
 
     }
 
