@@ -17,7 +17,7 @@ public class _22_Instance_Static_Local_Variables {
             obj1.a=7;
             System.out.println(obj.a);
             System.out.println(obj1.a);
-            //In static variable we no need to give by pointer like obj.num1 compiler automatically give for static variable
+            //In static variable we don't need to give by pointer like obj.num1 compiler automatically give for static variable
             System.out.println(num1);
         }
 }

@@ -1,5 +1,16 @@
 import javax.lang.model.SourceVersion;
-
+/*
+We use array over Variables as we need to create only one variable to store n number of values of " same datatype"
+What is an Array --> Index collection of Values stored in single Variable of Homogeneous Data type
+Jagged Array --> the array in which the number of rows or number of columns either one of the parameter is not specified
+difference between Length and Length() --> the length is used to find length of array and Length() is used to find length of array only
+Anonymous Array --> we have name of array in different class and the values without name in other class
+Array Out of Bounds Exception --> this occurs when the array "index" is out of range
+                                  To Not get this error instead of giving last number index make a habit of writing length-1
+                                  ex:int a[]={1,2,3}
+                                     print(a[2]) --> wrong practice
+                                     print(a[a.length-1])--> correct practice
+ */
 public class _17_Arrays_in_java {
     public static void main(String[] args) {
 
@@ -8,11 +19,12 @@ public class _17_Arrays_in_java {
         1)int[] marks;
           marks=new int[5]
         2)int[] marks ={1,2,3,4,5}
-        3)
+        3)int [] marks = new int[5];
         */
-        int [] marks = new int[5]; //here the array of name is marks and it stores 5 elements
-        //if we want we can create an floating array like syntax:float[] marks=new int[5]
-        //if we want we can create an string array like syntax:string[] marks=new int[5]
+        //In above examples we are not giving any number in parameters int[] that depicts we are not specifying the number of elements of an array
+        int [] marks = new int[5]; //here the array of name is marks, and it stores 5 elements
+        //if we want we can create a floating array like syntax:float[] marks=new int[5]
+        //if we want we can create a string array like syntax:string[] marks=new int[5]
         //entering values in array
         marks[0]=1;
         marks[1]=2;
@@ -36,7 +48,7 @@ public class _17_Arrays_in_java {
             System.out.println(marks[i]);
         }
 
-        //for-each loop *********
+        //for-each loop (or) Enhanced for Loop *********
         System.out.println("printing array using for each loop:");
         for (int element: marks){  //syntax: for(datatype element:array name)
             System.out.println(element); //print element not array name
@@ -44,7 +56,7 @@ public class _17_Arrays_in_java {
 
         /*multidimensional arrays
         if there is an array inside an array it is called 2D array
-        if there is an another array inside the the array it is called 3D array
+        if there is an another array inside the array it is called 3D array
          */
 
 
@@ -56,6 +68,10 @@ public class _17_Arrays_in_java {
         twoD [1][0]=4;
         twoD [1][1]=5;
         twoD [1][2]=6;
+        /*
+        or
+        int twoD[][]={{1,2},{3,4},{5,6}} //here we consider ont row of array as one unit
+         */
         //printing value of an array
         System.out.println("two dimensional array output:");
         System.out.println(twoD[0][1]);
@@ -68,6 +84,25 @@ public class _17_Arrays_in_java {
                 System.out.print(" "); //this used for gap in between the numbers
             }
             System.out.println("");
+        }
+
+        //for Each Loop for twoD array
+        System.out.println(" for each loop twoD array");
+        for (int e[]:twoD){   //here in for each loop one row will considered
+            for(int f:e){
+                System.out.println(f+" ");
+            }
+            System.out.println();
+        }
+
+        //Jagged Array
+        System.out.println("Jagged array");
+        int jagged[][]={{1,2,3},{4,5},{6}};
+        for (int i=0;i<=2;i++){
+            for(int j = 0; j<jagged[i].length; j++){
+                System.out.println(jagged[i][j]+" ");
+            }
+            System.out.println();
         }
 
         //creating an 3D array
@@ -162,6 +197,38 @@ public class _17_Arrays_in_java {
         }
         else{
             System.out.println("array is not sorted");
+        }
+
+        //Length of Array
+        System.out.println(" Length of Array");
+        int nums[]={1,2,3,4};
+        System.out.println(nums.length);
+        int nums1[][]={{1,2,3,4},{4,5},{6}};
+        System.out.println(nums1.length); //return value 3 that means the two D array has three sets
+        System.out.println(nums1[0].length); //it returns 4 as the first element has 4 elements
+
+        //length() Method of array
+        System.out.println("length() Method");
+        String Name="sadiq";
+        System.out.println(Name.length());
+
+        //Anonymous Array
+        System.out.println("Anonymous Array");
+        class calc{
+            public int add(int nums2[]){
+                int result=0;
+                for(int n:nums2){
+                    result=result+n;
+                }
+                return result;
+            }
+        }
+        class demo{
+            public static void main(String[] args) {
+                calc obj=new calc();
+                int result=obj.add(new int[]{1,2,3,4,5}); //here we do not have array name in the demo class it is in calc class but we have values
+                System.out.println(result);
+            }
         }
     }
 }
