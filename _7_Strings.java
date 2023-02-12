@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 /*
 String is a collection of Characters which are enclosed in "" are called strings
@@ -30,6 +31,16 @@ here lets discuss memory allocation of string in different types of execution
      string s2=new string("sadiq");
      print(s1==s2) //o/p:false as the string is referred by different pointers
 *If we use .equals method then it will compare content of strings rather then pointers
+* Mutable Strings --> The strings are which that can be changed this will be stored in
+                      heap and we use append in place of concatenation and this will be
+                      updated in same object rather created in new object
+                  --> **The mutable string is created only using new Keyword
+********** String Buffer and String Builder are used when we don't know how much length of string to be Created
+           This are used only in case of Mutable Strings
+           String Buffer --> Multithreading is not possible (synchronized)
+                             only one thread can run at a time (Thread safe)
+           String Builder -->Multithreading is possible (un synchronized)
+                             Many Threads can run at a time
  */
 public class _7_Strings {
     public static void main(String[] args) {
@@ -53,5 +64,144 @@ public class _7_Strings {
         System.out.println(st);
         String st2 = sc.nextLine();//will print the whole line of input given
         System.out.println(st2);
+
+        //String Builder
+        System.out.println("string builder");
+        StringBuilder sb=new StringBuilder(); //the default capacity of string builder or string buffer is 16
+        System.out.println(sb.capacity());//16
+        sb.append("abcdefghijklmnop");//again added 16 bits to sb still it's capacity is 16 asa haven't given anything up
+        System.out.println(sb.capacity());//16
+        sb.append("s");//added another bit to it --> then it becomes (16+1)*2 space
+        System.out.println(sb.capacity());//34
+        System.out.println(sb.length());//usually it's length should be 17
+
+        StringBuilder sb1=new StringBuilder("Mdsadiq"); //here we have initialize data first only
+        System.out.println(sb1);//Mdsadiq
+        System.out.println(sb1.capacity());//23-->7+16
+        System.out.println(sb1.charAt(1));//in Mdsadiq --> 1 index is d
+        sb1.setCharAt(1,'A');//replace d with A
+        System.out.println(sb1);//MAsadiq
+
+        StringBuilder sb2=new StringBuilder(150);//here we are giving capacity first only how many we should keep
+        System.out.println(sb2.capacity());//150 capacity
+        sb2.append("sadiq");
+        System.out.println(sb2);//here 150 only sadiq is there
+        sb2.trimToSize();//we are removing remaining 145 bits space
+        System.out.println(sb2.capacity());//5 spaces are filled sadiq
+
+        //String Buffer
+        System.out.println("string buffer");
+        StringBuffer sb5=new StringBuffer(); //the default capacity of string builder or string buffer is 16
+        System.out.println(sb5.capacity());//16
+        sb5.append("abcdefghijklmnop");//again added 16 bits to sb still it's capacity is 16 asa haven't given anything up
+        System.out.println(sb5.capacity());//16
+        sb5.append("s");//added another bit to it --> then it becomes (16+1)*2 space
+        System.out.println(sb5.capacity());//34
+        System.out.println(sb5.length());//usually it's length should be 17
+
+        StringBuffer sb6=new StringBuffer("Mdsadiq"); //here we have initialize data first only
+        System.out.println(sb6);//Mdsadiq
+        System.out.println(sb6.capacity());//23-->7+16
+        System.out.println(sb6.charAt(1));//in Mdsadiq --> 1 index is d
+        sb6.setCharAt(1,'A');//replace d with A
+        System.out.println(sb6);//MAsadiq
+
+        StringBuffer sb7=new StringBuffer(150);//here we are giving capacity first only how many we should keep
+        System.out.println(sb7.capacity());//150 capacity
+        sb7.append("sadiq");
+        System.out.println(sb7);//here 150 only sadiq is there
+        sb7.trimToSize();//we are removing remaining 145 bits space
+        System.out.println(sb7.capacity());//5 spaces are filled sadiq
+
+        //Final Keyword In java
+        System.out.println("Final keyword");
+        // -->using final keyword
+        final StringBuffer sb3=new StringBuffer("Md");
+        sb3.append("Sadiq");
+        System.out.println(sb3);
+        /*sb=new StringBuffer("Mohammad");
+        System.out.println(sb);*/ //-->this will give error as when we use final keyword we cannot rewrite the sb pointer, but we can add and form a new object for existing vector
+        // -->without using final keyword
+        StringBuffer sb4=new StringBuffer("Md");
+        sb4.append("Sadiq");
+        System.out.println(sb4);
+        sb4=new StringBuffer("Mohammad");
+        System.out.println(sb4);
+
+        //Reversing A String
+        System.out.println("Reversing a String");
+        /*Scanner sc1=new Scanner(System.in);
+        String e=sc1.nextLine();
+        System.out.println(e.substring(-1));*/
+        String e="Sadiq Md";
+        String f=" ";
+        for (int i=e.length()-1;i>=0;i--){
+            f=f+e.charAt(i);
+        }
+        System.out.println("Before reversing"+" "+e);
+        System.out.println("After reversing"+" "+f);
+
+        // swapping the Words of String
+        System.out.println("swapping the Words of String");
+        String g="Md Sadiq";
+        String h="";
+        String arr[]=g.split(" ");
+        for (int i=arr.length-1;i>=0;i--){
+            h=h+arr[i]+" ";
+        }
+        System.out.println("Before reversing"+" "+g);
+        System.out.println("After reversing"+" "+h);
+
+        //Palindrome In Java
+        System.out.println("Palindrome");
+        String k="abcba";
+        String l="";
+        for (int i=k.length()-1;i>=0;i--){
+            l=l+k.charAt(i);
+        }
+        if(k.equals(l)){
+            System.out.println("it is an palindrome");
+        }
+        else{
+            System.out.println("it is not an palindrome");
+        }
+
+        //Anagram Program in java
+        //Anagram means lets take word keep we can create a word called peek from the keep with using same number of letters these both are anagram to each other
+        System.out.println("Anagram");
+        String m1="School Master";
+        String m2="The Classroom";
+        m1=m1.trim(); //removing spaces
+        m2=m2.trim(); //removing spaces
+        m1=m1.toLowerCase(); //convert them into either one of the cases to compare
+        m2=m2.toLowerCase(); //convert them into either one of the cases to compare
+        char arr1[]=m1.toCharArray(); //this convert the string into an array
+        char arr2[]=m2.toCharArray(); //this convert the string into an array
+        Arrays.sort(arr1); //this sort array in alphabetical order
+        Arrays.sort(arr2); //this sort array in alphabetical order
+        if (Arrays.equals(arr1,arr2)){
+            System.out.println("It is an anagram");
+        }
+        else{
+            System.out.println("It is not an anagram");
+        }
+
+        //Pangram in Java
+        // If a sentence has all the alphabets from a to z then it is called a pangram
+        System.out.println("Pangram");
+        String n1="The Quick Brown Fox Jumps Over Lazy Dog ";
+        String n2="abcdefghijklmnopqrstuvwxyz";
+        n1=n1.trim(); //removing spaces
+        n1=n1.toLowerCase(); //convert them into either one of the cases to compare
+        char[] arr3 =n1.toCharArray(); //this convert the string into an array
+        char[] arr4 =n2.toCharArray(); //this convert the string into an array
+        Arrays.sort(arr3); //this sort array in alphabetical order
+        Arrays.sort(arr4); //this sort array in alphabetical order
+        if (Arrays.equals(arr3,arr4)){
+            System.out.println("It is an Pangram");
+        }
+        else{
+            System.out.println("It is not an Pangram");
+        }
     }
 }
