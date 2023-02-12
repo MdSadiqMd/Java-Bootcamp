@@ -47,13 +47,13 @@ public class _8_String_Methods {
         //equals used to see if the strings are equal or not using .equals
         System.out.println(name.equals("Sadiq"));//return true as it is equal
 
-        //equals ingnore case used to check the string is equal or not irrespective of case
+        //equals ignore case used to check the string is equal or not irrespective of case
         System.out.println(name.equalsIgnoreCase("saDIq"));
 
-        //escape sequence chracters
-        // if we want an double quotation in an print statement we can't as the double quotations are used to print and close a statement
-        // for closing we use  blacklash chracters \ not /
-        // blacklash chracters are \' , \" , \t , \n
+        //escape sequence characters
+        // if we want a double quotation in a print statement we can't as the double quotations are used to print and close a statement
+        // for closing we use  black lash characters \ not /
+        // black lash characters are \' , \" , \t , \n
         System.out.println("iam escape sequence  \\ double quote");
         System.out.println("iam escape sequence  \n double quote");// it will print the remaining statement in a new line
         System.out.println("iam escape sequence  \t double quote");// it will give a tab space and print remaining statement
