@@ -17,7 +17,7 @@ class Calc {
         return result;
     }
 }
-public class _28_Method_Overloading {
+public class _26_Method_Overloading {
     public static void main(String[] args) {
         Calc obj = new Calc();
         //int result=obj.add(4,3);

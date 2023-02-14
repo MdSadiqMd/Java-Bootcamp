@@ -5,7 +5,7 @@ class Test {
     int a=2;
     String name="Sadiq";
 }
-public class _22_Instance_Static_Local_Variables {
+public class _23_Instance_Static_Local_Variables {
     int num=5; //Instance Variable --> if we not give any value then it will return null and this is created and destroyed with object
     static int num1=6; //Static Variable
         public static void main(String[] args) {

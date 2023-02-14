@@ -36,7 +36,7 @@ class student3{
     }
 }
 
-public class _23_Static_Keyword {
+public class _24_Static_Keyword {
     public static void main(String[] args) {
         //show();--> we can't access it directly only by using object we can access
 
