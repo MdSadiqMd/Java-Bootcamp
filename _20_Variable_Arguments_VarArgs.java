@@ -1,6 +1,6 @@
 public class _20_Variable_Arguments_VarArgs {
-    /*varaible arguments or varArgs are used if we dont know
-     how many parameters should we give in the  function so
+    /*variable arguments or varArgs are used if we don't know
+     how many parameters should we give in the  function, so
      it will store the parameters in the form of an array
      */
     static int sum(int ...arr){  /*if we write **static int sum(int a;int ..arr)

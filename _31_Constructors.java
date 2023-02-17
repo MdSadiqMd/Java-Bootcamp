@@ -17,7 +17,7 @@ class men{
 
     /*men(int age) {
         //super(); -->already default internally present
-        this("Md",19);//--> this will execute the second constructor as this is refering to two variables if we remove the arguments in down obj
+        this("Md",19);//--> this will execute the second constructor as this is referring to two variables if we remove the arguments in down obj
         this.age=age;
     }*/
     men(String name,int age) {
