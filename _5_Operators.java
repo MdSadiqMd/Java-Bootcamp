@@ -9,9 +9,12 @@ public class _5_Operators {
         int c=b%2; //modulus operator give remainder
         System.out.println(c);
         float d=5.8f;
-        float e=3.3f; //modulus operator return float values if the both are given float values dont forget f at last
+        float e=3.3f; //modulus operator return float values if the both are given float values don't forget f at last
         System.out.println(e);
-        // precedance is order of evaluation of operators PEDMAS in decreasing order
-        //if the precedance is same for teo operators then we use associativity which states left to right evalustion to all and right to left evaluation to * and / and for comparision operators
+        // precedence is order of evaluation of operators PEDMAS in decreasing order
+        //if the precedence is same for teo operators then we use associativity which states left to right evaluation to all and right to left evaluation to * and / and for comparison operators*/
+        //left shift and right shift these are nothing but write the value of a in binary and move LSB towards right and left respectively
+        System.out.println(a>>1);
+        System.out.println(a<<1);
     }
 }

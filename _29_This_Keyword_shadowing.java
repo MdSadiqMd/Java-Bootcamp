@@ -20,7 +20,7 @@ class human1{
         System.out.println(age+" "+name);
     }
 }
-public class _29_THis_Keyword_shadowing {
+public class _29_This_Keyword_shadowing {
     public static void main(String[] args) {
         human1 obj1=new human1();
         human1 obj2=new human1();
