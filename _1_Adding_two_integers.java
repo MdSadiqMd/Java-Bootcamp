@@ -1,5 +1,5 @@
 /*
-Java Program execution
+Nothing Program execution
 .class file --> class loader sub system(Loading,Linking,Initialize) --> Run time area (method area,heap,java stack,PC registers,Native Stack Method) --> JVM(Interpreter,JIT compiler) --> operating system
  */
 public class _1_Adding_two_integers {

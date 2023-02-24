@@ -43,7 +43,7 @@ class derived1 extends base1{
         this.y = y;
     }
 }
-public class _37_Inheritance_and_constructor {
+public class _36_Inheritance_and_constructor {
     public static void main(String[] args) {
         base1 b=new base1();
         derived1 d=new derived1(/*8,9*/); //if we remove the comment in arguments then we get line 34 output

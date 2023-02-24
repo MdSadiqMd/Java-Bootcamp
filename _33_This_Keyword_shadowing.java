@@ -1,8 +1,8 @@
 /*
 Here we have two classes --> human1,_45_THis_Keyword_shadowing
 human1 class have three methods --> data1,data2,show
-_45_THis_Keyword_shadowing class have two objects obj1,obj2
-Here we are giving values from _45_THis_Keyword_shadowing class objects to the dynamic variables present in methods data 1,data2
+_33_This_Keyword_shadowing class have two objects obj1,obj2
+Here we are giving values from _33_This_Keyword_shadowing class objects to the dynamic variables present in methods data 1,data2
  */
 class human1{
     private int age;

@@ -1,10 +1,9 @@
-import java.util.Scanner; //this is a class code which we import while using an dynamic memory allocation
-//****enter sout and press enter and we will get System.out.println
-
+import java.util.Scanner; //this is a class code which we import while using a dynamic memory allocation
+//import java.util.*        -->this imports all the classes in the package
 public class _4_User_input_in_java {
     public static void main(String[] args) {
-
-        Scanner sc= new Scanner(System.in); //here we are intializing the that we are using the above import statement generally calling it
+        //java.util.Scanner sc=new java.util.Scanner(System.in); //-->this acts same as importing java.util.Scanner without writing the below whole line
+        Scanner sc= new Scanner(System.in); //here we are initializing the that we are using the above import statement generally calling it
         System.out.println("enter number 1:");
         int a= sc.nextInt(); // here we are entering the integer dynamic memory capital I
         System.out.println("enter number 2:");

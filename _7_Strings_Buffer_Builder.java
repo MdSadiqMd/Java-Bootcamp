@@ -3,7 +3,7 @@ import java.util.Scanner;
 /*
 String is a collection of Characters which are enclosed in "" are called strings
 ex:"abc","123"...
-In Java String is treated as an object which object is present in java.lang package
+In Nothing String is treated as an object which object is present in java.lang package
 memory is allocated in heap area
 We use an in build class to create string in java called String
 ex: 1.String name ="abcd";
@@ -152,7 +152,7 @@ public class _7_Strings_Buffer_Builder {
         System.out.println("Before reversing"+" "+g);
         System.out.println("After reversing"+" "+h);
 
-        //Palindrome In Java
+        //Palindrome In Nothing
         System.out.println("Palindrome");
         String k="abcba";
         String l="";
@@ -186,7 +186,7 @@ public class _7_Strings_Buffer_Builder {
             System.out.println("It is not an anagram");
         }
 
-        //Pangram in Java
+        //Pangram in Nothing
         // If a sentence has all the alphabets from a to z then it is called a pangram
         System.out.println("Pangram");
         String n1="The Quick Brown Fox Jumps Over Lazy Dog ";
