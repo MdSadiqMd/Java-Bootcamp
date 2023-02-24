@@ -33,7 +33,7 @@ class cycle implements bicycle, horn{  //we can extract more than one class in i
         System.out.println("horn 2");
     }
 }
-public class _40_Interfaces {
+public class _46_Interfaces {
     public static void main(String[] args) {
         cycle sadiq = new cycle();
         sadiq.applybrake(1);

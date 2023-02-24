@@ -39,7 +39,7 @@ class smartphone extends mycellphone implements wifi,camera{
     }
 }
 
-public class _39_Default_methods {
+public class _45_Default_methods {
     public static void main(String[] args) {
         smartphone ms= new smartphone();
         String[] ar=ms.getnetworks();

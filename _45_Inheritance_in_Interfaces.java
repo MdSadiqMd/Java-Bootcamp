@@ -27,7 +27,7 @@ class mysampleclass implements childsampleinterface{ //creating an interface fro
         System.out.println("meth4 - inheritance");
     }
 }
-public class _39_Inheritance_in_Interfaces {
+public class _45_Inheritance_in_Interfaces {
     public static void main(String[] args) {
         mysampleclass obj=new mysampleclass();
         obj.meth1();
