@@ -19,7 +19,7 @@ class mycaluclator{
 }
 
 
-public class _40_Caluclator_package {
+public class _39_Caluclator_package {
     public static void main(String[] args) {
         System.out.println("main method");
     }

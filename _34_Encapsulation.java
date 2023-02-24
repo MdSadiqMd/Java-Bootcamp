@@ -14,7 +14,7 @@ class human{
         System.out.println(age+" "+name);
     }
 }
-public class _35_Encapsulation {
+public class _34_Encapsulation {
     public static void main(String[] args) {
         human obj=new human();
         /*obj.age=16;

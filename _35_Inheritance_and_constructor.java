@@ -1,3 +1,6 @@
+//If we use a Final keyword for a class it will **not participate in Inheritance
+//if we apply final keyword to a method in a class it **will participate in inheritance ,but we cannot override it in child class
+//if we apply final keyword to a variable we cannot modify it **out of the class
 class base1{
     int x;
 
@@ -43,7 +46,7 @@ class derived1 extends base1{
         this.y = y;
     }
 }
-public class _36_Inheritance_and_constructor {
+public class _35_Inheritance_and_constructor {
     public static void main(String[] args) {
         base1 b=new base1();
         derived1 d=new derived1(/*8,9*/); //if we remove the comment in arguments then we get line 34 output

@@ -41,7 +41,7 @@ class men{
         return age;
     }
 }
-public class _34_Constructors {
+public class _33_Constructors {
     public static void main(String[] args) {
         men obj=new men("sadiq",20); //we use constructor so we give values in the argument at the time of object creation
         /*obj.setName("sadiq");

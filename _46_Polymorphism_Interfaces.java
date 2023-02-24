@@ -40,7 +40,7 @@ class smartphone1 extends mycellphone1 implements wifi1,camera1{
     }
 }
 
-public class _41_Polymorphism {
+public class _46_Polymorphism_Interfaces {
     public static void main(String[] args) {
        camera1 cam=new smartphone1();
        //cam.getnetwork1(); -- throws an error as we only initialized camera

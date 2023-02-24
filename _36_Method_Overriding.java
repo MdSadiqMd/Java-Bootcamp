@@ -23,7 +23,7 @@ class B extends A{
         System.out.println(" meth 3 constructor of inherit classB");
     }
 }
-public class _37_Method_overriding {
+public class _36_Method_Overriding {
     public static void main(String[] args) {
         A a=new A();
         a.meth2();
