@@ -10,5 +10,57 @@ public class _2_All_Data_Types {
         System.out.println(age);
         String str="sadiq"; //in string S is capital
         System.out.println(str);
+        //Formatting
+        System.out.println("Formatting:");
+        System.out.printf("%d%n",10);//10
+        System.out.printf("%8d%n",123);//     123
+        System.out.printf("%4d%5d%n",123,456);// 123  456
+        System.out.printf("%4d%n",12345);//2345--> this examole shows that it print from backward
+        System.out.printf("%-8d%n",123);//123_____
+        System.out.printf("%-6s%5d%n","num=",456);//num_=___456
+        System.out.printf("%06d%n",-123);//-00123   --> ***here - also takes a place
+        //Sign
+        System.out.printf("%+d%n",123);//+123
+        System.out.printf("%+d%n",-123);//-123
+        System.out.printf("%+.2f%n",123.12);//+123.12
+        System.out.printf("%+.2f%n",-123.12);//-123.12
+        //Commas
+        System.out.printf("%,d%n",123);//123
+        System.out.printf("%,d%n",-1234);//-1,234
+        System.out.printf("%,.2f%n",1234.12);//1,234.12
+        System.out.printf("%,08d%n",12345);//0012,345
+        //Brackets
+        System.out.printf("%(d%n",123);//123
+        System.out.printf("%(d%n",-1234);//(1,234)--> no negative sign
+        System.out.printf("%(.2f%n",1234.12);//1,234.12
+        System.out.printf("%(08d%n",12345);//0012,345
+        //Float Points
+        System.out.printf("%f%n",10.1);//10.100000 --> will give 6 after point if more it will cut
+        System.out.printf("%6.2f%n",4234123.45234);//4234123.45
+        System.out.printf("%.0f%n",10.1);//10--> will give nothing after point it will cut it
+        System.out.printf("%.1f%n",10.1);//10.1 --> will give one number after point and cut other
+        System.out.printf("%.2f%n",10.1);//10.10 --> will give two number after point and if nothing present will give zero or cut if other numbers are present
+        //the above three examples is also applicable for other formatting as string and also for %e,%g,%b,......
+        //***But not applicable for others like char,decimal and others
+        System.out.printf("%c%n",'a');//a
+        System.out.printf("%C%n",'a');//A
+        System.out.printf("%s%n","hello");//hello
+        System.out.printf("%S%n","hello");//Hello
+        System.out.printf("%b%n",5<4);//false
+        System.out.printf("%B%n",5<4);//FALSE
+        System.out.printf("%b%n",null);//false
+        System.out.printf("%b%n","cow");//true
+        System.out.printf("%e%n",10.123);//10.12300e+01
+        System.out.printf("%E%n",10.123);//10.12300E+01
+        System.out.printf("%g%n",10.123);//10000.0
+        System.out.printf("%G%n",10.123);//1.00000E+06
+        System.out.printf("%d%n",123);//change to decimal of four spaces will keep zero in empty spaces
+        System.out.printf("%b%n",123);//change to binary
+        System.out.printf("%o%n",123);//change to octal
+        System.out.printf("%x%n",123);//change to lower case Hexadecimal
+        System.out.printf("%X%n",123);//change to upper case Hexadecimal
+        System.out.printf("%h%n","hello");//5e918d2 --> print hash code
+        System.out.printf("%H%n","hello");//5E91802 --> print hash code in Capital
+        System.out.printf("%a%n",10.12);//hexadecimal for floating point --> 0x1.43d70a3d70a3dp3
     }
 }
