@@ -1,8 +1,10 @@
 //Interfaces - it is group of related methods with empty bodies
 //we can't create objects from interfaces
-interface bicycle{
+//It only allows Abstract Methods and Interface is not object-oriented
+//all the variables "should" be Public Static final, and we cannot create a constructor as we cannot create an object of an interface
+interface bicycle{ //creating an interface
     int a=100;
-    void applybrake(int decrement);
+    void applybrake(int decrement); //every method is public and abstract so, we don't need to write "public abstract" separately
     void speedup(int increment);
 }
 interface horn{
@@ -10,6 +12,7 @@ interface horn{
     void blowhorn2();
 }
 class cycle implements bicycle, horn{  //we can extract more than one class in interfaces but cannot in abstract classes
+                                       //we cannot create an object in interface ,but we cannot do anything in java without classes ,so we create an implements class a create an object there and use it as a reference at other classes or methods
     public void blowhorn(){
         System.out.println("inherited interface");
     }
@@ -33,7 +36,7 @@ class cycle implements bicycle, horn{  //we can extract more than one class in i
         System.out.println("horn 2");
     }
 }
-public class _46_Interfaces {
+public class _42_Interfaces {
     public static void main(String[] args) {
         cycle sadiq = new cycle();
         sadiq.applybrake(1);
@@ -41,6 +44,6 @@ public class _46_Interfaces {
         System.out.println(sadiq.a);
         //we cannot modify properties in interfaces
         /*sadiq.a=50;
-        System.out.println(sadiq.a); -- error */
+        System.out.println(sadiq.a); --> error */
     }
 }
