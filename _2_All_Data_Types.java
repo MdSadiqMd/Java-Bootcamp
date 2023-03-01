@@ -33,7 +33,15 @@ public class _2_All_Data_Types {
         System.out.printf("%(d%n",123);//123
         System.out.printf("%(d%n",-1234);//(1,234)--> no negative sign
         System.out.printf("%(.2f%n",1234.12);//1,234.12
-        System.out.printf("%(08d%n",12345);//0012,345
+        System.out.printf("%(08d%n",12345);//0012,
+        //Argument Index
+        System.out.printf("%s%s%s%n","1","2","3");//123
+        System.out.printf("%3$s%2$s%1$s%n","1","2","3");//321
+        System.out.printf("%2$s%s%s%n","1","2","3");//*******212
+        System.out.printf("%s%<s%<s%n","1","2","3");//***111 --> if the before one is lower than the present then it will print 1 only --> 1<2
+        System.out.printf("%s%s%<s%n","1","2","3");//122
+        //System.out.printf("%<s%s%s%n","1","2","3");//error
+        //System.out.printf("%2$s%s%<s%n","1","2","3");//error
         //Float Points
         System.out.printf("%f%n",10.1);//10.100000 --> will give 6 after point if more it will cut
         System.out.printf("%6.2f%n",4234123.45234);//4234123.45
