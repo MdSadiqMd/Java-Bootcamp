@@ -70,5 +70,6 @@ public class _2_All_Data_Types {
         System.out.printf("%h%n","hello");//5e918d2 --> print hash code
         System.out.printf("%H%n","hello");//5E91802 --> print hash code in Capital
         System.out.printf("%a%n",10.12);//hexadecimal for floating point --> 0x1.43d70a3d70a3dp3
+        //souf
     }
 }
