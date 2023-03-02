@@ -2,6 +2,13 @@
 //we can't create objects from interfaces
 //It only allows Abstract Methods and Interface is not object-oriented
 //all the variables "should" be Public Static final, and we cannot create a constructor as we cannot create an object of an interface
+//************In Java 8 we can create objects in interface to know check methods in Interface
+/*Difference between the abstract and Interface
+* the abstract class can have normal methods but interface can only have abstract methods
+* we cannot have multiple abstract,but we can have multiple interfaces
+* In abstract class we use extends and in interface we use implements
+* One thing common in both that we cannot create object of both classes */
+//Pro tip: if you want to create a class ,but should not be used by anyone then make the class and methods abstract that no one can make an object in any way
 interface bicycle{ //creating an interface
     int a=100;
     void applybrake(int decrement); //every method is public and abstract so, we don't need to write "public abstract" separately
@@ -24,7 +31,6 @@ class cycle implements bicycle, horn{  //we can extract more than one class in i
     public void speedup(int decrement){
         System.out.println("applying speedup");
     }
-
 
     @Override
     public void blowhorn1() {

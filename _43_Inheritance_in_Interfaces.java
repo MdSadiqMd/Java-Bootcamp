@@ -1,4 +1,5 @@
-
+//The use of Interface is we can create a parent class and refer the other classes objects from the reference of parent class
+//example:Someone created a car nowadays, many companies manufacture the cars but still we refer it as a car even of different companies
 interface sampleinterface{
     void meth1();
     void meth2();
@@ -27,7 +28,7 @@ class mysampleclass implements childsampleinterface{ //creating an interface fro
         System.out.println("meth4 - inheritance");
     }
 }
-public class _45_Inheritance_in_Interfaces {
+public class _43_Inheritance_in_Interfaces {
     public static void main(String[] args) {
         mysampleclass obj=new mysampleclass();
         obj.meth1();
