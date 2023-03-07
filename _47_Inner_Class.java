@@ -13,7 +13,7 @@ class a{
         }
     }
 }
-public class _46_Inner_Class {
+public class _47_Inner_Class {
     public static void main(String[] args) {
         //creating obj of a
         a obj=new a();
