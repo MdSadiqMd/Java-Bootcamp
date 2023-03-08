@@ -6,6 +6,10 @@ public class _8_String_Methods {
         int value=name.length();
         System.out.println(value);
 
+        //To convert a String to Camel Case
+        String name1="sadiq";
+        System.out.println(name1.substring(0,1).toUpperCase()+name1.substring(1));
+
         //converting string to lower case using toLowerCase()
         String a=name.toLowerCase();
         System.out.println(a);
