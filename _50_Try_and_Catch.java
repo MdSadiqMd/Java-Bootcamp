@@ -18,7 +18,7 @@ public class _50_Try_and_Catch {
         }
         //customizable errors
         catch(ArithmeticException e){
-            System.out.println(e);
+            System.out.println(e.toString()); //here will return value error if we enter a string in place of integer
         }
         catch(ArrayIndexOutOfBoundsException e){
             System.out.println(e);
