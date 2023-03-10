@@ -2,6 +2,7 @@
 //                                            --> throws is written st method name and throw is written in a method
 //                                            --> throw need an object to execute and throws don't need an object to execute
 //                                            --> Program will run without both throw and throws
+//Why  do we use throw Keyword --> throw statement is like return statement we can write whole try and catch block or just print exception using throw keyword
 //Checked: Occur during the compilation. Here, the compiler checks whether the exception is handled and throws an error accordingly.
 //Unchecked: Occur during program execution. These are not detectable during the compilation process.
 //Checked and Unchecked errors in Exceptional Handling --> here the runtime errors are checked by compiler others compiler won't care called unchecked errors this usually follows the hierarchy where the object at the top and throwable at next and left side are checked and left side are unchecked exceptions --> check the diagram
