@@ -8,5 +8,6 @@ public class _3_Marks_to_percentage {
         int b=sc.nextInt();
         int average=(a+b)/2;
         System.out.println(average);
+
     }
 }
