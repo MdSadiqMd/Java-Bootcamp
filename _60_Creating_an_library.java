@@ -39,7 +39,7 @@ class library{
     }
 }
 
-public class _54_Creating_an_library {
+public class _60_Creating_an_library {
     public static void main(String[] args) {
         library centrallibrary=new library();
         centrallibrary.addbook("the almanck of naval ravikant");
