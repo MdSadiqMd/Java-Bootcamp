@@ -1,4 +1,15 @@
 /*
+There are some states of threads in java
+                                                                                                               <--------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                                                               |                  It happens when the thread execution encounters the yield() method                                                                   |                                                                 |
+                                                                                                               |                                                                                                                                                       |
+New thread(The thread which is just now created) ------> (By using t1.start();) -----> Runnable / Ready state (and here thread will be handled over the thread scheduler ) -----> (After getting permission and allocation from the thread scheduler) -----> Running state ------>Dead State ( after completion of the whole thread come to dead state)
+                                                                                                                                                                                                                                                                     |
+                                                                                                                                                                                                                                                                     |
+                                                                                                                                                                                                                                                                     |
+                                                                                                                                                                                                                                                                      ---> This runnable state can be redirected to waiting or blocked state if it encounters the sleep method and go to runnable method
+*/
+/*
 How Threading Works ****Without Runnable Interface Acting Directly (refer 55)? --> There is an Interface called Runnable Interface Which has void run(); Function which is public and abstract
                      --> There is an inbuilt class by the name thread class in which many methods like join(),run(),sleep(),....
                      --> When we creating a class we write thread-name extends thread which activate the thread class which inherit thread methods to the created thread

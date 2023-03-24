@@ -134,7 +134,8 @@ public class _55_Threading_in_Runnable_interface {
         //class1.setPriority(MythreadRunnable1.MIN_PRIORITY); //-->this will print the number last
 
         class1.start();
-        //here in this block we used join function which stops other to run until 1 had run and completed
+        //******Here in this block we used join function which stops other to run until 1 had run and completed
+        //Here we use try and catch as when we give preference to one thread then other threads will be running then any error can occur
        /*
        try{
           class1.join();
@@ -142,7 +143,11 @@ public class _55_Threading_in_Runnable_interface {
         catch(Exception e){
             System.out.println(e);
         }*/
+        //Is alive will check whether the thread is alive or not
+        //An thread is alive when we start the thread
+        System.out.println(class2.isAlive());//false
         class2.start();
+        System.out.println(class2.isAlive());//true
         class3.start();
         class4.start();
     }
