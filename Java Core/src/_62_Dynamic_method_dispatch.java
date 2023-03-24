@@ -15,7 +15,7 @@ class two extends one{
         System.out.println("class two name2");
     }
 }
-public class _60_Dynamic_method_dispatch {
+public class _62_Dynamic_method_dispatch {
     public static void main(String[] args) {
         /* one obj=new one();
         two obj2=new two();

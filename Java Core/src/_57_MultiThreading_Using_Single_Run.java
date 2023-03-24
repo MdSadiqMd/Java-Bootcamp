@@ -24,7 +24,7 @@ class thread extends Thread {
         System.out.println("Replying");
     }
 }
-public class _56_MultiThreading_Using_Single_Run {
+public class _57_MultiThreading_Using_Single_Run {
     public static void main(String[] args) {
         thread t1=new thread();
         thread t2=new thread();

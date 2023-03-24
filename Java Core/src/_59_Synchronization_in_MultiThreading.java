@@ -26,7 +26,7 @@ class rapido extends Thread{
         }
     }
 }
-public class _58_Synchronization_in_MultiThreading {
+public class _59_Synchronization_in_MultiThreading {
     public static void main(String[] args) {
         rapido r=new rapido();
         Thread t1=new Thread(r);

@@ -118,7 +118,7 @@ class MythreadRunnable4 implements Runnable{
     }
 }
 
-public class _55_Threading_in_Runnable_interface {
+public class _56_Threading_in_Runnable_interface {
     public static void main(String[] args) {
         MythreadRunnable1 t1= new MythreadRunnable1();
         Thread class1 = new Thread(t1);

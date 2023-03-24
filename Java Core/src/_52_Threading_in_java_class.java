@@ -9,9 +9,9 @@ with threading:
      function2()-->
      here the functions implement at a time
  */
-/*
-class thread{
-    public thread(MythreadRunnable2 t2) {
+
+/*class thread1{
+    public thread1(MythreadRunnable2 t2) {
     }
 
     public void run(){
@@ -46,7 +46,7 @@ class Mythread1 extends thread{  //creating an Mythread class which extends thre
 
 }
 
-public class _40_Threading_in_java_class {
+public class _52_Threading_in_java_class {
     public static void main(String[] args) {
         Mythread t1=new Mythread();
         Mythread1 t2=new Mythread1();
