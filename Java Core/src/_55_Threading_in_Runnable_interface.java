@@ -4,7 +4,7 @@ Summary: Without Runnable Interface Acting Directly
          Summary : Runnable Interface(public and Abstract) <-- Thread Class( which haves join(),Run(),sleep(),... Methods) <-- Extended by the thread we create
          With Runnable Interface Acting Directly
          Summary : Runnable Interface(public and Abstract) <-- Extended by the thread we create
-WHen we are using Runnable Directly we Use Implements runnable keyword After the Created Thread Name
+When we are using Runnable Directly we Use Implements runnable keyword After the Created Thread Name
 Using Runnable Interface Directly is More preferable as we can Extend and Implement many threads, but we can extend only one class
 The run Method is available in the thread class constructed Using a separate runnable object.Otherwise, this Method does nothing and returns.we can also run it multiple times
  */
