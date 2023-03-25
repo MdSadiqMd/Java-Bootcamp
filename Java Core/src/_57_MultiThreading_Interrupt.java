@@ -12,7 +12,7 @@ class room extends Thread{
         }
     }
 }
-public class _58_MultiThreading_Interrupt {
+public class _57_MultiThreading_Interrupt {
     public static void main(String[] args) {
        room ex=new room();
        Thread t1=new Thread(ex); //***here ethe thread is referred by a variable with the name ex

@@ -1,33 +1,43 @@
-/*
-There are some states of threads in java
-                                                                                                               <--------------------------------------------------------------------------------------------------------------------------------------------------------
-                                                                                                               |                  It happens when the thread execution encounters the yield() method                                                                   |                                                                 |
-                                                                                                               |                                                                                                                                                       |
-New thread(The thread which is just now created) ------> (By using t1.start();) -----> Runnable / Ready state (and here thread will be handled over the thread scheduler ) -----> (After getting permission and allocation from the thread scheduler) -----> Running state ------>Dead State ( after completion of the whole thread come to dead state)
-                                                                                                                                                                                                                                                                     |
-                                                                                                                                                                                                                                                                     |
-                                                                                                                                                                                                                                                                     |                 (or)Dead State refer 59(Dead lock)
-                                                                                                                                                                                                                                                                      ---> This runnable state can be redirected to waiting or blocked state if it encounters the sleep method and go to runnable method
-*/
-/*
-How Threading Works ****Without Runnable Interface Acting Directly (refer 55)? --> There is an Interface called Runnable Interface Which has void run(); Function which is public and abstract
-                     --> There is an inbuilt class by the name thread class in which many methods like join(),run(),sleep(),....
-                     --> When we creating a class we write thread-name extends thread which activate the thread class which inherit thread methods to the created thread
-                     --> We should not call run method we should call start method for output (t.start()) by which it hands over the thread to thread scheduler and if we call run then it will act as single thread program neglecting the default main thread
-                     Summary : Runnable Interface(public and Abstract) <-- Thread Class( which haves join(),Run(),sleep(),... Methods) <-- Extended by the thread we create
-There are two ways to create Threads
-1.By Extending Thread Class
-2.By Implementing Runnable Interface
- */
-class Mythread extends Thread{
+//The Statements which we want to run With separate type of execution or Different thread other than main thread we keep them inside public void run()
+//Here the main thread execute first and then when we tell t1.start() and t2.start() then the threads t1 and t2 will be handover to thread scheduler and the thread scheduler will run them as per it's convenience on the consideration of the metric that CPU time should not be wasted
+//What do I mean in the Above Statement? --> for example the Zoom and WhattsApp threads are running then first Zoom thread will run and later on if any Interruptions occur in zoom thread then the thread scheduler will skip the execution to Whattsapp thread as the interuption wastes the CPU time
+//Now let us take an example that lets sleep zoom thread for some time and ******keep that in try catch block to avoid the compiler error as sleeping is an interruption the execution changes to Whattsapp block
+
+class Zoom extends Thread{
     public void run(){
-        System.out.println("Child Thread");
+        System.out.println("Meeting is Going");
+        System.out.println("Meeting is Going");
+        System.out.println("Meeting is Going");
+        System.out.println("Meeting is Going");
+        try{
+            Thread.sleep(2000);//It means two seconds the standard time consideration in java is milliseconds
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+        System.out.println("Meeting is Going");
+        System.out.println("Meeting is Going");
+        System.out.println("Meeting is Going");
+        System.out.println("Meeting is Going");
+        System.out.println("Meeting is Going");
+        System.out.println("Meeting is Going");
+    }
+}
+class WhattsApp extends Thread{
+    public void run(){
+        System.out.println("Replying to messages");
+        System.out.println("Replying to messages");
+        System.out.println("Replying to messages");
+        System.out.println("Replying to messages");
+        System.out.println("Replying to messages");
+        System.out.println("Replying to messages");
     }
 }
 public class _54_MultiThreading {
     public static void main(String[] args) {
-        System.out.println("Main Thread");
-        Mythread t=new Mythread();
-        t.start();
+        Zoom t1=new Zoom();
+        WhattsApp t2=new WhattsApp();
+        t1.start();
+        t2.start();
     }
 }

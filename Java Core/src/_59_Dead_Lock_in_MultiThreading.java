@@ -78,7 +78,7 @@ class BookHub implements Runnable{
         }
     }
 }
-public class _60_Dead_Lock_in_MultiThreading {
+public class _59_Dead_Lock_in_MultiThreading {
     public static void main(String[] args) {
             BookHub lb=new BookHub();
             Thread t1=new Thread(lb);

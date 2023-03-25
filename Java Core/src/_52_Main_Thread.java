@@ -7,7 +7,7 @@ There are two types in Multitasking that are
 2.Thread Based Multitasking --> Executing Several tasks Simultaneously where each task is a separate Independent part of the ***Same Program,where each independent part is called a "Thread"
 ***The Main Thread is Default Created Behind by JVM
  */
-public class _53_Main_Thread {
+public class _52_Main_Thread {
     public static void main(String[] args) {
         System.out.println("Main thread");
         String name=Thread.currentThread().getName(); //This Will give the name of the thread
