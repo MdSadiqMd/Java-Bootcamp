@@ -1,4 +1,3 @@
-package Inheritance; //use it when using inheritance
 /*
 It's like tool for code re-usability
 Constructors will not participate in Inheritance, but they get executed because of super method present in base and derived class

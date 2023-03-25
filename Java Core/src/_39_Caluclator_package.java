@@ -1,5 +1,3 @@
-package calc;
-
 class caluclator{
     public void caluclate(int a, int b){
         System.out.println("result:"+ a+b);
