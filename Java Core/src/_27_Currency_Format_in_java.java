@@ -1,10 +1,6 @@
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 import java.text.NumberFormat;
-public class _26_Currency_Format_in_java {
+public class _27_Currency_Format_in_java {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter amount in double or float"); //ex:1234.123
