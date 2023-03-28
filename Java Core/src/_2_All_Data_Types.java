@@ -1,15 +1,46 @@
+import java.util.Scanner;
 public class _2_All_Data_Types {
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
         byte age = 34;
         int age2 = 56;
         short age3 = 87; //these three have some range will lie in it
         long age4 = 23457653786978L; //here we need to write capital L at last to specify it is long
         char ch = 'a'; //here need to write character in quotations
-        float f=345.545f; //here we need to write f at last to specify it is a float value other wise it will become double
-        double d1=345.45D; //here we need to write capital D at last to specify it is an double value
+        float f=345.545f; //here we need to write f at last to specify it is a float value otherwise it will become double
+        double d1=345.45D; //here we need to write capital D at last to specify it is a double value
         System.out.println(age);
         String str="sadiq"; //in string S is capital
         System.out.println(str);
+        //Type Conversion
+        System.out.println("Type Conversion");//In type conversion we can only change the lower data types to higher data types means we can change int to float  but not float to int
+        Float num=sc.nextFloat();
+        System.out.println((num));
+        //Type Casting
+        //example1:
+        System.out.println("Type Casting");//here we can convert float to int
+        int num1=(int)(45.67f);
+        System.out.println(num1);
+        //example2:
+        int a=257;
+        byte b=(byte)(a); //give answer 1 as byte range is 256 and 257%256=1 it returns reminder as it is more than the range
+        System.out.println(b);
+        //example3: ******
+        byte c=40;
+        byte d=50;
+        byte e=100;
+        int g=(c*d)/e; //here c*d is more than 256 but why it hasn't given us error or returned the reminder because java will convert them into int for convenience
+        System.out.println(g);
+        //example4: *******
+        byte h=42;
+        char i='a';
+        short s=1024;
+        int j=50000;
+        float k=5.67f;
+        double l=0.1234;
+        double result=(k*b)+(j/i)-(l*s);
+        System.out.println((k*b)+" "+(j/i)+" "+(l*s));
+        System.out.println(result);
         //Formatting
         System.out.println("Formatting:");
         System.out.printf("%d%n",10);//10

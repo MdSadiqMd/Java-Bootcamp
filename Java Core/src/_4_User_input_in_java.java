@@ -6,6 +6,8 @@ public class _4_User_input_in_java {
         Scanner sc= new Scanner(System.in); //here we are initializing the that we are using the above import statement generally calling it
         System.out.println("enter number 1:");
         int a= sc.nextInt(); // here we are entering the integer dynamic memory capital I
+        //(or)
+        // System.out.println("enter number 1:"+sc.nextInt());
         System.out.println("enter number 2:");
         float b=sc.nextFloat(); //here we are entering the float dynamic memory capital F
         float sum=a+b;
@@ -16,6 +18,7 @@ public class _4_User_input_in_java {
             str=sc.nextLine();
         }
         System.out.println(str);
+
         //if we want to a string to integer,float,byte,long,double we use parse key word
         /*
         ex: i/p: "123"-->String
