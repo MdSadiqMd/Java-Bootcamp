@@ -4,9 +4,9 @@ public class _19_Methods_in_java {
     //syntax of creating an method or function
     //datatype name(parameters){
     // }
-    //we cant change an array using methods but we can make an copy
+    //we cant change an array using methods, but we can make a copy
     //***method overloading - we can have functions of same name but should have different parameters
-    //parameters the variables in function brackets
+    //Parameters the variables in function brackets
     //arguments are the ones we call in at last like logic(2,3) here 2,3 are arguments
     static int logic(int x,int y){ //here we write static as we are calling the static class
                                    //if we write void in place of int then it will return nothing
