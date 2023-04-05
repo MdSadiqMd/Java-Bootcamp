@@ -7,6 +7,7 @@ protected    yes      yes        yes        no
 default      yes      yes        no         no
 private      yes      no         no         no
  */
+//*****Even if we write Static Public void main it will Run Correctly
 
 //example of same class
 class c1{

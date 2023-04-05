@@ -9,6 +9,7 @@
 //Super();--> super keyword is present default in every constructor this used to call or interlink the constructor and the class of constructor
 //This();--> this keyword should be written by the programmer this is used to call or interlink two constructors of same class
 //this and super method will work only when they are in first line in constructor
+//Copy Constructor Means:A copy constructor is a constructor that initializes an object through another object of same class
 class men{
     private int age;
     private String name;

@@ -18,7 +18,7 @@ public class _4_User_input_in_java {
             str=sc.nextLine();
         }
         System.out.println(str);
-
+        
         //if we want to a string to integer,float,byte,long,double we use parse key word
         /*
         ex: i/p: "123"-->String

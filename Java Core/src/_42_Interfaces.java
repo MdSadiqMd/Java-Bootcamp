@@ -9,6 +9,7 @@
 * In abstract class we use extends and in interface we use implements
 * One thing common in both that we cannot create object of both classes */
 //Pro tip: if you want to create a class ,but should not be used by anyone then make the class and methods abstract that no one can make an object in any way
+//Marker Interface --> AN empty Interface in java is referred as Marker Interface in java ex:serializable and cloneable Interfaces
 interface bicycle{ //creating an interface
     int a=100;
     void applybrake(int decrement); //every method is public and abstract so, we don't need to write "public abstract" separately
