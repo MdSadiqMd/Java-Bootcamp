@@ -28,7 +28,7 @@ In Dynamically typed language means we don't need to specify the type of the var
 ex: a=10
     a="sadiq" o/p:sadiq
 
-If No pointer is pointed to an Object then it goes to Garbage Collector Automatically
+If No pointer is pointed to an Object then it goes to Garbage Collector Automatically to call garbage collector we use System.gc();
 
 Here variable a,main method main,... are Identifiers and the values are Literals
 
