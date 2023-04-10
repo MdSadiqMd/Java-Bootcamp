@@ -1,5 +1,4 @@
-import java.util.HashMap;
-import java.util.WeakHashMap;
+import java.util.*;
 /*
 Here when we run without hash map and weak hashmap the variable will go to garbage collector
 Here when we run with hash map the garbage collector will get dominated by hash map and print the employee status
