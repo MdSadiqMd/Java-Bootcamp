@@ -4,6 +4,9 @@ SO to store data permanently we have two options
 1.To store in database
 2.To store in hard Disk
 The IO operation is used to store data in hard disk suing java.io package
+The Java platform supports three Standard Streams: Standard Input, accessed
+through System.in; Standard Output, accessed through System.out; and Standard Error, accessed
+through System.err.
  */
 import java.io.*;
 public class _1_File_Class {

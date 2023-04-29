@@ -1,4 +1,8 @@
 import java.util.Scanner;
+/*
+Automatic type conversation is possible in the following sequence (reverse is not possible):
+byte → short → int → long → float → double
+ */
 public class _2_All_Data_Types {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);

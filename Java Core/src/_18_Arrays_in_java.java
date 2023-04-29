@@ -229,6 +229,15 @@ public class _18_Arrays_in_java {
                 System.out.println(result);
             }
         }
+        class Question{
+            public static void main(String[] args){
+                int[] x = {222, 210, 012};
+                for(int i = 0; i < x.length; i++){
+                    System.out.print(x[i] + ""); //Answer is not 222210012 Answer is 22221010
+                                                 //Since, int[2] numeral value have 0 in leading, therefore, it's taken as octal base (8). So,corresponding decimal value is (2 × 80) + (1 × 81) = 10
+                }
+            }
+        }
     }
 }
 
