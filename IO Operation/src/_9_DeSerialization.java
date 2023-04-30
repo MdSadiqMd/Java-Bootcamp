@@ -1,9 +1,8 @@
 import java.io.*;
-
 class Cricketer1 implements Serializable {
-    private String name;
-    private int age;
-    private int runs;
+    String name;
+    int age;
+    int runs;
     public Cricketer1 (String name,int age,int runs){
         this.name=name;
         this.age=age;
