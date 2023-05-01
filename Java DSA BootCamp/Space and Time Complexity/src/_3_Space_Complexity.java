@@ -15,7 +15,7 @@ int f(int n){
     return n+f(n-1);
 }
 In above problem we are using recursion here f(int n) is a function inside that function we have f(n-1) which a shifted argument function of f(n)
-Here every value in the code returning will be stored in stack and further on will get retrived
+Here every value in the code returning will be stored in stack and further on will get retrieved
 here the space complexity is O(n) as further refer array
  */
 public class _3_Space_Complexity {
