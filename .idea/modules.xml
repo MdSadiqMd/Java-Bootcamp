@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/API and Annotations/API and Annotations.iml" filepath="$PROJECT_DIR$/API and Annotations/API and Annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java DSA BootCamp/Add-On Problems/Add-On Problems.iml" filepath="$PROJECT_DIR$/Java DSA BootCamp/Add-On Problems/Add-On Problems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java DSA BootCamp/Arrays/Arrays.iml" filepath="$PROJECT_DIR$/Java DSA BootCamp/Arrays/Arrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/Collection FrameWork/Collection FrameWork.iml" filepath="$PROJECT_DIR$/Collection FrameWork/Collection FrameWork.iml" />
       <module fileurl="file://$PROJECT_DIR$/IO Operation/IO Operation.iml" filepath="$PROJECT_DIR$/IO Operation/IO Operation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java Core/Java Core.iml" filepath="$PROJECT_DIR$/Java Core/Java Core.iml" />
