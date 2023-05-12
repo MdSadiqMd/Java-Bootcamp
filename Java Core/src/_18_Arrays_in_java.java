@@ -1,4 +1,5 @@
 /*
+Array Store Data in Contiguous manner (Address for every element)
 We use array over Variables as we need to create only one variable to store n number of values of " same datatype"
 What is an Array --> Index collection of Values stored in single Variable of Homogeneous Data type
 Jagged Array --> the array in which the number of rows or number of columns either one of the parameter is not specified
@@ -9,7 +10,7 @@ Array Out of Bounds Exception --> this occurs when the array "index" is out of r
                                   ex:int a[]={1,2,3}
                                      print(a[2]) --> wrong practice
                                      print(a[a.length-1])--> correct practice
- */
+*/
 public class _18_Arrays_in_java {
     public static void main(String[] args) {
 
@@ -55,12 +56,12 @@ public class _18_Arrays_in_java {
 
         /*multidimensional arrays
         if there is an array inside an array it is called 2D array
-        if there is an another array inside the array it is called 3D array
+        if there is an array inside the array it is called 3D array
          */
 
 
         //creating an 2D array
-        int [][] twoD=new int[2][3]; //it form an array of name twoD and of two elements having three elements in each
+        int [][] twoD=new int[2][3]; //it forms an array of name twoD and of two elements having three elements in each
         twoD [0][0]=1;
         twoD [0][1]=2;
         twoD [0][2]=3;
@@ -155,10 +156,10 @@ public class _18_Arrays_in_java {
         //java program to reverse an array
         System.out.println("reversing an array:");
         //we will do it by swapping the elements for odd number of elements in the array
-        //let there is an array of length of 4 (even) elements then there will be replace it by Length-1-i where i increses l-1 because index start with zero
+        //let there is an array of length of 4 (even) elements then there will be replaced it by Length-1-i where i increases l-1 because index start with zero
         int[] reverse={2,3,4,5};
         int l=reverse.length;
-        int s=Math.floorDiv(l,2); //here we are finding the mid length value of the array
+        int s=Math.floorDiv(l,2); //here we are finding the mid-length value of the array
         int temp;
         for (int i=0;i<s;i++){
             temp=reverse[i];
@@ -181,7 +182,7 @@ public class _18_Arrays_in_java {
         }
         System.out.println(max);
 
-        //to check whether a array is sorted or not
+        //to check whether an array is sorted or not
         System.out.println("sorting of array");
         int[] sorted={1,3,2,4,5};//here array is not sorted as 2 is less than 3 and three had appeared first
         boolean isSorted=true;

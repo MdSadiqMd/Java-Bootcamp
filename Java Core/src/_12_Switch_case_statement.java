@@ -32,7 +32,7 @@ public class _12_Switch_case_statement {
             case "prakash" :
                 System.out.println("become a angel investor");
                 break;
-            case "ravikant" :
+            case "ravikanth" :
                 System.out.println("ready for end");
                 break;
             default:
