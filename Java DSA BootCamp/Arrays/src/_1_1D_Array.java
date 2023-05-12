@@ -1,6 +1,6 @@
 //we don't write n*(n+1)/2 because the index start with 0 when we find summation in arrays
 ////Now if the value of n is very large we can get Array overflow problem then take a number between (1,n) and subtract the that with all elements in array this case the size of values of array will decrease and later on add the subtracted value to answer
-public class _2_1D_Array {
+public class _1_1D_Array {
     public static void main(String[] args) throws ArrayIndexOutOfBoundsException{
         System.out.println("Printing elements in an Array");
         int[] marks={1,2,3,4,5};
