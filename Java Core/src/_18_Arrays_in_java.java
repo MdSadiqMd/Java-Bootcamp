@@ -13,8 +13,6 @@ Array Out of Bounds Exception --> this occurs when the array "index" is out of r
 */
 public class _18_Arrays_in_java {
     public static void main(String[] args) {
-        //sadiq
-
         //there are three ways to create an array
         /*
         1)int[] marks;
