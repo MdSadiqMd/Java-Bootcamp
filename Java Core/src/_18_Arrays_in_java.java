@@ -69,7 +69,7 @@ public class _18_Arrays_in_java {
         twoD [1][1]=5;
         twoD [1][2]=6;
         /*
-        or
+        (or)
         int twoD[][]={{1,2},{3,4},{5,6}} //here we consider ont row of array as one unit
          */
         //printing value of an array
