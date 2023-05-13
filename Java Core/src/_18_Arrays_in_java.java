@@ -29,7 +29,7 @@ public class _18_Arrays_in_java {
         marks[1]=2;
         marks[2]=3;
         marks[3]=4;
-        marks[4]=5; //here only upto 4 as five elements of index from 1 to 4
+        marks[4]=5; //here only unto 4 as five elements of index from 1 to 4
         System.out.println(marks[2]);
 
         //using length of array
