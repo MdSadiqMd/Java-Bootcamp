@@ -4,7 +4,6 @@ If array is declared by a[m][n] where m is the number of rows while n is the num
 of an element a[i][j] of the array stored in row major order is calculated as,
 Address of A [ I ][ J ] = B + W * [ N * ( I – Lr ) + ( J – Lc ) ]
  */
-import java.io.*;
 import java.util.Scanner;
 public class _2_2D_Array {
     public static void main(String[] args) {
@@ -25,21 +24,5 @@ public class _2_2D_Array {
                 System.out.println(arr[i][j]);
             }
         }
-
-        System.out.println("Rotation of Matrix");
-        //we can solve it through two steps
-        //1.Transpose the Matrix
-        //2.Swapping the rows and columns
-        /*public static void RotateMatrix(int[][] arr1){
-
-        }
-        /*public static void main (String[] args){
-            int[][] arr1= {
-                    {1,2,3,4},
-                    {5,6,7, 8},
-                    {9,10,11,12},
-                    {13,14,15,16}
-            };
-        }*/
     }
 }

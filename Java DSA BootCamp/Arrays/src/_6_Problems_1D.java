@@ -1,4 +1,4 @@
-public class _6_Problems {
+public class _6_Problems_1D {
     public static void main(String[] args) {
 
         System.out.println("Sum of Elements in even Indexes");
