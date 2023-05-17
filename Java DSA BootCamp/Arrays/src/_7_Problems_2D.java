@@ -16,7 +16,7 @@ public class _7_Problems_2D {
         }
 
         // 1.
-        /*System.out.println("Printing Types of Elements in an 2D Array");
+        System.out.println("Printing Types of Elements in an 2D Array");
         int positive = 0 , negative = 0 , zero = 0 , odd = 0 , even = 0;
         for(int i = 0 ; i < m  ; i++){
             for(int j = 0 ; j < n  ; j++){
@@ -32,35 +32,35 @@ public class _7_Problems_2D {
         System.out.println("Number of negatives = " + negative);
         System.out.println("Number of odds = " + odd);
         System.out.println("Number of evens = " + even);
-        System.out.println("Number of zeroes = " + zero);*/
+        System.out.println("Number of zeroes = " + zero);
 
         // 2.
-        /*System.out.println("Printing Upper Triangle Elements");
+        System.out.println("Printing Upper Triangle Elements");
         int c5=0;
         for(int i = 0 ; i < m  ; i++){
             for(int j = 0 ; j < n  ; j++){
                 if(i+j<n-1) System.out.print(arr[i][j]+" ");
             }
-        }*/
+        }
 
         // 3.
-        /*System.out.println("Printing Diagonal Elements ");
+        System.out.println("Printing Diagonal Elements ");
         for(int i = 0 ; i < m  ; i++){
             for(int j = 0 ; j < n  ; j++){
                 if(i+j == m-1) System.out.print(arr[i][j]+" ");
                 else if (i==j) System.out.print(arr[i][j]+" ");
             }
-        }*/
+        }
 
         // 4.
-        /*System.out.println("Printing Maximum Element in 2D Array");
+        System.out.println("Printing Maximum Element in 2D Array");
         int sum = 0;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 sum = Math.max(arr[i][j], arr[j][i]);
             }
         }
-        System.out.println(sum);*/
+        System.out.println(sum);
 
         // 5.
         System.out.println("Print Elements of Middle Column and Middle Row");
