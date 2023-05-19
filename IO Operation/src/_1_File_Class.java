@@ -1,9 +1,9 @@
 /*
 In Java when we create an object it is created in RAM and RAM is volatile in nature the data stored in RAM is not permanent it may erase
-SO to store data permanently we have two options
+So to store data permanently we have two options
 1.To store in database
 2.To store in hard Disk
-The IO operation is used to store data in hard disk suing java.io package
+The IO operation is used to store data in hard disk using java.io package
 The Java platform supports three Standard Streams: Standard Input, accessed
 through System.in; Standard Output, accessed through System.out; and Standard Error, accessed
 through System.err.
