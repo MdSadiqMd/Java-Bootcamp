@@ -10,6 +10,7 @@
 //This();--> this keyword should be written by the programmer this is used to call or interlink two constructors of same class
 //this and super method will work only when they are in first line in constructor
 //Copy Constructor Means:A copy constructor is a constructor that initializes an object through another object of same class
+//Constructor Overloading is also an noticeable point
 class men{
     private int age;
     private String name;
@@ -44,7 +45,7 @@ class men{
 }
 public class _33_Constructors {
     public static void main(String[] args) {
-        men obj=new men("sadiq",20); //we use constructor so we give values in the argument at the time of object creation
+        men obj=new men("sadiq",20); //we use constructor, so we give values in the argument at the time of object creation
         /*obj.setName("sadiq");
         obj.setAge(20);*/
         String name=obj.getName();
