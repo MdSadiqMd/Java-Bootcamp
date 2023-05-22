@@ -1,5 +1,6 @@
 //Method Overloading or Function Overloading Means Classes with same Name but different Arguments
 //Where the compiler will decide which function to as per input given by the User
+//*** Can use Method Overloading and VarArgs together
 //Here in class Calc we have two methods of same name of add this is called method overloading
 class Calc {
     public int add(int n1, int n2) {

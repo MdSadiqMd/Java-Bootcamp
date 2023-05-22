@@ -1,6 +1,4 @@
-// create an cylinder class and getter and setter of
-// radius and height and find surface area and volume of cylinder
-
+// create a cylinder class and getter and setter of radius and height and find surface area and volume of cylinder
 class cylinder{
     private int radius;
     private int height;
@@ -42,7 +40,7 @@ class cylinder{
 
 
 }
-public class _31_pratice_on_getters_setters_constructors {
+public class _31_practice_on_getters_setters_constructors {
     public static void main(String[] args) {
         //uncomment two lines and remove the arguments we get set item and get item output and now we will get output of constructor
         cylinder mycylinder = new cylinder(12,9);
