@@ -1,7 +1,7 @@
 public class _19_Methods_in_java {
     //methods in java are function
     //here if a same logic is using in different parts of the program then use function that decrease complexity and work of the program
-    //syntax of creating an method or function
+    //syntax of creating a method or function
     //datatype name(parameters){
     // }
     //we cant change an array using methods, but we can make a copy
