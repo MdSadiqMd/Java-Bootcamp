@@ -1,6 +1,6 @@
-//here in class Calc we have two methods of same name of add this is called method overloading
-//if we give two arguments then first one will execute
-// if we give three arguments it will execute second one
+//Method Overloading or Function Overloading Means Classes with same Name but different Arguments
+//Where the compiler will decide which function to as per input given by the User
+//Here in class Calc we have two methods of same name of add this is called method overloading
 class Calc {
     public int add(int n1, int n2) {
         int result = n1 + n2;

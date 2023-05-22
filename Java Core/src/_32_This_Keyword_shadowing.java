@@ -1,4 +1,5 @@
 /*
+// Shadowing Means defining two variables with name in scope which overlaps
 Here we have two classes --> human1,_45_THis_Keyword_shadowing
 human1 class have three methods --> data1,data2,show
 _33_This_Keyword_shadowing class have two objects obj1,obj2
