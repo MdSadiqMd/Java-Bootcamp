@@ -40,6 +40,7 @@ Every Java Program will have an inbuilt Main Thread
                        -->out is a static variable present in system class of type PrintStream() class
                        -->Println() is a method present in PrintStream Class()
                        -->This Println() method convert the value address to value using toString() and display the output
+//In Java we only pass the value not the reference
  */
 public class _1_Adding_two_integers {
     public static void main(String[] args) { //Here we use static as to call main we need to create an object and to create the object we need to start execution to avoid this contradiction we use static keyword "here" refer static keyword file for clarity

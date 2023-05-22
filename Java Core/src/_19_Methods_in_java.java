@@ -18,6 +18,11 @@ public class _19_Methods_in_java {
             z=(x+y)*2;
         }
         return z; //here it will return the value
+        //System.out.println(z);  --> Here it will give error as after the return statement the method will end
+    }
+
+    static void ChangeName(String Name1){
+        Name1="Md.Sadiq";
     }
 
     public static void main(String[] args) {
@@ -32,5 +37,8 @@ public class _19_Methods_in_java {
         System.out.println(c);
         System.out.println(c1);
 
+        String Name="Sadiq";
+        ChangeName(Name);
+        System.out.println(Name); // Even After we get Name as Sadiq Only because Name and Name1 point to the same object but when one is changed other create a separate object ,and it doesn't change
     }
 }
