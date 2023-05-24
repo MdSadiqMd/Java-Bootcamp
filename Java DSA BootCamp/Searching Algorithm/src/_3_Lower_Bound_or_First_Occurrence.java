@@ -33,7 +33,6 @@ public class _3_Lower_Bound_or_First_Occurrence {
         int target=sc.nextInt();
 
         int result=BinarySearch(arr,target);
-        int mid=BinarySearch(arr,target);
         if (result!=-1) {
             System.out.println("Element found at index " + result);
         } else{
