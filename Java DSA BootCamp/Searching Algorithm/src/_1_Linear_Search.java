@@ -37,7 +37,7 @@ public class _1_Linear_Search {
         int l=sc.nextInt();
         int [][] arr1=new int[m][n];
         int row=-1;
-        int coloumn=-1;
+        int column=-1;
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
                 arr1[i][j]=sc.nextInt();
