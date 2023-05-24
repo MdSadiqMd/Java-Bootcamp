@@ -17,6 +17,8 @@ Final --> It is a Modifier Applicable for Classes,methods and variables
           If a variable declared Final then it will become constant ,and we can't re-assign value for that variable
 Finally --> Finally is a block with try,catch blocks which is generally used to write clean up code like clear database connection etc....
 Finalize --> It is a method which is called by the garbage collector before destroying an object to remove if there are any connections like database connections associated with the variable
+*
+* Note: Finalize is for clean up activity of variable and Finally is for cleanup activity of try block
  */
 
 class c1{
