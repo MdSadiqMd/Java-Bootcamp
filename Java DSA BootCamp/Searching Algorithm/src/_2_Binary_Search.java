@@ -16,8 +16,6 @@ Interview Question : return the index of first infinite
                     then low =4 and high =7 and again mid-value =5
                     now index -5 infinite so, return it and for it is first infinite or not tally if the before element is integer or not
  */
-import java.util.Scanner;
-
 public class _2_Binary_Search {
     public static int binarySearch(int[] arr, int target) {
         int low = 0;
