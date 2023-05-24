@@ -9,7 +9,16 @@ private      yes      no         no         no
  */
 //*****Even if we write Static Public void main it will Run Correctly
 
-//example of same class
+/*
+***Difference Between Final , Finally and Finalize Methods
+Final --> It is a Modifier Applicable for Classes,methods and variables
+          If a class declared Final then we can't extend the class i.e., we can't create child class for it
+          If a method declared final we can't override that method in child class
+          If a variable declared Final then it will become constant ,and we can't re-assign value for that variable
+Finally --> Finally is a block with try,catch blocks which is generally used to write clean up code like clear database connection etc....
+Finalize --> It is a method which is called by the garbage collector before destroying an object to remove if there are any connections like database connections associated with the variable
+ */
+
 class c1{
     public int x=5;
     protected int y=45;
