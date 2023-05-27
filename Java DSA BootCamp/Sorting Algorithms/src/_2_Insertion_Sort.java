@@ -10,7 +10,7 @@ This process continues until the entire array is sorted.
 It's a Stable and In-Place Algorithm
  */
 public class _2_Insertion_Sort {
-    public static int InsertionSort(int[] arr){
+    public static void InsertionSort(int[] arr){
         for(int i=0;i<arr.length;i++){
             int j=i;
             while (j>0 && arr[j]<arr[j-1]){
@@ -20,7 +20,6 @@ public class _2_Insertion_Sort {
                 j--;
             }
         }
-        return 0;
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
