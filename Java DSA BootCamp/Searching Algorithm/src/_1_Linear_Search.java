@@ -3,19 +3,7 @@
 //But it's sucks if the Length of array is huge
 import java.util.Scanner;
 public class _1_Linear_Search {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the Length of 1D Array");
-        int n=sc.nextInt();
-
-        //1D Array
-        System.out.println("Enter the Values of 1D Array");
-        int [] arr=new int[n];
-        for(int i=0;i<n;i++){
-            arr[i]=sc.nextInt();
-        }
-        System.out.println("Enter the element needed to be Searched");
-        int k=sc.nextInt();
+    public static String LinearSearch(int[] arr, int k, int n){
         int count=-1;
         for(int i=0;i<n;i++){
             if(arr[i]==k){
@@ -29,7 +17,25 @@ public class _1_Linear_Search {
         else{
             System.out.println("Element is present at Index "+count +"\n"+"Element is present in the place "+(count+1));
         }
+        return "Execution is Completed";
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Length of 1D Array");
+        int n=sc.nextInt();
 
+        //1D Array
+        System.out.println("Enter the Values of 1D Array");
+        int [] arr=new int[n];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("Enter the element needed to be Searched");
+        int k=sc.nextInt();
+
+        String Result=LinearSearch(arr,k,n);
+
+        System.out.println(Result);
         //2D Array
         /*System.out.println("Enter Number of Columns of 2D Array");
         int m=sc.nextInt();
