@@ -1,6 +1,7 @@
 //Linear Search Means we Search Element by Element equating to the term need to be found
 //Can be used in sorted or unsorted array
 //But it's sucks if the Length of array is huge
+//If asked to search in a particular range of an array then just change the i value in for loop
 import java.util.Scanner;
 public class _1_Linear_Search {
     public static String LinearSearch(int[] arr, int k, int n){
@@ -39,25 +40,5 @@ public class _1_Linear_Search {
         String Result=LinearSearch(arr,k,n);
 
         System.out.println(Result);
-        //2D Array
-        /*System.out.println("Enter Number of Columns of 2D Array");
-        int m=sc.nextInt();
-        System.out.println("Enter Number to Be Searched from 2D Array");
-        int l=sc.nextInt();
-        int [][] arr1=new int[m][n];
-        int row=-1;
-        int column=-1;
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                arr1[i][j]=sc.nextInt();
-            }
-        }
-        for(int i=0;i<m;i++){
-            for(int j=0;j<n;j++){
-                if(arr1[i][j]==l){
-                    return new int[] {i,j};
-                }
-            }
-        }*/
     }
 }
