@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class _1_Linear_Search {
     public static String LinearSearch(int[] arr, int k, int n){
         int count=-1;
+        if(arr.length==0){ //***Here length method don't have brackets as arr is a data structure
+            System.out.println("Array is empty");
+        }
         for(int i=0;i<n;i++){
             if(arr[i]==k){
                 count=i;
