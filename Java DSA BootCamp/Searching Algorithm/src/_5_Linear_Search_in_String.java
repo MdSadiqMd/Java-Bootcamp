@@ -27,6 +27,6 @@ public class _5_Linear_Search_in_String {
         System.out.println("Enter the Target Letter to be Searched :");
         char target=sc.next().charAt(0);
 
-        String result=LinearSearch(name,target);
+        LinearSearch(name,target);
     }
 }
