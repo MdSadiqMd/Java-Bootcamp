@@ -1,7 +1,9 @@
 // 1. Find the Element in the Array using Linear Search
+// 2. Find last occurrence of the element in the array --> Iterate from back --> arr.length-1
 import java.util.*;
 public class Problems {
-    public static int LinearSearch(int[] arr,int k){
+    //1.
+    /*public static int LinearSearch(int[] arr,int k){
         int count=-1;
         for(int i=0;i<arr.length;i++){
             while(arr[i]==k){
@@ -11,7 +13,20 @@ public class Problems {
             return count;
         }
         return -1;
-    }
+    }*/
+
+    //2.
+    /*public static int LinearSearch(int[] arr,int k){
+        int count=-1;
+        for(int i=arr.length-1;i>=0;i--){
+            while(arr[i]==k){
+                count=i;
+                break;
+            }
+            return count;
+        }
+        return -1;
+    }*/
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the Length of the Array :");
