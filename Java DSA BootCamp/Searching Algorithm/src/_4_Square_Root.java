@@ -7,7 +7,7 @@ Here ,we make an array of number of elements of which we need to find square roo
 public class _4_Square_Root {
     public static int BinarySearch(int n){
       int result = 0;
-      int low=0,high=n;
+      int low=0,high=n/2; // here we give the high=n/2 as the square root of any number is less than it's half value
       while(low<=high){
           int mid=low+(high-low)/2;
           int mid2=mid*mid;
