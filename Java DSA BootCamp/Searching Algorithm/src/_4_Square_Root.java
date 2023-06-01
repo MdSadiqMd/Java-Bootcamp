@@ -1,8 +1,10 @@
 import java.util.*;
 /*
 Return the square root of the entered number , if not perfect square return the floor / Lower Bound value
-Here ,we make an array of number of elements of which we need to find square root of
-
+Here ,we make an array of number of elements of length of same of the element
+Now, we declare length of high is n/2 as the square root of any number is less than it's half value
+and will search the number in the reduced bracket of 0 to n/2
+If the element is not found we will return the lower bound (n/2) --> ex: if 15 --> 3 its the last mid-value we get
  */
 public class _4_Square_Root {
     public static int BinarySearch(int n){
