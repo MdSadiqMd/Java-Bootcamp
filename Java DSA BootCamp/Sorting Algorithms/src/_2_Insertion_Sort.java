@@ -5,7 +5,7 @@ Insertion sort is a simple sorting algorithm that works by dividing an array int
 Initially, the sorted part contains only the first element of the array, and the unsorted part contains the remaining elements.
 The algorithm repeatedly takes an element from the unsorted part and inserts it into its correct position in the sorted part.
 This process continues until the entire array is sorted.
-***Interview Question --> If the Array is sorted which Algorithm you use --> IInsertion Sort as it's time complexity for Sorted Array is O(n) --> Linear Time Complexity
+***Interview Question --> If the Array is sorted which Algorithm you use --> Insertion Sort as it's time complexity for Sorted Array is O(n) --> Linear Time Complexity
 ***Interview Question --> If the Array is totally disrupted Which Algorithm you use --> Quick Sort or Merge Sort
 It's a Stable and In-Place Algorithm
  */
