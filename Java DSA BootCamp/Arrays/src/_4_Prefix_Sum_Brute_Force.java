@@ -12,7 +12,6 @@ public class _4_Prefix_Sum_Brute_Force {
         for(int i=0;i<=r2;i++){
             for(int j=0;j<=c2;j++){
                 sum+=arr[i][j];
-                sum=sum+arr[i][j];
             }
         }
         return sum;
