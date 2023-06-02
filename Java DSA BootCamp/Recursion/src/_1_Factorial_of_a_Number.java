@@ -6,11 +6,11 @@ import java.util.*;
 public class _1_Factorial_of_a_Number {
     public static int factorial(int n) {
         int result;
-        if(n==0 || n==1){ //base case condition
+        if(n==0 || n==1){ //Base Case Condition
             return 1;
         }
         else {
-            result=n*factorial(n-1); //recursive calling
+            result=n*factorial(n-1); //Recursive Calling
         }
         return result;
     }
