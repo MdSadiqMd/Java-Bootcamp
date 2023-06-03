@@ -11,24 +11,12 @@ Output 2 : 3
  */
 public class _7_Sum_Using_Alternate_Signs {
     public static int SumAlternate(int[] arr,int n){
-        int sum1=0;
-        int sum2=0;
-        int result1=0;
-        int result2=0;
         if (n == 0) {
             return 0;
+        } else if (n%2==0) {
+            return -n + SumAlternate(arr,n-1);
         } else {
-            for(int i=0;i<arr.length;i++){
-                if(i%2==0){
-                    sum1+=arr[i];
-                    result1=sum1;
-                }
-                else{
-                    sum2-=arr[i];
-                    result2=sum2;
-                }
-            }
-            return result1+result2;
+            return n + SumAlternate(arr,n-1);
         }
     }
     public static void main(String[] args) {
