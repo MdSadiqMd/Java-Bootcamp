@@ -4,15 +4,15 @@ import java.util.Scanner;
 //Odd Power = 2^65 = 2 * 2^32 * 2^32
 public class _4_Finding_Power_Using_Recursion_Optimized {
     public static int power(int n,int m){
-        int result=0;
-        if (n==0){
-            result=0;
-        } else if (n==1 || m==0) {
-            result=1;
-        } else {
-            result=n*power(n,m-1);
+        if(m == 0) { //Base Condition
+            return 1;
+        } else if (m%2==0) {
+            int result = power(n,m/2);
+            return result*result;
+        } else{
+            int result = power(n,(m-1)/2);
+            return n*result*result;
         }
-        return result;
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
