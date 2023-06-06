@@ -114,6 +114,6 @@ public class Problems {
 
         int result=Sorting(arr);
         System.out.println(Arrays.toString(arr));
-        System.out.println(result); //for 4 and 5 questions
+        System.out.println(result); //for 4 and 5 questions use this line rather ones remove it
     }
 }
