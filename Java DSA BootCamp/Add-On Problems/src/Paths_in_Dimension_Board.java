@@ -1,3 +1,6 @@
+/*
+Find the Possible paths to reach from one point to Another in a given n x m matrix
+ */
 public class Paths_in_Dimension_Board {
     public static void printBoardPaths(int curr, int dest, String ans) {
 
