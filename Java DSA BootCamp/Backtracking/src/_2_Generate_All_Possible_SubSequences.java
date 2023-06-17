@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 /*
 for explanation see GFG Website
  */
 public class _2_Generate_All_Possible_SubSequences {
-    public static void PrintSequences(int[] arr, int index, ArrayList<Integer> temparr){
+    public static void PrintSequences(int[] arr, int index, ArrayList<Integer> temparr){ //We use Array List as Dynamic length
         if(index==arr.length){
             if(temparr.size()>0){
                 System.out.println(temparr);
