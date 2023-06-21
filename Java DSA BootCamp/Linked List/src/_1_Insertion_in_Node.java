@@ -28,6 +28,12 @@ public class _1_Insertion_in_Node {
             temp.next = newNode;
         }
 
+        public void InsertAtBegin(int newData){
+            Node newNode=new Node(newData);
+            newNode.next=head;
+            head=newNode;
+        }
+
         public void PrintNodes() {
             Node current = head;
             while (current != null) {
@@ -44,6 +50,7 @@ public class _1_Insertion_in_Node {
         list.InsertAtEnd(4);
         list.InsertAtEnd(3);
         list.InsertAtEnd(6);
+        list.InsertAtBegin(1);
         list.PrintNodes();
     }
 }
