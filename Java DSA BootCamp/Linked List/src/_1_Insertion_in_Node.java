@@ -12,7 +12,7 @@ public class _1_Insertion_in_Node {
             }
         }
 
-        public void InsertAtEnd(int newData) {
+        public void insertAtEnd(int newData) {
             Node newNode = new Node(newData);
             // If Linked List is Empty
             if (head == null) {
@@ -20,7 +20,6 @@ public class _1_Insertion_in_Node {
                 return;
             }
             // If Linked List is not Empty
-            newNode.next = null;
             Node temp = head;
             while (temp.next != null) {
                 temp = temp.next;
@@ -28,13 +27,23 @@ public class _1_Insertion_in_Node {
             temp.next = newNode;
         }
 
-        public void InsertAtBegin(int newData){
+        public void insertAtBegin(int newData){
             Node newNode=new Node(newData);
             newNode.next=head;
             head=newNode;
         }
 
-        public void PrintNodes() {
+        public void insertAfter(Node prevNode,int newData){
+            if(prevNode == null){
+                System.out.println("Previous node can't be null. Please provide a valid node.");
+                return;
+            }
+            Node newNode=new Node(newData);
+            newNode.next=prevNode.next;
+            prevNode.next=newNode;
+        }
+
+        public void printNodes() {
             Node current = head;
             while (current != null) {
                 System.out.print(current.data + " ");
@@ -45,12 +54,13 @@ public class _1_Insertion_in_Node {
 
     public static void main(String[] args) {
         _1_Insertion_in_Node.LinkedList list = new _1_Insertion_in_Node().new LinkedList();
-        list.InsertAtEnd(2);
-        list.InsertAtEnd(5);
-        list.InsertAtEnd(4);
-        list.InsertAtEnd(3);
-        list.InsertAtEnd(6);
-        list.InsertAtBegin(1);
-        list.PrintNodes();
+        list.insertAtEnd(2);
+        list.insertAtEnd(5);
+        list.insertAtEnd(4);
+        list.insertAtEnd(3);
+        list.insertAtEnd(6);
+        list.insertAtBegin(1);
+        list.insertAfter(list.head.next.next, 13);
+        list.printNodes();
     }
 }
