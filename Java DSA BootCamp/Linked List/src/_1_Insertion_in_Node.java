@@ -1,11 +1,9 @@
 public class _1_Insertion_in_Node {
     class LinkedList {
         Node head;
-
         class Node {
             int data;
             Node next;
-
             Node(int d) {
                 data = d;
                 next = null;
