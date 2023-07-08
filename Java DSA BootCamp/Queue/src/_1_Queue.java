@@ -12,5 +12,6 @@ public class _1_Queue {
         q.remove(); //Removing Top-Most Element of the Queue
         System.out.println(q.peek());
         System.out.println(q.size()); //Return the Size of the Queue
+        System.out.println(q.poll()); //It returns and Remove the Element
     }
 }
