@@ -13,7 +13,7 @@ Approach :
 3. Here we keep the key value 1 and if the number is repeated then we keep the key value as 2
  */
 import java.util.*;
-public class _6_Ransome_Magazine {
+public class _5_Ransome_Magazine {
     public static void main(String[] args) {
         String r="caa";
         String m="aca";
