@@ -1,7 +1,8 @@
+//For Sorting Based on Values just replace the line put to data.put(b,a) do tree map take values as key and sort it
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class _7_Sorting_Values_in_HashMap {
+public class _7_Sorting_Key_in_HashMap {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         TreeMap<Integer, String> data = new TreeMap<>();
