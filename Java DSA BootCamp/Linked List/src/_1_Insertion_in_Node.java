@@ -1,5 +1,5 @@
 public class _1_Insertion_in_Node {
-    class LinkedList {
+    static class LinkedList {
         Node head;
         class Node {
             int data;
@@ -51,7 +51,7 @@ public class _1_Insertion_in_Node {
     }
 
     public static void main(String[] args) {
-        _1_Insertion_in_Node.LinkedList list = new _1_Insertion_in_Node().new LinkedList();
+        _1_Insertion_in_Node.LinkedList list = new LinkedList();
         list.insertAtEnd(2);
         list.insertAtEnd(5);
         list.insertAtEnd(4);
