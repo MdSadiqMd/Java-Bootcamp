@@ -44,9 +44,10 @@ public class _1_Insertion_in_Node {
         public void printNodes() {
             Node current = head;
             while (current != null) {
-                System.out.print(current.data + " ");
+                System.out.print(current.data + " -> ");
                 current = current.next;
             }
+            System.out.println("null");
         }
     }
 
