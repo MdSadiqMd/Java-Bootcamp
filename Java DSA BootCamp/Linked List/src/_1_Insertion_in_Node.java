@@ -1,3 +1,4 @@
+// We can Only Traverse Forward in Linked List but can't traverse Backward
 public class _1_Insertion_in_Node {
     static class LinkedList {
         Node head;
