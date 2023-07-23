@@ -24,7 +24,7 @@ public class _14_Reverse_Level_Order_Traversal {
             int levelSize = queue.size();
             List<Integer> currentLevel = new ArrayList<>();
 
-            for (int i = levelSize; i >0; i--) {
+            for (int i = 0;i<levelSize;i++) {
                 Node13 node = queue.remove();
                 currentLevel.add(node.data);
 
