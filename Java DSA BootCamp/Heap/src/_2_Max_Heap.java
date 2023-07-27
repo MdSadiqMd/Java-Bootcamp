@@ -72,6 +72,14 @@ public class _2_Max_Heap {
 
     public static void main(String[] args) {
         _2_Max_Heap maxHeap = new _2_Max_Heap();
-        /*
+        maxHeap.insert(5);
+        maxHeap.insert(7);
+        maxHeap.insert(3);
+        maxHeap.insert(10);
+        maxHeap.insert(1);
+
+        System.out.println("Max element: " + maxHeap.deleteMax());
+        System.out.println("Max element: " + maxHeap.deleteMax());
+    }
 }
 
