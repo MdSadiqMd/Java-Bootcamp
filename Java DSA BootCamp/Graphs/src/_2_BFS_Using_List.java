@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class _4_BFS_Using_List {
+public class _2_BFS_Using_List {
     public ArrayList<Integer> bfsGraph(int v, ArrayList<ArrayList<Integer>> adj) {
         ArrayList<Integer> bfs = new ArrayList<>();
         boolean[] Vis = new boolean[v];
@@ -28,7 +28,7 @@ public class _4_BFS_Using_List {
     }
 
     public static void main(String[] args) {
-        _4_BFS_Using_List bfsTraversal = new _4_BFS_Using_List();
+        _2_BFS_Using_List bfsTraversal = new _2_BFS_Using_List();
 
         Scanner sc = new Scanner(System.in);
         int v = sc.nextInt(); // Number of vertices

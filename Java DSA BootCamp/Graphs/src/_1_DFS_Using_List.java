@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class _2_DFS_Using_List {
+public class _1_DFS_Using_List {
     public static void dfs(int node, boolean[] Vis, ArrayList<ArrayList<Integer>> adj, ArrayList<Integer> ls) {
         Vis[node] = true;
         ls.add(node);
@@ -20,7 +20,7 @@ public class _2_DFS_Using_List {
     }
 
     public static void main(String[] args) {
-        _2_DFS_Using_List dfsTraversal = new _2_DFS_Using_List();
+        _1_DFS_Using_List dfsTraversal = new _1_DFS_Using_List();
 
         Scanner sc = new Scanner(System.in);
         int v = sc.nextInt(); // Number of vertices
