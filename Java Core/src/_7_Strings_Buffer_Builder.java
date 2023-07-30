@@ -75,7 +75,7 @@ public class _7_Strings_Buffer_Builder {
         System.out.println(sb.capacity());//34
         System.out.println(sb.length());//usually it's length should be 17
 
-        StringBuilder sb1=new StringBuilder("Mdsadiq"); //here we have initialize data first only
+        StringBuilder sb1=new StringBuilder("Mdsadiq"); //here we have initialized data first only
         System.out.println(sb1);//Mdsadiq
         System.out.println(sb1.capacity());//23-->7+16
         System.out.println(sb1.charAt(1));//in Mdsadiq --> 1 index is d
@@ -99,7 +99,7 @@ public class _7_Strings_Buffer_Builder {
         System.out.println(sb5.capacity());//34
         System.out.println(sb5.length());//usually it's length should be 17
 
-        StringBuffer sb6=new StringBuffer("Mdsadiq"); //here we have initialize data first only
+        StringBuffer sb6=new StringBuffer("Mdsadiq"); //here we have initialized data first only
         System.out.println(sb6);//Mdsadiq
         System.out.println(sb6.capacity());//23-->7+16
         System.out.println(sb6.charAt(1));//in Mdsadiq --> 1 index is d
@@ -136,7 +136,7 @@ public class _7_Strings_Buffer_Builder {
         String e="Sadiq Md";
         String f=" ";
         for (int i=e.length()-1;i>=0;i--){
-            f=f+e.charAt(i);
+            f+=e.charAt(i);
         }
         System.out.println("Before reversing"+" "+e);
         System.out.println("After reversing"+" "+f);
