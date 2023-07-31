@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 
-public class _7_Print_Path {
+/*
+Here we Create Found Variable to Track the if the Node value is reaches or not
+We Use DFS in this Question as it traverse Node neighbour and go deep wisely not as BFS which traverse Level Node Order
+ */
+public class _7_Print_Path_Using_DFS {
     static class Edge4 {
         int src;
         int dest;
