@@ -32,7 +32,7 @@ public class _3_Breath_First_Search {
     public static void BFS(ArrayList<Edge2> graph[], int v) {
         Queue<Integer> q = new LinkedList<>();
         boolean vis[] = new boolean[v];
-        q.add(0);
+        q.add(0); // We had Manually given the Traversal Starting Node Value
 
         while (!q.isEmpty()) {
             int curr = q.remove();
