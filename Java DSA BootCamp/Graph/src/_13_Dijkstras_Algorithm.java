@@ -7,6 +7,8 @@ This Algorithm is used to find the Smallest Distance from one Node to Another
 2. We Traverse in neighbors of Node and check if they had Visited[node]=false and distance is shortest
 3. Then replace the value of the Distance in Array
 Then we get Array of the Shortest paths from the Node to all other Nodes
+
+Dijkstras might fail when the weight < 0
  */
 public class _13_Dijkstras_Algorithm {
     static class Edge8 {
