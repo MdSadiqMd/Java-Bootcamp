@@ -2,13 +2,18 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 /*
-This Algorithm is used to find the Smallest Distance from one Node to Another
-1. We initialize the Distance Array with Value infinite
-2. We Traverse in neighbors of Node and check if they had Visited[node]=false and distance is shortest
-3. Then replace the value of the Distance in Array
-Then we get Array of the Shortest paths from the Node to all other Nodes
+Dijkstra's algorithm is a shortest-path algorithm that finds the shortest distance from a single source node to all other nodes in a graph with non-negative edge weights. Here are the steps to understand Dijkstra's algorithm in simple terms:
 
-Dijkstras might fail when the weight < 0
+1. Start by initializing the distance array with infinity for all nodes except the source node, which is set to 0.
+2. Create a priority queue to store nodes with their corresponding distances. Initially, add the source node with distance 0 to the priority queue.
+3. While the priority queue is not empty, do the following:
+    a. Extract the node with the minimum distance from the priority queue. Let's call it the "current node."
+    b. For each neighbor of the current node, calculate the total distance from the source node to the neighbor through the current node. If this distance is less than the distance recorded for the neighbor in the distance array, update the neighbor's distance.
+    c. Add the updated neighbor nodes with their new distances to the priority queue.
+4. Repeat step 3 until all nodes are visited or processed.
+5. After the algorithm finishes, the distance array will contain the shortest distances from the source node to all other nodes in the graph.
+
+Note: Dijkstra's algorithm assumes that all edge weights are non-negative. If there are negative edge weights, the algorithm may not produce the correct results, and other algorithms like Bellman-Ford should be used.
  */
 public class _13_Dijkstras_Algorithm {
     static class Edge8 {
