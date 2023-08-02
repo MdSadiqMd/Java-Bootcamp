@@ -1,21 +1,25 @@
 import java.util.ArrayList;
 
 /*
-Tarjan's algorithm finds strongly connected components (SCCs) in a directed graph.
+Tarjan's algorithm is used to find all the bridges in an undirected graph, where a bridge is an edge whose removal increases the number of connected components in the graph. The algorithm efficiently identifies these bridges in linear time complexity.
 
-Algorithm:
-1. Initialize a stack, a counter, and arrays to track traversal order, low-link values, and visited vertices.
-2. Perform a DFS traversal on the graph:
-   - Assign traversal order and low-link values to each visited vertex.
-3. During the DFS, identify SCCs:
-   - Push each visited vertex onto the stack.
-   - Update low-link values based on neighbors' values.
-   - If traversal order matches the low-link value for a vertex, pop elements from the stack to form an SCC.
-4. Continue DFS traversal until all vertices are visited.
-5. The stack contains the SCCs when the algorithm finishes.
-6. End of the algorithm.
-
-The algorithm efficiently identifies and groups strongly connected components in a directed graph.
+Tarjan's Algorithm for Bridge Problem:
+1. Initialize data structures:
+   - Create an empty list to store the bridges.
+   - Create arrays for discovery time and lowest reachable ancestor (set initial values to -1).
+   - Use a stack for DFS traversal.
+2. Perform DFS:
+   - Start DFS from a vertex (pick the first unvisited vertex if multiple components exist).
+   - Mark vertex as visited, assign discovery time, and update lowest reachable ancestor.
+   - Push the vertex onto the stack.
+3. Explore adjacent vertices:
+   - For each unvisited adjacent vertex:
+     - Recursively perform DFS on the adjacent vertex.
+     - Update the lowest reachable ancestor of the current vertex.
+4. Find Bridges:
+   - If the lowest reachable ancestor of the current vertex is greater than the discovery time of its parent:
+     - The edge between the current vertex and its parent is a bridge. Add it to the list.
+5. Repeat Steps 2-4 for unvisited vertices until all vertices are visited.
  */
 public class _17_Tarjan_Algorithm_Bridge_Problem {
     public static class Edge {
