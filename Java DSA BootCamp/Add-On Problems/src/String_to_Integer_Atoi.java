@@ -57,7 +57,9 @@ public class String_to_Integer_Atoi {
             if (!Character.isDigit(s.charAt(i))) {
                 break; // Stop if non-digit character is encountered
             }
-            result = result * 10 + (s.charAt(i) - '0');
+            result = result * 10 + (s.charAt(i) - '0'); // This line updates the result value by adding the parsed digit to it.
+                                                        // Since we're dealing with digits in ASCII encoding, subtracting the ASCII value of '0' from the character gives the actual digit value.
+                                                        // The multiplication by 10 shifts the existing digits to the left to make space for the new digit
             if (result * sign > Integer.MAX_VALUE) {
                 return Integer.MAX_VALUE;
             }
