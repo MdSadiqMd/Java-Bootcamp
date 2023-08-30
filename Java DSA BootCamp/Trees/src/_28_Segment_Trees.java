@@ -58,7 +58,7 @@ class Node23 {
 }
 
 public class _28_Segment_Trees {
-    Node23 root;
+    static Node23 root;
 
     _28_Segment_Trees() {
         root = null;
@@ -119,19 +119,34 @@ public class _28_Segment_Trees {
         currentNode.data = currentNode.left.data + currentNode.right.data;
     }
 
+    // In-Order traversal
+    public static void Inorder(Node23 node){
+        if(node==null){
+            return;
+        }
+        Inorder(node.left);
+        System.out.println(node.data+" ");
+        Inorder(node.right);
+    }
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6};
 
         _28_Segment_Trees segmentTree = new _28_Segment_Trees();
-        segmentTree.root = segmentTree.buildSegmentTree(arr, 0, arr.length - 1);
+        root = segmentTree.buildSegmentTree(arr, 0, arr.length - 1);
 
         // Calculate the sum from index 2 to index 4
         int queryStart = 2;
         int queryEnd = 4;
-        int sum = segmentTree.Sum(segmentTree.root, queryStart, queryEnd);
+        int sum = segmentTree.Sum(root, queryStart, queryEnd);
         System.out.println("Sum between index " + queryStart + " and " + queryEnd + ": " + sum);
 
+        System.out.println("Before Updating");
+        Inorder(root);
+
         // Updating Value at Particular Index --> *** This will update the whole upward values
-        updateValueAtIndex(segmentTree.root,3,7);
+        updateValueAtIndex(root,3,7);
+
+        System.out.println("After Updating");
+        Inorder(root);
     }
 }
