@@ -1,6 +1,7 @@
 /*
 Let's take an example of an array [1,2,3,4,5,6]. Find the sum of elements from index two to five the time complexity in worst-Case is O(n)
-To optimize this to O(logn) we use segment trees
+To optimize this to O(logn) we use segment trees.
+*** Segment trees are Binary Trees (No Duplicates and present in Order)
 *** We use segment trees when we need to find sum,avg,max,min,product,*Updating Values at Indexes... in arrays from some indexes
 
  The Representation of the Dividing of the Indexes in form of Segment Trees
@@ -12,7 +13,7 @@ To optimize this to O(logn) we use segment trees
       /   \    |     /   \   |
     [0]   [1] [2]  [3]  [4] [5]
 
-Let us say we need sum between 2 and 4
+--> Let us say we need sum between 2 and 4
 1. Start at the root node `[0-5]`.
 2. Since the range `[2-4]` intersects with both `[0-2]` and `[3-5]`, we need to consider both child nodes.
 3. Move to node `[0-2]` (left child).
@@ -26,6 +27,22 @@ Now, let's look at the values associated with these nodes:
 - Value at node `[2]` represents the sum of elements `[2]`, which is `5`.
 - Value at node `[3-4]` represents the sum of elements `[3, 4]`, which is `7 + 9 = 16`.
 Sum between indexes 2 and 4 = 5 + 16 = `21`
+
+--> Let us say we need to update Index 3 with 7
+*** The Update will not only update the selected "Node" in Segment tree it updates all nodes to the top as sum will be updated
+1. Start at the root node `[0-5]`.
+2. The update affects index 3, which falls under the `[3-5]` segment. Move to node `[3-5]`.
+3. Within the `[3-5]` segment, index 3 corresponds to node `[3]`. Update the value of node `[3]` to 7.
+4. Update the parents of node `[3]` accordingly. In this case, you only need to update the value at node `[3-4]` since it also covers index 3.
+After update:
+                [0-5]
+               /     \
+          [0-2]       [3-5]
+          /   \        /   \
+      [0-1]   [2]    [3-4] [5]
+      /   \    |     /   \   |
+    [0]   [1] [2]  [7]  [4] [5]
+The segment tree efficiently maintains the updated values and allows you to keep track of the changes in the array while still being able to perform range queries efficiently.
  */
 class Node23{
     int data;
