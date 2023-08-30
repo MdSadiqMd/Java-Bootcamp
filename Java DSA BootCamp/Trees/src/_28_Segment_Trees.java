@@ -101,6 +101,24 @@ public class _28_Segment_Trees {
         return leftSum + rightSum;
     }
 
+    // Function to update a value at a specific index
+    public static void updateValueAtIndex(Node23 currentNode, int index, int newValue) {
+        if (currentNode.startInterval == index && currentNode.endInterval == index) {
+            currentNode.data = newValue;
+            return;
+        }
+
+        int mid = (currentNode.startInterval + currentNode.endInterval) / 2;
+
+        if (index <= mid) {
+            updateValueAtIndex(currentNode.left, index, newValue);
+        } else {
+            updateValueAtIndex(currentNode.right, index, newValue);
+        }
+
+        currentNode.data = currentNode.left.data + currentNode.right.data;
+    }
+
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6};
 
@@ -113,5 +131,7 @@ public class _28_Segment_Trees {
         int sum = segmentTree.Sum(segmentTree.root, queryStart, queryEnd);
         System.out.println("Sum between index " + queryStart + " and " + queryEnd + ": " + sum);
 
+        // Updating Value at Particular Index --> *** This will update the whole upward values
+        updateValueAtIndex(segmentTree.root,3,7);
     }
 }
