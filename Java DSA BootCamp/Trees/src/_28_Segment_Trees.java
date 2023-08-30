@@ -44,20 +44,74 @@ After update:
     [0]   [1] [2]  [7]  [4] [5]
 The segment tree efficiently maintains the updated values and allows you to keep track of the changes in the array while still being able to perform range queries efficiently.
  */
-class Node23{
+class Node23 {
     int data;
-    Node23 left,right;
-    public Node23(int data){
-        this.data=data;
-        left=right=null;
+    int startInterval;
+    int endInterval;
+    Node23 left, right;
+    public Node23(int startInterval, int endInterval, int data) {
+        this.startInterval = startInterval;
+        this.endInterval = endInterval;
+        this.data = data;
+        left = right = null;
     }
 }
+
 public class _28_Segment_Trees {
     Node23 root;
-    _28_Segment_Trees(){
-        root=null;
+
+    _28_Segment_Trees() {
+        root = null;
     }
+
+    // Function to build a segment tree
+    Node23 buildSegmentTree(int[] arr, int start, int end) {
+        if (start == end) {
+            return new Node23(start, end, arr[start]);
+        }
+
+        int mid = (start + end) / 2;
+        Node23 leftChild = buildSegmentTree(arr, start, mid);
+        Node23 rightChild = buildSegmentTree(arr, mid + 1, end);
+
+        Node23 parentNode = new Node23(start, end, leftChild.data + rightChild.data);
+        parentNode.left = leftChild;
+        parentNode.right = rightChild;
+
+        return parentNode;
+    }
+
+    // Code for Finding sum from  a to b Index Using Segment Trees
+    int Sum(Node23 node, int queryStart, int queryEnd) {
+        // If the node's interval is completely outside the query range
+        if (node.endInterval < queryStart || node.startInterval > queryEnd) {
+            return 0;
+        }
+
+        // If the node's interval is completely inside the query range
+        if (node.startInterval >= queryStart && node.endInterval <= queryEnd) {
+            return node.data;
+        }
+
+        // Otherwise, we need to check both left and right children
+        int mid = (node.startInterval + node.endInterval) / 2;
+        int leftSum = Sum(node.left, queryStart, queryEnd);
+        int rightSum = Sum(node.right, queryStart, queryEnd);
+
+        return leftSum + rightSum;
+    }
+
     public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+
+        _28_Segment_Trees segmentTree = new _28_Segment_Trees();
+        segmentTree.root = segmentTree.buildSegmentTree(arr, 0, arr.length - 1);
+
+        // Calculate the sum from index 2 to index 4
+        int queryStart = 2;
+        int queryEnd = 4;
+        int sum = segmentTree.Sum(segmentTree.root, queryStart, queryEnd);
+        System.out.println("Sum between index " + queryStart + " and " + queryEnd + ": " + sum);
 
     }
 }
