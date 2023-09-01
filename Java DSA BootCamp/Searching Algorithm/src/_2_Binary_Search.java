@@ -10,6 +10,9 @@ Working of Binary Search --> It will find Middle Index of the Array
 Note : When Finding Middle Index we can face the problem of Overflow
       so, write it as mid= low + (high -low) / 2
 
+Order-Agnostic Binary Search: Binary Search is applied on a sorted array but Confirm the given array is Sorted in Ascending (or) Descending Order
+                              For that, Compare the first and last Element
+
 Interview Question : return the index of first infinite
                     Array --> 2 1 7 10 12 infinite infinite infinite
                     first find the mid-value it's 10
@@ -20,14 +23,30 @@ public class _2_Binary_Search {
     public static int binarySearch(int[] arr, int target) {
         int low = 0;
         int high = arr.length - 1;
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (arr[mid] == target) {
-                return mid;
-            } else if (arr[mid] > target) {
-                high = mid - 1;
-            } else if (arr[mid] < target) {
-                low = mid + 1;
+        // If array is sorted in Descending Order
+        if(arr[low]>arr[high]){
+            while (low <= high) {
+                int mid = low + (high - low) / 2;
+                if (arr[mid] == target) {
+                    return mid;
+                } else if (arr[mid] < target) {
+                    high = mid - 1;
+                } else if (arr[mid] > target) {
+                    low = mid + 1;
+                }
+            }
+        }
+        // If array is sorted in Ascending Order
+        else {
+            while (low <= high) {
+                int mid = low + (high - low) / 2;
+                if (arr[mid] == target) {
+                    return mid;
+                } else if (arr[mid] > target) {
+                    high = mid - 1;
+                } else if (arr[mid] < target) {
+                    low = mid + 1;
+                }
             }
         }
         return -1;
@@ -47,7 +66,6 @@ public class _2_Binary_Search {
         System.out.println("Enter the value to be searched in the array:");
         int target = sc.nextInt();
 
-        // Calling the function
         int result = binarySearch(arr, target);
         if (result != -1) {
             System.out.println("Element found at index " + result);
