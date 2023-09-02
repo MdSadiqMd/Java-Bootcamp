@@ -1,29 +1,29 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node1 {
+class Node {
     int data;
-    Node1 right, left;
+    Node right, left;
 
-    public Node1(int data) {
+    public Node(int data) {
         this.data = data;
         left = right = null;
     }
 }
 
 public class Average_of_Levels_in_Binary_Tree {
-    Node1 root;
+    Node root;
 
     Average_of_Levels_in_Binary_Tree() {
         root = null;
     }
 
-    public static void Order(Node1 root) {
+    public static void Order(Node root) {
         if (root == null) {
             return;
         }
 
-        Queue<Node1> queue = new LinkedList<>();
+        Queue<Node> queue = new LinkedList<>();
         queue.add(root);
 
         while (!queue.isEmpty()) {
@@ -31,7 +31,7 @@ public class Average_of_Levels_in_Binary_Tree {
             double levelSum = 0;
 
             for (int i = 0; i < levelSize; i++) {
-                Node1 currentNode = queue.poll();
+                Node currentNode = queue.poll();
                 levelSum += currentNode.data;
 
                 if (currentNode.left != null) {
@@ -50,13 +50,13 @@ public class Average_of_Levels_in_Binary_Tree {
 
     public static void main(String[] args) {
         Average_of_Levels_in_Binary_Tree tree = new Average_of_Levels_in_Binary_Tree();
-        tree.root = new Node1(5);
-        tree.root.left = new Node1(2);
-        tree.root.right = new Node1(8);
-        tree.root.left.left = new Node1(1);
-        tree.root.left.right = new Node1(3);
-        tree.root.right.left = new Node1(7);
-        tree.root.right.right = new Node1(9);
+        tree.root = new Node(5);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(8);
+        tree.root.left.left = new Node(1);
+        tree.root.left.right = new Node(3);
+        tree.root.right.left = new Node(7);
+        tree.root.right.right = new Node(9);
 
         Order(tree.root);
     }
