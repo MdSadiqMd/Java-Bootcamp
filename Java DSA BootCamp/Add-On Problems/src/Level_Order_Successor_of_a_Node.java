@@ -1,29 +1,29 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node {
+class Node2 {
     int data;
-    Node left, right;
+    Node2 left, right;
 
-    public Node(int data) {
+    public Node2(int data) {
         this.data = data;
         left = right = null;
     }
 }
 
 public class Level_Order_Successor_of_a_Node {
-    Node root;
+    Node2 root;
 
     Level_Order_Successor_of_a_Node() {
         root = null;
     }
 
-    public Node findSuccessor(Node root, int target) {
+    public Node2 findSuccessor(Node2 root, int target) {
         if (root == null) {
             return null;
         }
 
-        Queue<Node> queue = new LinkedList<>();
+        Queue<Node2> queue = new LinkedList<>();
         queue.add(root);
         boolean foundTarget = false;
 
@@ -32,7 +32,7 @@ public class Level_Order_Successor_of_a_Node {
             foundTarget = false;
 
             for (int i = 0; i < levelSize; i++) {
-                Node current = queue.poll();
+                Node2 current = queue.poll();
 
                 // If the target node was found in the previous level, the current node is its successor.
                 if (foundTarget) {
@@ -59,17 +59,17 @@ public class Level_Order_Successor_of_a_Node {
 
     public static void main(String[] args) {
         Level_Order_Successor_of_a_Node tree = new Level_Order_Successor_of_a_Node();
-        tree.root = new Node(1);
-        tree.root.left = new Node(2);
-        tree.root.right = new Node(3);
-        tree.root.left.left = new Node(4);
-        tree.root.right.left = new Node(5);
-        tree.root.right.right = new Node(6);
-        tree.root.right.left.left = new Node(7);
-        tree.root.right.left.right = new Node(8);
+        tree.root = new Node2(1);
+        tree.root.left = new Node2(2);
+        tree.root.right = new Node2(3);
+        tree.root.left.left = new Node2(4);
+        tree.root.right.left = new Node2(5);
+        tree.root.right.right = new Node2(6);
+        tree.root.right.left.left = new Node2(7);
+        tree.root.right.left.right = new Node2(8);
 
         int target = 6;
-        Node successor = tree.findSuccessor(tree.root, target);
+        Node2 successor = tree.findSuccessor(tree.root, target);
 
         if (successor != null) {
             System.out.println("The level order successor of " + target + " is " + successor.data);
