@@ -4,14 +4,25 @@ If an element is 0, then you cannot move through that element.
  */
 public class Minimum_Number_of_Jumps {
     public static int jumps(int[] arr){
-        int ans=0;
+        int max=0,halt=0,jump=0;
+        if(arr[0]==0){ // we cannot reach the answer
+            return -1;
+        }
         for(int i=0;i<arr.length-1;i++){
-            int k=arr[0];
-            for(int j=1;j<arr[0]-1;j++){
-                ans=Math.max(arr[j]+j,arr[j+1]+j+1);
+            max=Math.max(max,arr[i]+i);
+            if(max>=arr.length-1){
+                jump++;
+                return jump;
+            }
+            if(i==halt){
+                halt=max;
+                jump++;
             }
         }
-        return ans;
+        if(halt>=arr.length-1){ // If the first index+value is huge enough to calculate the answer
+            return jump;
+        }
+        return -1;
     }
     public static void main(String[] args) {
         int[] arr={1,3,5,8,9,2,6,8,2,9,10};
