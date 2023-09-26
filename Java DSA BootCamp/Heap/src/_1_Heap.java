@@ -49,6 +49,21 @@ to
 14
 Note : Heapify --> The process of rearranging the elements such that elements satisfy heap property is called Heapify
 MaxHeap : The top most Element (Node) is the Largest Element in the Whole Array
+
+Interview Question : Create the Max - Heap from the given unsorted array [1, 4, 2, 5, 3, 6]
+the binary tree representation of given array is
+        1
+       / \
+      4   2
+     / \   \
+    5   3   6
+now to convert the given unsorted array into heap we should come from ***last leaf nodes and check whether the leaf nodes are satisfying the condition of heap wrt their parents and if not swap them
+        6
+       / \
+      5   2
+     / \   \
+    4   3   1
+Remember start from bottom
  */
 public class _1_Heap {
     static class Heap<T extends Comparable<T>> {
@@ -86,7 +101,7 @@ public class _1_Heap {
                 return;
             }
             int p = parent(index);
-            if (list.get(index).compareTo(list.get(p)) > 0) {  // if <0 then it will become maxHeap
+            if (list.get(index).compareTo(list.get(p)) > 0) {  // ***If <0 then it will become maxHeap
                 swap(index, p);
                 upheap(p);
             }
