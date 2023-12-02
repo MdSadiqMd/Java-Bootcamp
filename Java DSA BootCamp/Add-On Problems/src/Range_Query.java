@@ -1,3 +1,7 @@
+// In this we divide the array into blocks
+// If the array size is 10 we dic=vide it into 4 blocks 3 of size three and another one of size 1 and perform range queries on it
+// generally the division of block size os of Square root of length of array
+// Thus it is also called SQRT decomposition
 public class Range_Query {
     public static int query(int[] blocks, int[] arr, int l, int r, int sqrt) {
         int ans = 0;
