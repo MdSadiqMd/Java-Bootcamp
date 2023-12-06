@@ -1,6 +1,10 @@
 import java.util.*;
+// Here we create an array to store values and a hash function which will convert the Inserting value into index of a particular array which we call it as bucket index (bi)
+// As the Conflicts arises we can have same hashcode for two different Inserting values, so we store them in the same bucket in the form of Linked List
+// As the Linked Lists will also form a sequence we assign Data Index (di) for the nodes of the linked List
+// If all the Index of the First array is filled then we create a new Array of double the size of the Existing array and again apply hashing algorithm on the new array and ***re-arrange all the elements again as the hashing algorithm we made of dependent on the size of the array
 public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it as Array of Linked Lists
-    static class HashMap<K,V> { // Here the K,V are taken in the context of generics
+    static class HashMap<K,V> { // Here the K,V are taken in the context of generics (Making our own Data type)
         private class Node {
             K key;
             V value;
@@ -25,14 +29,14 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
         // The Hash Function will return the Index in which the value that had inserted in hashmap need to be stored
         private int hashFunction(K key) {
             int bi = key.hashCode();
-            return Math.abs(bi) % N; // We divide it by N (length of bucket) to Minimize it to the length of Array we have taken
+            return Math.abs(bi) % N; // We the absolute value to handle potential negative hash codes. We divide it by N (length of bucket) to Minimize it to the length of Array we have taken
         }
 
         private int searchInLL(K key, int bi) {
             LinkedList<Node> ll = buckets[bi];
             for(int i=0; i<ll.size(); i++) {
                 if(ll.get(i).key == key) {
-                    return i; //di
+                    return i;
                 }
             }
             return -1;
@@ -88,7 +92,7 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
 
         public boolean containsKey(K key) {
             int bi = hashFunction(key);
-            int di = searchInLL(key, bi); //di = -1
+            int di = searchInLL(key, bi);
             return di!=-1; // return true if key contains in the hash table and false if the key not present in hash table
             /*
             if(di == -1) { //key doesn't exist
@@ -99,9 +103,9 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
              */
         }
 
-        public V remove(K key) {
+        public V remove(K key) { // It returns the V (value type in Node)
             int bi = hashFunction(key);
-            int di = searchInLL(key, bi); // di = -1
+            int di = searchInLL(key, bi);
             if(di == -1) { // key doesn't exist
                 return null;
             } else { // key exists
@@ -113,11 +117,11 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
 
         public V get(K key) {
             int bi = hashFunction(key);
-            int di = searchInLL(key, bi); // di = -1
+            int di = searchInLL(key, bi);
             if(di == -1) { // key doesn't exist
                 return null;
             } else { // key exists
-                Node node = buckets[bi].get(di); // The get method of the LinkedList class, not the HashMap
+                Node node = buckets[bi].get(di); // ***The get method of the LinkedList class, not the HashMap
                 return node.value;
             }
         }
@@ -126,7 +130,7 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
             ArrayList<K> keys = new ArrayList<>();
             for (LinkedList<Node> ll : buckets) { // Iterate over Linked lists in all the Nodes
                 for (Node node : ll) { // Iterate Over each linked List in particular node and store the node value in the key
-                    keys.add(node.key);
+                    keys.add(node.key); // add the key in arrayList that to be returned as answer
                 }
             }
             /*
