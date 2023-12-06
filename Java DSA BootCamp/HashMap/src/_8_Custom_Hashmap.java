@@ -140,8 +140,9 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
              */
             return keys;
         }
+
         public boolean isEmpty() {
-            return n == 0;
+            return n == 0; // Returns true if the Hashmap is empty or false if Hashmap is full
         }
     }
     public static void main(String args[]) {
