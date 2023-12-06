@@ -1,5 +1,5 @@
 import java.util.*;
-public class _8_Custom_Hashmap {
+public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it as Array of Linked Lists
     static class HashMap<K,V> { // Here the K,V are taken in the context of generics
         private class Node {
             K key;
@@ -13,6 +13,7 @@ public class _8_Custom_Hashmap {
         private int N; // N - buckets
         private LinkedList<Node> buckets[]; //N = buckets.length
         @SuppressWarnings("unchecked") // This suppresses the warnings in the Hashmap class which are raised by compiler
+        // Creating the Initial Hashmap Array
         public HashMap() {
             this.N = 4;
             this.buckets = new LinkedList[4];
