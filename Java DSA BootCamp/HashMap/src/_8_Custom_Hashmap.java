@@ -145,16 +145,21 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
             return n == 0; // Returns true if the Hashmap is empty or false if Hashmap is full
         }
     }
-    public static void main(String args[]) {
-        HashMap<String, Integer> map = new HashMap<>();
+
+    public static void main(String[] args) {
+        HashMap<String, Integer> map = new HashMap<>(); // Using our custom Hashmap
         map.put("India", 190);
         map.put("China", 200);
         map.put("US", 50);
         ArrayList<String> keys = map.keySet();
+        for (String key : keys) {
+            System.out.println(key + " " + map.get(key));
+        }
+        /*
         for(int i=0; i<keys.size(); i++) {
             System.out.println(keys.get(i)+" "+map.get(keys.get(i)));
         }
-
+         */
         map.remove("India");
         System.out.println(map.get("India"));
     }
