@@ -113,11 +113,11 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
 
         public V get(K key) {
             int bi = hashFunction(key);
-            int di = searchInLL(key, bi); //di = -1
-            if(di == -1) { //key doesn't exist
+            int di = searchInLL(key, bi); // di = -1
+            if(di == -1) { // key doesn't exist
                 return null;
-            } else { //key exists
-                Node node = buckets[bi].get(di);
+            } else { // key exists
+                Node node = buckets[bi].get(di); // The get method of the LinkedList class, not the HashMap
                 return node.value;
             }
         }
