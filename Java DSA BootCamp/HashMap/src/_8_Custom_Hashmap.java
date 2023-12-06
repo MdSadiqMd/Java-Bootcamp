@@ -46,6 +46,12 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
             for(int i=0; i<N*2; i++) {
                 buckets[i] = new LinkedList<>();
             }
+            for (LinkedList<Node> newBucket : oldBucket) { // Inserting the old Bucket items into new Bucket Linked List Items
+                for (Node node : newBucket) { // Inserting Node values (Series of LL) into newBucket Nodes
+                    put(node.key, node.value);
+                }
+            }
+            /*
             for(int i=0; i<oldBucket.length; i++) {
                 LinkedList<Node> ll = oldBucket[i];
                 for(int j=0; j<ll.size(); j++) {
@@ -53,11 +59,12 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
                     put(node.key, node.value);
                 }
             }
+             */
         }
 
         public void put(K key, V value) {
             int bi = hashFunction(key);
-            int di = searchInLL(key, bi); //di = -1
+            int di = searchInLL(key, bi); // While Inserting
             if(di == -1) { //key doesn't exist
                 buckets[bi].add(new Node(key, value));
                 n++;
