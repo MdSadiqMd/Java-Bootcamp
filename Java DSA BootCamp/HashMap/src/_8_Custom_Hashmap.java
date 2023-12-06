@@ -101,11 +101,11 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
 
         public V remove(K key) {
             int bi = hashFunction(key);
-            int di = searchInLL(key, bi); //di = -1
-            if(di == -1) { //key doesn't exist
+            int di = searchInLL(key, bi); // di = -1
+            if(di == -1) { // key doesn't exist
                 return null;
-            } else { //key exists
-                Node node = buckets[bi].remove(di);
+            } else { // key exists
+                Node node = buckets[bi].remove(di); // Here we are not using the remove method of a Java HashMap. Instead, it is using the remove method of a linked list
                 n--;
                 return node.value;
             }
