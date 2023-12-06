@@ -63,18 +63,25 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
         }
 
         public void put(K key, V value) {
+            // Calculate the bucket index using a hash function
             int bi = hashFunction(key);
-            int di = searchInLL(key, bi); // While Inserting
-            if(di == -1) { //key doesn't exist
+            // Search for the key in the linked list at the calculated bucket index
+            int di = searchInLL(key, bi);
+            // If the key doesn't exist in the linked list
+            if (di == -1) {
+                // Add a new node with the key-value pair to the linked list at the bucket index
                 buckets[bi].add(new Node(key, value));
+                // Increment the total number of key-value pairs in the hash table
                 n++;
-            } else { //key exists
+            } else { // If the key already exists in the linked list
+                // Update the value associated with the existing key
                 Node node = buckets[bi].get(di);
                 node.value = value;
             }
-            double lambda = (double)n/N;
-
-            if(lambda > 2.0) {
+            // Calculate the load factor (lambda) of the hash table
+            double lambda = (double) n / N;
+            // If the load factor exceeds 2.0, trigger a rehash operation to resize the hash table
+            if (lambda > 2.0) {
                 rehash();
             }
         }
@@ -82,11 +89,14 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
         public boolean containsKey(K key) {
             int bi = hashFunction(key);
             int di = searchInLL(key, bi); //di = -1
+            return di!=-1;
+            /*
             if(di == -1) { //key doesn't exist
                 return false;
             } else { //key exists
                 return true;
             }
+             */
         }
 
         public V remove(K key) {
