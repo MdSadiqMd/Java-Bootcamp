@@ -10,8 +10,8 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
             }
         }
         private int n; // n - nodes
-        private int N; // N - buckets
-        private LinkedList<Node> buckets[]; //N = buckets.length
+        private int N; // N - buckets.length --> Each Linked List in the Node of an array is termed as bucket the length of the linked list in each bucket is N
+        private LinkedList<Node> buckets[];
         @SuppressWarnings("unchecked") // This suppresses the warnings in the Hashmap class which are raised by compiler
         // Creating the Initial Hashmap Array
         public HashMap() {
