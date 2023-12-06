@@ -22,9 +22,10 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
             }
         }
 
+        // The Hash Function will return the Index in which the value that had inserted in hashmap need to be stored
         private int hashFunction(K key) {
             int bi = key.hashCode();
-            return Math.abs(bi) % N;
+            return Math.abs(bi) % N; // We divide it by N (length of bucket) to Minimize it to the length of Array we have taken
         }
 
         private int searchInLL(K key, int bi) {
