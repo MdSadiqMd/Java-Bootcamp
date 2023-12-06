@@ -89,7 +89,7 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
         public boolean containsKey(K key) {
             int bi = hashFunction(key);
             int di = searchInLL(key, bi); //di = -1
-            return di!=-1;
+            return di!=-1; // return true if key contains in the hash table and false if the key not present in hash table
             /*
             if(di == -1) { //key doesn't exist
                 return false;
