@@ -11,7 +11,7 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
         }
         private int n; // n - nodes
         private int N; // N - buckets.length --> Each Linked List in the Node of an array is termed as bucket the length of the linked list in each bucket is N
-        private LinkedList<Node> buckets[];
+        private LinkedList<Node>[] buckets; // Linked List at a particular Node
         @SuppressWarnings("unchecked") // This suppresses the warnings in the Hashmap class which are raised by compiler
         // Creating the Initial Hashmap Array
         public HashMap() {
@@ -30,19 +30,18 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
 
         private int searchInLL(K key, int bi) {
             LinkedList<Node> ll = buckets[bi];
-
             for(int i=0; i<ll.size(); i++) {
                 if(ll.get(i).key == key) {
                     return i; //di
                 }
             }
-
             return -1;
         }
 
+        // We double the size of the array if the array we have taken is filled but inserting the elements
         @SuppressWarnings("unchecked")
         private void rehash() {
-            LinkedList<Node> oldBucket[] = buckets;
+            LinkedList<Node>[] oldBucket = buckets;
             buckets = new LinkedList[N*2];
             for(int i=0; i<N*2; i++) {
                 buckets[i] = new LinkedList<>();
