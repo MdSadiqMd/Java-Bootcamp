@@ -4,7 +4,6 @@ public class _8_Custom_Hashmap {
         private class Node {
             K key;
             V value;
-
             public Node(K key, V value) {
                 this.key = key;
                 this.value = value;
