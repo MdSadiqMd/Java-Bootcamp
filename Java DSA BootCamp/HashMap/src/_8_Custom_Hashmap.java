@@ -1,6 +1,6 @@
 import java.util.*;
 public class _8_Custom_Hashmap {
-    static class HashMap<K,V> { //generics
+    static class HashMap<K,V> { // Here the K,V are taken in the context of generics
         private class Node {
             K key;
             V value;
@@ -9,10 +9,10 @@ public class _8_Custom_Hashmap {
                 this.value = value;
             }
         }
-        private int n; //n - nodes
-        private int N; //N - buckets
+        private int n; // n - nodes
+        private int N; // N - buckets
         private LinkedList<Node> buckets[]; //N = buckets.length
-        @SuppressWarnings("unchecked")
+        @SuppressWarnings("unchecked") // This suppresses the warnings in the Hashmap class which are raised by compiler
         public HashMap() {
             this.N = 4;
             this.buckets = new LinkedList[4];
