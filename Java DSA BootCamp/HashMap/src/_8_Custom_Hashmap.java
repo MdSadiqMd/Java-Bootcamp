@@ -124,6 +124,12 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
 
         public ArrayList<K> keySet() {
             ArrayList<K> keys = new ArrayList<>();
+            for (LinkedList<Node> ll : buckets) { // Iterate over Linked lists in all the Nodes
+                for (Node node : ll) { // Iterate Over each linked List in particular node and store the node value in the key
+                    keys.add(node.key);
+                }
+            }
+            /*
             for(int i=0; i<buckets.length; i++) { //bi
                 LinkedList<Node> ll = buckets[i];
                 for(int j=0; j<ll.size(); j++) { //di
@@ -131,6 +137,7 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
                     keys.add(node.key);
                 }
             }
+             */
             return keys;
         }
         public boolean isEmpty() {
