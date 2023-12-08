@@ -19,10 +19,10 @@ public class _8_Custom_Hashmap { // This Hashmap is achieved by visualising it a
         @SuppressWarnings("unchecked") // This suppresses the warnings in the Hashmap class which are raised by compiler
         // Creating the Initial Hashmap Array
         public HashMap() {
-            this.N = 4;
+            this.N = 4; // Initialising the length of array (hard coding)
             this.buckets = new LinkedList[4];
             for(int i=0; i<4; i++) {
-                this.buckets[i] = new LinkedList<>();
+                this.buckets[i] = new LinkedList<>(); // creating a linked list which stores ***"null" at every location
             }
         }
 
