@@ -18,6 +18,8 @@ public class _2_HashMap {
         Data.remove("Banana");
         System.out.println(Data);
 
+        System.out.println(Data.size());
+
         //Checking the Values and Keys
         if(Data.containsKey("Mango")){
             System.out.println("Present");
@@ -25,5 +27,10 @@ public class _2_HashMap {
         else{
             System.out.println("Not Present");
         }
+
+        System.out.println(Data.clone());
+
+        Data.clear();
+        System.out.println(Data);
     }
 }
