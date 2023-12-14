@@ -26,12 +26,16 @@ public class Remove_Linked_List_Elements {
                 ptr2 = ptr2.next;
             }
         }*/
-        if(node==null){
+
+        // Recursive Solution
+        if (node == null) {
             return;
         }
-        remove(node.next,val);
-        if(node.data==val){
-
+        // Recursively remove elements from the rest of the list
+        remove(node.next, val);
+        // Check if the current node's data matches the value to be removed
+        if (node.next != null && node.next.data == val) {
+            node.next = node.next.next;
         }
     }
 
