@@ -8,16 +8,26 @@ public class Remove_Linked_List_Elements {
             this.next=null;
         }
     }
-    public static void remove(Node node,int val){
-        Node ptr1=node;
-        Node ptr2=node.next;
-        while(ptr2!=null && ptr2.data!=val){
-            ptr1=ptr1.next;
-            ptr2=ptr2.next;
+    public static void remove(Node node, int val) {
+        // Handle the case where the value to be removed is at the beginning of the list
+        while (node != null && node.data == val) {
+            node = node.next;
         }
-        ptr1.next=ptr2.next;
-        ptr2.next=null;
+
+        Node ptr1 = node;
+        Node ptr2 = (node != null) ? node.next : null;
+
+        while (ptr2 != null) {
+            if (ptr2.data == val) {
+                ptr1.next = ptr2.next;
+                ptr2 = ptr2.next; // Move ptr2 forward without moving ptr1
+            } else {
+                ptr1 = ptr1.next;
+                ptr2 = ptr2.next;
+            }
+        }
     }
+
     public static void main(String[] args) {
         int n=3;
         Node list=new Node(1);
