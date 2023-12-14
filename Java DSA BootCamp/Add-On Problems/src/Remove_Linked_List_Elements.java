@@ -10,7 +10,7 @@ public class Remove_Linked_List_Elements {
     }
     public static void remove(Node node, int val) {
         // Handle the case where the value to be removed is at the beginning of the list
-        while (node != null && node.data == val) {
+        /*while (node != null && node.data == val) {
             node = node.next;
         }
 
@@ -25,6 +25,13 @@ public class Remove_Linked_List_Elements {
                 ptr1 = ptr1.next;
                 ptr2 = ptr2.next;
             }
+        }*/
+        if(node==null){
+            return;
+        }
+        remove(node.next,val);
+        if(node.data==val){
+
         }
     }
 
