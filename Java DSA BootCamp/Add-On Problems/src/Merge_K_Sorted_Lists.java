@@ -1,5 +1,8 @@
 import java.util.*;
-
+/*
+Here we take a MinHeap using priority Queue and keep all elements into it and pop the elements as they are in ascending order and keep them in the form of Linked List
+We take a Dummy Node to traverse after it and return the dummy Node "next" and traverse over it to print solution
+ */
 public class Merge_K_Sorted_Lists {
     static class Node{
         int data;
@@ -10,8 +13,8 @@ public class Merge_K_Sorted_Lists {
         }
     }
 
-    public static Node merge(List<Node> ans,int k){
-        if(ans.size()==0 || ans.isEmpty()){
+    public static Node merge(List<Node> ans){
+        if(ans.isEmpty()){
             return null;
         }
         PriorityQueue<Node> minheap = new PriorityQueue<Node>((a,b) -> a.data - b.data);
@@ -22,15 +25,15 @@ public class Merge_K_Sorted_Lists {
         }
         Node dummy=new Node(0);
         Node current=dummy;
-        Node smallest=dummy.next;
         while(!minheap.isEmpty()){
+            Node smallest=minheap.poll();
             current.next=smallest;
             current=current.next;
-            if(current.next==null){
-
+            if(smallest.next!=null){
+                minheap.offer(smallest.next);
             }
         }
-        return null;
+        return dummy.next;
     }
 
     public static void main(String[] args) {
@@ -51,11 +54,12 @@ public class Merge_K_Sorted_Lists {
         lists.add(list2);
         lists.add(list3);
 
-        Node mergedList = merge(lists,k);
+        Node mergedList = merge(lists);
 
         while (mergedList != null) {
             System.out.print(mergedList.data + " -> ");
             mergedList = mergedList.next;
         }
+        System.out.print("null");
     }
 }
