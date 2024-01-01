@@ -1,5 +1,8 @@
 import java.util.*;
-
+// The bucket Sort Algorithm is a part of internal working of hashmap
+// In bucket sort we sort the buckets of the hashmap and push them into an array
+// Here the length of the buckets array is equal to (int) * (The Largest Element in the Array to be sorted) * (Length of the array to be sorted)
+// *** The bucket sort is applicable only when the elements are evenly distributed
 public class _10_Bucket_Sort {
     static void bucketSort(float[] arr, int n) {
         if (n <= 0)
@@ -13,7 +16,7 @@ public class _10_Bucket_Sort {
             buckets[i] = new Vector<Float>();
         }
 
-        // 2) Put array elements in different buckets
+        // 2) Put array elements in different buckets ***(Hash Function)
         for (int i = 0; i < n; i++) {
             float idx = arr[i] * n;
             buckets[(int)idx].add(arr[i]);
