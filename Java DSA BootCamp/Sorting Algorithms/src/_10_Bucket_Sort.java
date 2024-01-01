@@ -1,5 +1,5 @@
 import java.util.*;
-import java.util.Collections;
+
 public class _10_Bucket_Sort {
     static void bucketSort(float[] arr, int n) {
         if (n <= 0)
