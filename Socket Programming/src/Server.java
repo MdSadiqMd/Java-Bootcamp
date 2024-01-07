@@ -7,13 +7,13 @@ public class Server {
         int PORT=8000;
         try(ServerSocket serverSocket=new ServerSocket(PORT)){
             System.out.println("Server Started at :"+ PORT);
-
+            int count=0;
             // Accepting all Socket connections
             while(true){
                 Socket socket=serverSocket.accept();
-                System.out.println("New Client connected");
+                System.out.println("New Client connected --> "+count);
 
-                new ClientHandler(socket).start();
+                new ClientHandler(socket).run(count);
             }
         } catch(IOException err){
             System.out.println(err.getMessage());
