@@ -1,5 +1,5 @@
 /*
-
+Here in this problem consider four cases if all elements are positive,array has even numbered of negative elements,array has positive number of negative elements,array has a zero
  */
 public class Maximum_Product_SubArray {
     public static int sum(int[] arr){
