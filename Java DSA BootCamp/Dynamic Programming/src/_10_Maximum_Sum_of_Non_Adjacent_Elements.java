@@ -1,5 +1,5 @@
 import java.util.Arrays;
-
+// Definitely draw recursion tree
 public class _10_Maximum_Sum_of_Non_Adjacent_Elements {
     // Top - Down Approach --> Memoization
     public static int sum(int index,int[] arr,int[] dp){
@@ -29,17 +29,17 @@ public class _10_Maximum_Sum_of_Non_Adjacent_Elements {
         return dp[index-1];
     }
     // Space Optimization
-    public static int sumSpace(int index,int[] arr,int[] dp){
-        dp[0]=arr[0];
+    public static int sumSpace(int index,int[] arr){
+        int prev1=arr[0];
+        int prev2=0;
         for(int i=1;i<index;i++){
-            int pick=arr[index];
-            if(i>1){
-                pick+=dp[i-2];
-            }
-            int notPick=dp[i-1];
-            dp[i]=Math.max(pick,notPick);
+            int pick=arr[index]+prev2;
+            int notPick=prev1;
+            int curr=Math.max(pick,notPick);
+            prev2=prev1;
+            prev1=curr;
         }
-        return dp[index-1];
+        return prev1;
     }
     public static void main(String[] args) {
         int[] arr={2, 1, 4, 9};
@@ -48,5 +48,6 @@ public class _10_Maximum_Sum_of_Non_Adjacent_Elements {
         Arrays.fill(dp,-1);
         System.out.println(sum(n-1,arr,dp));
         System.out.println(sumTab(n-1,arr,dp));
+        System.out.println(sumSpace(n-1,arr));
     }
 }
