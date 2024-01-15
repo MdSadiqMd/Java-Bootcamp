@@ -37,7 +37,7 @@ public class _9_Frog_Jump {
         return dp[index]=Math.min(left,right);
     }
     // Space Optimization
-    public static int costSpace(int index,int[] arr,int[] dp){
+    public static int costSpace(int index,int[] arr){
         if(index==0) return 0;
         int prev1=0;
         int prev2=0;
@@ -78,9 +78,8 @@ public class _9_Frog_Jump {
         return dp[index]=Math.min(left,right);
     }
     // Space Optimization
-    public static int costKSpace(int index,int k,int[] arr,int[] dp){
+    public static int costKSpace(int index,int k,int[] arr){
         if(arr.length==0) return 0;
-        if(dp[index]!=-1) return dp[index];
         int prev1=0;
         int prev2=0;
         int left=prev1+Math.abs(arr[index]-arr[index-1]);
@@ -102,12 +101,12 @@ public class _9_Frog_Jump {
         Arrays.fill(dp,-1);
         System.out.println(cost(n-1,arr,dp));
         System.out.println(costTab(n-1,arr,dp));
-        System.out.println(costSpace(n-1,arr,dp));
+        System.out.println(costSpace(n-1,arr));
 
         // If Given K number of Jumps
         int k=3;
         System.out.println(costK(n-1,k,arr,dp));
         System.out.println(costKTab(n-1,k,arr,dp));
-        System.out.println(costKSpace(n-1,k,arr,dp)); // *** Here it won't Optimise the space as if in the worst case k=N and the space complexity will be O(N)
+        System.out.println(costKSpace(n-1,k,arr)); // *** Here it won't Optimise the space as if in the worst case k=N and the space complexity will be O(N)
     }
 }
