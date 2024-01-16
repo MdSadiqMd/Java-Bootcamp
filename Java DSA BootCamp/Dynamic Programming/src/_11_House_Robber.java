@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class _11_House_Robber {
+    // Top - Down Approach --> Memoization
     public static int sum(int n, ArrayList<Integer> arr, int[] dp) {
         if (n == 0) {
             return arr.get(0);
@@ -14,6 +15,7 @@ public class _11_House_Robber {
         int pickLast = sum(n - 1, arr, dp);
         return dp[n] = Math.max(pickFirst, pickLast);
     }
+    // Bottom - Up Approach --> Tabulation
     public static int sumTab(int n, ArrayList<Integer> arr, int[] dp) {
         if (n == 0) {
             return arr.get(0);
@@ -26,6 +28,7 @@ public class _11_House_Robber {
         int pickLast = dp[n-1];
         return dp[n] = Math.max(pickFirst, pickLast);
     }
+    // Space Optimization
     public static int sumSpace(int n, ArrayList<Integer> arr) {
         int prev1 = arr.get(0);
         int prev2 = 0;
