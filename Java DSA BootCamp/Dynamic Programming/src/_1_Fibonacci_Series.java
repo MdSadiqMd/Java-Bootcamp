@@ -8,7 +8,13 @@ To write recurrence relation follow the below steps
 Now after finding the recurrence relation, and we write the code using recursion it may run or return time limit exceeded error. So, now let's apply DP
 1. Top - Down Approach --> Memoization --> Here we take an array of the size of the output needed and try to store the values in that array that required for computation, Here the time complexity will be decreased but the space complexity *** might remain same
 2. Bottom - Up Approach --> Tabulation --> Here we replace the recursion part and try to replace it with index based which we memoized before, Here it will decrease the recursion stack space that took in before Approach
-3. Space Optimization --> Here we take the advantage that we don't need to store the whole array we just need to store few set of previous computed values, and we just store them for computation and garbage collector will clean it after computation, this approach reduces the space complexity by large extent this also has some limitations so see the countKSpace Method in Frog Jump problem
+                                           To convert memoization to tabulation follow these steps
+                                           1. Declare base case
+                                           2. Express all the states in for loop
+                                           3. Copy the recurrence and write
+3. Space Optimization --> Here we take the advantage that we don't need to store the whole array we just need to store few set of previous computed values, and we just store them for computation and garbage collector will clean it after computation, this approach reduces the space complexity by large extent
+                          To do space Optimization in multidimensional Array see if there are using previous n computed values take the advantage of it and swap with that make to compute the values.
+                          This also has some limitations so see the countKSpace Method in Frog Jump problem
  */
 public class _1_Fibonacci_Series {
     // Top - Down Approach --> Memoization --> Time and Space Complexity --> O(N)
