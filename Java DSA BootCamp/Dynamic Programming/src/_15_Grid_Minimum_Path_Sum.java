@@ -29,6 +29,23 @@ public class _15_Grid_Minimum_Path_Sum {
         }
         return dp[n-1][m-1];
     }
+    // Space Optimization
+    public static int pathSpace(int n, int m, int[][] arr) {
+        int[] prev = new int[m];
+        for (int i = 0; i < n; i++) {
+            int[] temp = new int[m];
+            for (int j = 0; j < m; j++) {
+                if (i == 0 && j == 0) temp[j] = arr[i][j];
+                else {
+                    int up = arr[i][j] + (i > 0 ? prev[j] : (int) Math.pow(10, 9));
+                    int left = arr[i][j] + (j > 0 ? temp[j - 1] : (int) Math.pow(10, 9));
+                    temp[j] = Math.min(up, left);
+                }
+            }
+            prev = temp.clone();
+        }
+        return prev[m - 1];
+    }
     public static void main(String[] args) {
         int[][] arr= {
                 {5, 9, 6},
@@ -40,5 +57,6 @@ public class _15_Grid_Minimum_Path_Sum {
         for (int[] row : dp) Arrays.fill(row, -1);
         System.out.println(path(n - 1,m - 1,arr,dp));
         System.out.println(pathTab(n,m,arr,dp));
+        System.out.println(pathSpace(n,m,arr));
     }
 }
