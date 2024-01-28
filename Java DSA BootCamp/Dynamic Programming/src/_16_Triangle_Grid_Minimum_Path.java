@@ -23,15 +23,31 @@ public class _16_Triangle_Grid_Minimum_Path {
         }
         return dp[0][0];
     }
+    // Space Optimization
+    public static int sumSpace(int n,int[][] arr){
+        int[] front=new int[n];
+        int[] curr=new int[n];
+        for(int j=0;j<n;j++) front[j]=arr[n-1][j];
+        for(int i=n-2;i>=0;i--){
+            for(int j=i;j>=0;j--){
+                int down=arr[i][j]+front[j];
+                int diagonal=arr[i][j]+front[j+1];
+                curr[j]=Math.min(down,diagonal);
+            }
+            front=curr.clone();
+        }
+        return front[0];
+    }
     public static void main(String[] args) {
         int[][] arr = {{1},
-                {2, 3},
-                {3, 6, 7},
-                {8, 9, 6, 10}};
+                       {2, 3},
+                       {3, 6, 7},
+                       {8, 9, 6, 10}};
         int n = arr.length;
         int[][] dp = new int[n][n];
         for (int[] row : dp) Arrays.fill(row, -1);
         System.out.println(sum(0,0,n,arr,dp));
         System.out.println(sumTab(n,arr,dp));
+        System.out.println(sumSpace(n,arr));
     }
 }
