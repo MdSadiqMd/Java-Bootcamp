@@ -28,7 +28,24 @@ public class _19_Subset_Sum_Equal_To_Target {
         }
         return dp[n - 1][k];
     }
-
+    // Space Optimization
+    public static boolean sumSpace(int n,int k,int[] arr){
+        boolean[] prev=new boolean[k+1];
+        prev[0]=true;
+        if(arr[0]<=k) prev[arr[0]]=true;
+        for(int i=0;i<n;i++){
+            boolean[] curr=new boolean[k+1];
+            curr[0]=true;
+            for(int target=0;target<=k;target++){
+                boolean notTake=prev[target];
+                boolean take=false;
+                if(arr[i]<=target) take=prev[target-arr[i]];
+                curr[target]=take || notTake;
+            }
+            prev=curr;
+        }
+        return prev[k];
+    }
     public static void main(String[] args) {
         int[] arr={1,2,3,4};
         int n=arr.length;
@@ -37,5 +54,6 @@ public class _19_Subset_Sum_Equal_To_Target {
         for(int[] row:dp) Arrays.fill(row,-1);
         System.out.println(sum(n-1,k,arr,dp));
         System.out.println(sumTab(n-1,k,arr));
+        System.out.println(sumSpace(n-1,k,arr));
     }
 }
