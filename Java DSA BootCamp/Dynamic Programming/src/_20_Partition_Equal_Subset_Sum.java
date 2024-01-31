@@ -46,13 +46,32 @@ public class _20_Partition_Equal_Subset_Sum {
     }
     // Space Optimization
     public static boolean partitionSpace(int n,int[] arr){
-        boolean[] prev=new boolean[n];
-
+        int sum=0;
+        for(int i=0;i<=arr.length-1;i++) sum+=arr[i];
+        if(sum%2!=0) return false;
+        else {
+            int k = sum / 2;
+            boolean[] prev=new boolean[n];
+            prev[0]=true;
+            if(arr[0]<=k) prev[arr[0]]=true;
+            for(int index=1;index<n;index++){
+                boolean[] curr=new boolean[k+1];
+                for(int target=1;target<=k;target++){
+                    boolean notTake=prev[target];
+                    boolean take=false;
+                    if(arr[index]<=target) take=prev[target-arr[index]];
+                    curr[target]=take || notTake;
+                }
+                prev=curr;
+            }
+            return prev[k];
+        }
     }
     public static void main(String[] args) {
         int[] arr={2,3,3,3,4,5};
         int n=arr.length;
         System.out.println(helper(n-1,arr));
         System.out.println(partitionTab(n,arr));
+        System.out.println(partitionSpace(n,arr));
     }
 }
