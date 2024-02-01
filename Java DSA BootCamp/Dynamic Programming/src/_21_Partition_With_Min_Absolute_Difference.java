@@ -6,20 +6,20 @@ public class _21_Partition_With_Min_Absolute_Difference {
 
     // Top - Down Approach --> Memoization
     public static int partition(int n, ArrayList<Integer> arr){
-        int sum=0;
-        for(int i=0;i<n;i++) sum+=arr.get(i);
-        boolean[][] dp=new boolean[n][sum+1];
-        for(int i=0;i<=sum;i++) dp[0][i]=(i==arr.get(0));
-        for(int index=1;index<n;index++){
-            for(int target=0;target<=sum;target++){
-                boolean notTaken=dp[index-1][target];
-                boolean taken=false;
-                if(arr.get(index)<=target) taken=dp[index-1][target-arr.get(index)];
-                dp[index][target]=taken || notTaken;
+        int sum = 0;
+        for(int i = 0; i < n; i++) sum += arr.get(i);
+        boolean[][] dp = new boolean[n][sum + 1];
+        for(int i = 0; i <= sum; i++) dp[0][i] = (i == 0 || i == arr.get(0));
+        for(int index = 1; index < n; index++) {
+            for(int target = 0; target <= sum; target++) {
+                boolean notTaken = dp[index - 1][target];
+                boolean taken = false;
+                if(arr.get(index) <= target) taken = dp[index - 1][target - arr.get(index)];
+                dp[index][target] = taken || notTaken;
             }
         }
-        int min=Integer.MIN_VALUE;
-        for(int i=0;i<=sum;i++) if(dp[n-1][i]) min=Math.min(min,Math.abs(i-(sum-i)));
+        int min = Integer.MAX_VALUE;
+        for(int i = 0; i <= sum; i++) if(dp[n - 1][i]) min = Math.min(min, Math.abs(i - (sum - i)));
         return min;
     }
     public static void main(String[] args) {
