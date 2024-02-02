@@ -13,6 +13,7 @@ public class _22_Count_Subsets_With_Sum_K {
         if(arr[index]<=target) take+=count(index-1,target-arr[index],arr,dp);
         return dp[index][target]=notTake+take;
     }
+    // Bottom - Up Approach --> Tabulation
     public static int countTab(int index,int target,int[] arr,int[][] dp){
         if(target==0) return 1;
         if(index==0) return arr[0]==target?1:0;
@@ -22,6 +23,7 @@ public class _22_Count_Subsets_With_Sum_K {
         if(arr[index]<=target) take+=dp[index-1][target-arr[index]];
         return dp[index][target]=notTake+take;
     }
+    // Space Optimization
     public static int countSpace(int n, int k, int[] arr) {
         int[] prev = new int[k + 1];
         prev[0] = 1;
