@@ -22,14 +22,22 @@ public class _22_Count_Subsets_With_Sum_K {
         if(arr[index]<=target) take+=dp[index-1][target-arr[index]];
         return dp[index][target]=notTake+take;
     }
-    public static int countSpace(int n,int target,int[] arr){
-        int[] prev=new int[target+1];
-        for(int i=0;i<=n-1;i++){
-            int[] curr=new int[n];
-            for(int j=0;j<=target;j++){
-
+    public static int countSpace(int n,int k,int[] arr){
+        int[] prev=new int[k+1];
+        prev[0]=1;
+        if(arr[0]<=k) prev[arr[0]]=1;
+        for(int index=1;index<=n-1;index++){
+            int[] curr=new int[k+1];
+            curr[0]=1;
+            for(int target=1;target<=k;target++){
+                int notTake=prev[target];
+                int take=0;
+                if(arr[index]<=target) take=prev[target-arr[index]];
+                curr[target]=take+notTake;
             }
+            prev=curr;
         }
+        return prev[k];
     }
     public static void main(String[] args) {
         int[] arr={1,2,3,4};
@@ -39,5 +47,6 @@ public class _22_Count_Subsets_With_Sum_K {
         for(int[] row:dp) Arrays.fill(row,-1);
         System.out.println(count(n-1,k,arr,dp));
         System.out.println(countTab(n-1,k,arr,dp));
+        System.out.println(countSpace(n-1,k,arr));
     }
 }
