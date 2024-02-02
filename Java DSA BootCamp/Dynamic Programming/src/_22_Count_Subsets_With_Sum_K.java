@@ -22,20 +22,20 @@ public class _22_Count_Subsets_With_Sum_K {
         if(arr[index]<=target) take+=dp[index-1][target-arr[index]];
         return dp[index][target]=notTake+take;
     }
-    public static int countSpace(int n,int k,int[] arr){
-        int[] prev=new int[k+1];
-        prev[0]=1;
-        if(arr[0]<=k) prev[arr[0]]=1;
-        for(int index=1;index<=n-1;index++){
-            int[] curr=new int[k+1];
-            curr[0]=1;
-            for(int target=1;target<=k;target++){
-                int notTake=prev[target];
-                int take=0;
-                if(arr[index]<=target) take=prev[target-arr[index]];
-                curr[target]=take+notTake;
+    public static int countSpace(int n, int k, int[] arr) {
+        int[] prev = new int[k + 1];
+        prev[0] = 1;
+        if (arr[0] <= k) prev[arr[0]] = 1;
+        for (int index = 1; index <= n - 1; index++) {
+            int[] curr = new int[k + 1];
+            curr[0] = 1;
+            for (int target = 1; target <= k; target++) {
+                int notTake = prev[target];
+                int take = 0;
+                if (arr[index] <= target) take = prev[target - arr[index]];
+                curr[target] = take + notTake;
             }
-            prev=curr;
+            prev = curr;
         }
         return prev[k];
     }
