@@ -19,6 +19,19 @@ public class _4_0_1_Knapsack {
         int take=(wt[0]<=capacity) ? val[index]+dp[index-1][capacity-wt[index]] :0;
         return dp[index][capacity]=Math.max(notTake,take);
     }
+    // Space Optimization
+    public static int knapsackSpace(int capacity, int index, int[] wt, int[] val) {
+        int[] prev = new int[capacity + 1];
+        for (int i = 0; i <= capacity; i++) prev[i] = (wt[0] <= i) ? val[0] : 0;
+        for (int i = 1; i < index; i++) {
+            for (int cap = capacity; cap >= 0; cap--) {
+                int notTaken = prev[cap];
+                int taken = (wt[i] <= cap) ? val[i] + prev[cap - wt[i]] : 0;
+                prev[cap] = Math.max(notTaken, taken);
+            }
+        }
+        return prev[capacity];
+    }
     public static void main(String[] args) {
         int[] wt = {1, 2, 4, 5};
         int[] val = {5, 4, 8, 6};
@@ -28,5 +41,6 @@ public class _4_0_1_Knapsack {
         for(int[] row:dp) Arrays.fill(row,-1);
         System.out.println(knapsack(capacity,n-1,wt,val,dp));
         System.out.println(knapsackTab(capacity,n-1,wt,val,dp));
+        System.out.println(knapsackSpace(capacity,n-1,wt,val));
     }
 }
