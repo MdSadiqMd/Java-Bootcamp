@@ -5,12 +5,18 @@ public class _4_0_1_Knapsack {
 
     // Top - Down Approach --> Memoization
     public static int knapsack(int capacity,int index,int[] wt,int[] val,int[][] dp){
-        if(index==0){
-            return  (wt[0]<=capacity) ? val[0] : 0;
-        }
+        if(index==0) return  (wt[0]<=capacity) ? val[0] : 0;
         if(dp[index][capacity]!=-1) return dp[index][capacity];
         int notTake = knapsack(capacity, index - 1, wt, val, dp);
         int take = (wt[index] <= capacity) ? val[index] + knapsack(capacity - wt[index], index - 1, wt, val, dp) : 0;
+        return dp[index][capacity]=Math.max(notTake,take);
+    }
+    // Bottom - Up Approach --> Tabulation
+    public static int knapsackTab(int capacity,int index,int[] wt,int[] val,int[][] dp){
+        if(index==0) return  (wt[0]<=capacity) ? val[0] : 0;
+        if(dp[index][capacity]!=-1) return dp[index][capacity];
+        int notTake=dp[index-1][capacity];
+        int take=(wt[0]<=capacity) ? val[index]+dp[index-1][capacity-wt[index]] :0;
         return dp[index][capacity]=Math.max(notTake,take);
     }
     public static void main(String[] args) {
@@ -21,5 +27,6 @@ public class _4_0_1_Knapsack {
         int[][] dp=new int[n][capacity+1];
         for(int[] row:dp) Arrays.fill(row,-1);
         System.out.println(knapsack(capacity,n-1,wt,val,dp));
+        System.out.println(knapsackTab(capacity,n-1,wt,val,dp));
     }
 }
