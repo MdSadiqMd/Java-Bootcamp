@@ -15,6 +15,23 @@ public class _7_Coin_Change_Problem {
         if (arr[ind] <= T) taken = 1 + count(arr, ind, T - arr[ind], dp);
         return dp[ind][T] = Math.min(notTaken, taken);
     }
+    // Bottom - Up Approach --> Tabulation
+    public static int countTab(int[] arr, int ind, int T, int[][] dp) {
+        if (ind == 0) {
+            if (T % arr[0] == 0) return T / arr[0];
+            else return (int) Math.pow(10, 9);
+        }
+        if (dp[ind][T] != -1) return dp[ind][T];
+        for (int i = 0; i <= ind; i++) {
+            for (int target = 0; target <= T; target++) {
+                int notTaken = dp[i][target];
+                int taken = (int) Math.pow(10, 9);
+                if (arr[ind] <= target) taken = 1 + dp[i][target - arr[ind]];
+                dp[ind][T] = Math.min(notTaken, taken);
+            }
+        }
+        return dp[ind][T];
+    }
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
         int T = 7;
@@ -22,5 +39,6 @@ public class _7_Coin_Change_Problem {
         int[][] dp = new int[n][T + 1];
         for (int[] row : dp) Arrays.fill(row, -1);
         System.out.println(count(arr,n-1,T,dp));
+        System.out.println(countTab(arr,n-1,T,dp));
     }
 }
