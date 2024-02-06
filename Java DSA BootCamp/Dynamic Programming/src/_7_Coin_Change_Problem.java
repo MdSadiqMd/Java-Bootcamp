@@ -32,6 +32,27 @@ public class _7_Coin_Change_Problem {
         }
         return dp[ind][T];
     }
+    // Space Optimization
+    public static int countSpace(int[] arr, int n, int T) {
+        int[] prev = new int[T + 1];
+        int[] cur = new int[T + 1];
+        for (int i = 0; i <= T; i++) {
+            if (i % arr[0] == 0) prev[i] = i / arr[0];
+            else prev[i] = (int) Math.pow(10, 9);
+        }
+        for (int ind = 0; ind < n; ind++) {
+            for (int target = 0; target <= T; target++) {
+                int notTake = prev[target];
+                int take = (int) Math.pow(10, 9);
+                if (arr[ind] <= target) take = 1 + cur[target - arr[ind]];
+                cur[target] = Math.min(notTake, take);
+            }
+            prev = cur.clone();
+        }
+        int ans = prev[T];
+        if (ans >= (int) Math.pow(10, 9)) return -1;
+        return ans;
+    }
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
         int T = 7;
@@ -40,5 +61,6 @@ public class _7_Coin_Change_Problem {
         for (int[] row : dp) Arrays.fill(row, -1);
         System.out.println(count(arr,n-1,T,dp));
         System.out.println(countTab(arr,n-1,T,dp));
+        System.out.println(countSpace(arr,n-1,T));
     }
 }
