@@ -1,26 +1,26 @@
-/*
-Given an integer array of coins[ ] of size N representing different types of currency and an integer sum, The task is to find the number of ways to make sum by using different combinations from coins[].
-Note: Assume that you have an infinite supply of each type of coin.
+import java.util.Arrays;
 
-Examples:
-Input: sum = 4, coins[] = {1,2,3},
-Output: 4
-Explanation: there are four solutions: {1, 1, 1, 1}, {1, 1, 2}, {2, 2}, {1, 3}.
- */
 public class _7_Coin_Change_Problem {
-    public static int countWays(int[] coins,int n,int sum){
-        int[] table=new int[sum+1];
-        table[0]=1;
-        for(int i=0;i<n;i++){
-            for(int j=coins[i];j<=sum;j++){
-                table[j]+=table[i-coins[i]];
-            }
+    // Coin Change Problem ( Minimum Coins ) --> https://takeuforward.org/data-structure/minimum-coins-dp-20/
+
+    // Top - Down Approach --> Memoization
+    static int count(int[] arr, int ind, int T, int[][] dp) {
+        if (ind == 0) {
+            if (T % arr[0] == 0) return T / arr[0];
+            else return (int) Math.pow(10, 9);
         }
-        return table[sum];
+        if (dp[ind][T] != -1) return dp[ind][T];
+        int notTaken =count(arr, ind - 1, T, dp);
+        int taken = (int) Math.pow(10, 9);
+        if (arr[ind] <= T) taken = 1 + count(arr, ind, T - arr[ind], dp);
+        return dp[ind][T] = Math.min(notTaken, taken);
     }
     public static void main(String[] args) {
-        int[] coins={1,2,3};
-        int sum=4;
-        System.out.println(countWays(coins,coins.length,sum));
+        int[] arr = {1, 2, 3};
+        int T = 7;
+        int n = arr.length;
+        int[][] dp = new int[n][T + 1];
+        for (int[] row : dp) Arrays.fill(row, -1);
+        System.out.println(count(arr,n-1,T,dp));
     }
 }
