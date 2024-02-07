@@ -5,14 +5,10 @@ import java.util.Queue;
 // N Array Tree is a Tree which has N children
 public class _29_N_Array_Tree {
     public static class TreeNode{
-        int val;
+        int data;
         List<TreeNode> children = new LinkedList<>();
         TreeNode(int data){
-            val = data;
-        }
-        TreeNode(int data,List<TreeNode> child){
-            val = data;
-            children = child;
+            this.data = data;
         }
     }
     private static void printNAryTree(TreeNode root){
@@ -24,7 +20,7 @@ public class _29_N_Array_Tree {
             for(int i=0;i<len;i++) {
                 TreeNode node = queue.poll();
                 assert node != null;
-                System.out.print(node.val + " ");
+                System.out.print(node.data + " ");
                 for (TreeNode item : node.children) {
                     queue.offer(item);
                 }
