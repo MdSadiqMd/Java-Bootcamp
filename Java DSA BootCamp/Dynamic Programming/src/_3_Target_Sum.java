@@ -16,6 +16,23 @@ public class _3_Target_Sum {
         if(arr[index]<=target) take=sum(index-1,target-arr[index],arr,dp);
         return dp[index][target]=notTake+take;
     }
+    public static int sumTab(int index,int target,int[] arr,int[][] dp){
+        if(index==0){
+            if (target == 0 && arr[0] == 0) return 2;
+            if (target == 0 || target == arr[0]) return 1;
+            return 0;
+        }
+        if(dp[index][target]!=-1) return dp[index][target];
+        for(int i=1;i<=index;i++){
+            for(int T=0;T<=target;T++){
+                int notTake=dp[i-1][T];
+                int take = 0;
+                if(arr[i]<=T) take=dp[i-1][T-arr[i]];
+                dp[i][T]=notTake+take;
+            }
+        }
+        return dp[index-1][target];
+    }
     public static void main(String[] args) {
         int[] arr={1,2,3,1};
         int n=arr.length;
@@ -27,6 +44,7 @@ public class _3_Target_Sum {
         if(sum-target<0 || (sum-target)%2==1) System.out.println("Edge Case Bro");
         else{
             System.out.println(sum(n-1,target,arr,dp));
+            System.out.println(sumTab(n-1,target,arr,dp));
         }
     }
 }
