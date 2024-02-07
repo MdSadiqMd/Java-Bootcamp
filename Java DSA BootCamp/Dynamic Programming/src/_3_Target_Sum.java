@@ -16,6 +16,7 @@ public class _3_Target_Sum {
         if(arr[index]<=target) take=sum(index-1,target-arr[index],arr,dp);
         return dp[index][target]=notTake+take;
     }
+    // Bottom - Up Approach --> Tabulation
     public static int sumTab(int index,int target,int[] arr,int[][] dp){
         if(index==0){
             if (target == 0 && arr[0] == 0) return 2;
@@ -33,6 +34,24 @@ public class _3_Target_Sum {
         }
         return dp[index-1][target];
     }
+    // Space Optimization
+    public static int sumSpace(int index, int target, int[] arr) {
+        int[] prev = new int[target + 1];
+        if (target == 0) prev[0] = 2;
+        else prev[0] = 1;
+        if (prev[0] <= target) prev[prev[0]] = 1;
+        for (int i = 0; i < index; i++) {
+            int[] cur = new int[target + 1];
+            for (int T = 0; T <= target; T++) {
+                int notTaken = prev[T];
+                int taken = 0;
+                if (arr[i] <= T) taken = prev[T - arr[i]];
+                cur[T] = (notTaken + taken);
+            }
+            prev = cur;
+        }
+        return prev[target];
+    }
     public static void main(String[] args) {
         int[] arr={1,2,3,1};
         int n=arr.length;
@@ -45,6 +64,7 @@ public class _3_Target_Sum {
         else{
             System.out.println(sum(n-1,target,arr,dp));
             System.out.println(sumTab(n-1,target,arr,dp));
+            System.out.println(sumSpace(n-1,target,arr));
         }
     }
 }
