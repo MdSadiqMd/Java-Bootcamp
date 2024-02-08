@@ -20,6 +20,21 @@ public class _24_0_1_Knapsack_Unbounded {
         }
         return dp[index-1][capacity];
     }
+    public static int knapsackSpace(int index,int capacity,int[] wt,int[] val){
+        int[] curr=new int[capacity+1];
+        for(int i=wt[0];i<=capacity;i++){
+            curr[i]=(int) (i/wt[0])*val[0];
+        }
+        for(int ind=1;ind<index;ind++){
+            for(int cap=0;cap<=capacity;cap++){
+                int notTake=curr[cap];
+                int take=0;
+                if(wt[ind]<=cap) take=val[ind]+curr[cap-wt[ind]];
+                curr[cap]=Math.max(notTake,take);
+            }
+        }
+        return curr[capacity];
+    }
     public static void main(String[] args) {
         int[] wt = {2,4,6};
         int[] val = {5,11,13};
@@ -29,5 +44,6 @@ public class _24_0_1_Knapsack_Unbounded {
         for(int[] row:dp) Arrays.fill(row,-1);
         System.out.println(knapsack(n-1,capacity,wt,val,dp));
         System.out.println(knapsackTab(n-1,capacity,wt,val,dp));
+        System.out.println(knapsackSpace(n-1,capacity,wt,val));
     }
 }
