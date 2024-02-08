@@ -32,6 +32,24 @@ public class _23_Coin_Change_Infinite_Supply {
         }
         return dp[index-1][target];
     }
+    // Space Optimization
+    public static int countSpace(int index,int target,int[] arr){
+        int[] prev=new int[target+1];
+        for(int i=0;i<=target;i++){
+            if(i%arr[0]==0) prev[i]=1;
+        }
+        for(int i=1;i<index;i++){
+            int[] curr=new int[target+1];
+            for(int T=0;T<=target;T++){
+                int notTake=prev[T];
+                int take=0;
+                if(arr[i]<=T) take=curr[T-arr[i]];
+                curr[T]=notTake+take;
+            }
+            prev=curr;
+        }
+        return prev[target];
+    }
     public static void main(String[] args) {
         int[] arr = {1, 2, 3};
         int T = 4;
@@ -40,5 +58,6 @@ public class _23_Coin_Change_Infinite_Supply {
         for (int[] row : dp) Arrays.fill(row, -1);
         System.out.println(count(n-1,T,arr,dp));
         System.out.println(countTab(n-1,T,arr,dp));
+        System.out.println(countSpace(n,T,arr));
     }
 }
