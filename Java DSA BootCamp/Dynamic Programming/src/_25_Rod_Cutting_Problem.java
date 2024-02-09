@@ -26,6 +26,22 @@ public class _25_Rod_Cutting_Problem {
         }
         return dp[index-1][capacity];
     }
+    // Space Optimization
+    public static int countSpace(int index,int capacity,int[] wt,int[] val){
+        int[] curr=new int[capacity+1];
+        for (int i = wt[0]; i <= capacity; i++) {
+            curr[i] = ((int) i / wt[0]) * val[0];
+        }
+        for (int ind = 1; ind < index; ind++) {
+            for (int cap = 0; cap <= capacity; cap++) {
+                int notTaken = curr[cap];
+                int taken = Integer.MIN_VALUE;
+                if (wt[ind] <= cap) taken = val[ind] + curr[cap - wt[ind]];
+                curr[cap] = Math.max(notTaken, taken);
+            }
+        }
+        return curr[capacity];
+    }
     public static void main(String[] args) {
         int[] wt = { 2, 4, 6 };
         int[] val = { 5, 11, 13 };
@@ -35,5 +51,6 @@ public class _25_Rod_Cutting_Problem {
         for(int[] row:dp) Arrays.fill(row,-1);
         System.out.println(count(n-1,capacity,wt,val,dp));
         System.out.println(countTab(n-1,capacity,wt,val,dp));
+        System.out.println(countSpace(n-1,capacity,wt,val));
     }
 }
