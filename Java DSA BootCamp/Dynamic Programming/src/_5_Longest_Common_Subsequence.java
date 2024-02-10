@@ -24,6 +24,19 @@ public class _5_Longest_Common_Subsequence {
         }
         return dp[n][m];
     }
+    // Space Optimization
+    public static int countSpace(int n,int m,String s1,String s2){
+        int[] prev=new int[m+1];
+        int[] curr=new int[m+1];
+        for(int ind=1;ind<=n;ind++){
+            for(int ind1=1;ind1<=m;ind1++){
+                if(s1.charAt(ind)==s1.charAt(ind1)) curr[ind1]=1+prev[ind1];
+                else curr[ind1]=Math.max(prev[ind1],curr[ind1-1]);
+            }
+            prev=curr.clone();
+        }
+        return prev[m];
+    }
     public static void main(String[] args) {
         String s1 = "acd";
         String s2 = "ced";
@@ -33,5 +46,6 @@ public class _5_Longest_Common_Subsequence {
         for(int[] row:dp) Arrays.fill(row,-1);
         System.out.println(count(n-1,m-1,s1,s2,dp));
         System.out.println(countTab(n-1,m-1,s1,s2,dp));
+        System.out.println(countSpace(n-1,m-1,s1,s2));
     }
 }
