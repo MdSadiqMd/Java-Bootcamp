@@ -11,6 +11,19 @@ public class _5_Longest_Common_Subsequence {
         else return dp[n][m]=Math.max(count(n-1,m,s1,s2,dp),count(n,m-1,s1,s2,dp));
     }
     // Bottom - Up Approach --> Tabulation
+    public static int countTab(int n,int m,String s1,String s2,int[][] dp){
+        if(n<0 || m<0) return 0;
+        if(dp[n][m]!=-1) return dp[n][m];
+        for (int i = 0; i <= n; i++) dp[i][0] = 0;
+        for (int i = 0; i <= m; i++) dp[0][i] = 0;
+        for(int ind=1;ind<=n;ind++){
+            for(int ind1=1;ind1<=m;ind1++){
+                if(s1.charAt(ind)==s2.charAt(ind1)) dp[ind][ind1]=1+dp[ind-1][ind1-1];
+                else dp[ind][ind1]=Math.max(dp[ind-1][ind1],dp[ind][ind1-1]);
+            }
+        }
+        return dp[n][m];
+    }
     public static void main(String[] args) {
         String s1 = "acd";
         String s2 = "ced";
@@ -19,5 +32,6 @@ public class _5_Longest_Common_Subsequence {
         int[][] dp=new int[n][m];
         for(int[] row:dp) Arrays.fill(row,-1);
         System.out.println(count(n-1,m-1,s1,s2,dp));
+        System.out.println(countTab(n-1,m-1,s1,s2,dp));
     }
 }
