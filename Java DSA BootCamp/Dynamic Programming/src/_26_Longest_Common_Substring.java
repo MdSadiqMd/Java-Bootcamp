@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class _26_Longest_Common_Substring {
     // Longest Common SubString --> https://takeuforward.org/data-structure/longest-common-substring-dp-27/
 
-    // Top - Down Approach
+    // Top - Down Approach --> Memoization
     public static int count(int i, int j, String s1, String s2, int[][] dp) {
         if (i == 0 || j == 0) return 0;
         if (dp[i][j] != 0) return dp[i][j];
