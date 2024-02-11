@@ -19,15 +19,15 @@ public class _28_Insertions_to_Make_String_Palindrome {
                     dp[i][j] = dp[i - 1][j - 1] + 1;
                     maxLen = Math.max(maxLen, dp[i][j]);
                 } else {
-                    dp[i][j] = 0;
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
                 }
             }
         }
         return maxLen;
     }
     // Space Optimization
-    public static int countSpace(int n, int m, String s1, String s2) {
-        int[] prev = new int[m + 1];
+    public static int countSpace(int n,int m,String s1, String s2) {
+        int[] prev = new int[n+ 1];
         int[] curr = new int[m + 1];
         int ans = 0;
         for (int i = 1; i <= n; i++) {
@@ -36,7 +36,7 @@ public class _28_Insertions_to_Make_String_Palindrome {
                     curr[j] = 1 + prev[j - 1];
                     ans = Math.max(ans, curr[j]);
                 } else {
-                    curr[j] = 0;
+                    curr[j] = Math.max(curr[j - 1], prev[j]);
                 }
             }
             prev = curr.clone();
@@ -44,17 +44,17 @@ public class _28_Insertions_to_Make_String_Palindrome {
         }
         return ans;
     }
-    public static void helper(String s1){
-        String s2=new StringBuilder(s1).reverse().toString();
-        int n=s1.length();
-        int m=s2.length();
-        int[][] dp=new int[n+1][m+1];
-        System.out.println(n-count(n - 1, m - 1, s1, s2, dp));
-        System.out.println(n-countTab(s1, s2, dp));
-        System.out.println(n-countSpace(n-1,m-1,s1,s2));
+    public static void helper(String s1) {
+        String s2 = new StringBuilder(s1).reverse().toString();
+        int n = s1.length();
+        int m = s2.length();
+        int[][] dp = new int[n + 1][m + 1];
+        System.out.println(count(n, m, s1, s2, dp));
+        System.out.println(countTab(s1, s2, dp));
+        System.out.println(countSpace(n,m,s1, s2));
     }
     public static void main(String[] args) {
-        String s1="abcaa";
+        String s1 = "bbabcbcab";
         helper(s1);
     }
 }
