@@ -49,12 +49,12 @@ public class _28_Insertions_to_Make_String_Palindrome {
         int n = s1.length();
         int m = s2.length();
         int[][] dp = new int[n + 1][m + 1];
-        System.out.println(count(n, m, s1, s2, dp));
-        System.out.println(countTab(s1, s2, dp));
-        System.out.println(countSpace(n,m,s1, s2));
+        System.out.println(n-count(n, m, s1, s2, dp));
+        System.out.println(n-countTab(s1, s2, dp));
+        System.out.println(n-countSpace(n,m,s1, s2));
     }
     public static void main(String[] args) {
-        String s1 = "bbabcbcab";
+        String s1 = "abcaa";
         helper(s1);
     }
 }
