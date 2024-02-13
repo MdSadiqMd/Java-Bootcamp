@@ -30,7 +30,7 @@ public class _31_Distinct_SubSequence {
         }
         return dp[n][m];
     }
-    // Space Optimization
+    // Space Optimization --> 2D Array
     public static int countSpace(int n, int m, String s1, String s2) {
         int[] prev = new int[m + 1];
         int[] curr = new int[m + 1];
@@ -46,6 +46,18 @@ public class _31_Distinct_SubSequence {
         }
         return prev[m];
     }
+    // Space Optimization --> 1D Array
+    public static int countSpaceOptimize(int n, int m, String s1, String s2) {
+        int[] prev = new int[m + 1];
+        prev[0] = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = m; j >= 1; j--) {
+                if (s1.charAt(i) == s2.charAt(j - 1)) prev[j] = prev[j - 1] + prev[j];
+                else prev[j] = prev[j];
+            }
+        }
+        return prev[m];
+    }
     public static void main(String[] args) {
         String s1 = "babgbag";
         String s2 = "bag";
@@ -56,5 +68,6 @@ public class _31_Distinct_SubSequence {
         System.out.println(count(n-1,m-1,s1,s2,dp));
         System.out.println(count(n-1,m-1,s1,s2,dp));
         System.out.println(countSpace(n-1,m-1,s1,s2));
+        System.out.println(countSpaceOptimize(n,m,s1,s2));
     }
 }
