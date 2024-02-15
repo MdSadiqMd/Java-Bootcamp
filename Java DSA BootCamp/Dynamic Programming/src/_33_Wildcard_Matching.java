@@ -33,6 +33,34 @@ public class _33_Wildcard_Matching {
         }
         return 0;
     }
+    // Space Optimization
+    public static int matchSpace(int n, int m, String s1, String s2) {
+        if (n < 0 && m < 0) return 1;
+        if (n < 0) return 0;
+        if (m < 0) {
+            for (int i = 0; i <= n; i++) if (s1.charAt(i) != '*') return 0;
+            return 1;
+        }
+        int[] prev = new int[m + 1];
+        int[] curr = new int[m + 1];
+        prev[0] = 1;
+        for (int i = 1; i <= n; i++) {
+            curr[0] = 0;
+            for (int j = 1; j <= m; j++) {
+                if (s1.charAt(i - 1) == s2.charAt(j - 1) || s1.charAt(i - 1) == '?') {
+                    curr[j] = prev[j - 1];
+                } else if (s1.charAt(i - 1) == '*') {
+                    curr[j] = Math.max(curr[j - 1], prev[j]);
+                } else {
+                    curr[j] = 0;
+                }
+            }
+            int[] temp = prev;
+            prev = curr;
+            curr = temp;
+        }
+        return prev[m];
+    }
     public static void main(String[] args) {
         String s1 = "ab*cd";
         String s2 = "abdefcd";
@@ -42,5 +70,6 @@ public class _33_Wildcard_Matching {
         for (int[] row : dp) Arrays.fill(row, -1);
         System.out.println(match(n-1,m-1,s1,s2,dp));
         System.out.println(matchTab(n-1,m-1,s1,s2,dp));
+        System.out.println(matchSpace(n-1,m-1,s1,s2));
     }
 }
