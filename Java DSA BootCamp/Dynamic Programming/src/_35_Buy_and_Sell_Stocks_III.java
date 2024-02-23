@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class _35_Buy_and_Sell_Stocks_III {
-    // Buy and Sell Stocks III --> https://takeuforward.org/data-structure/buy-and-sell-stock-iii-dp-37/
+    // Buy and Sell Stocks with K Transactions --> https://takeuforward.org/data-structure/buy-and-sell-stock-iv-dp-38/ , https://youtu.be/oDhu5uGq_ic?si=8kEF7Dkz5WKNfIgC
 
     // Top - Down Approach --> Memoization
     public static long profit(int[] arr, int n, int k, long[][] dp) {
