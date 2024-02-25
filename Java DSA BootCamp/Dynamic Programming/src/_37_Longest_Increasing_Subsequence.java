@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class _37_Longest_Increasing_Subsequence {
-    // Longest Increasing Sub-Sequence --> https://takeuforward.org/data-structure/longest-increasing-subsequence-dp-41/, https://takeuforward.org/data-structure/printing-longest-increasing-subsequence-dp-42/,
+    // Longest Increasing Sub-Sequence --> https://takeuforward.org/data-structure/longest-increasing-subsequence-dp-41/, https://takeuforward.org/data-structure/printing-longest-increasing-subsequence-dp-42/, https://takeuforward.org/data-structure/longest-increasing-subsequence-binary-search-dp-43/
 
     // Top - Down Approach --> Memoization
     public static int count(int[] arr,int n,int curr_ind,int prev_ind,int[][] dp){
@@ -48,6 +48,38 @@ public class _37_Longest_Increasing_Subsequence {
         int[] hash=new int[n];
         Arrays.fill(hash,1);
         for(int i=0; i<=n-1; i++){
+            hash[i] = i; // initializing with current index
+            for(int prev_index = 0; prev_index <=i-1; prev_index ++){
+                if(arr[prev_index]<arr[i] && 1 + dp[prev_index] > dp[i]){
+                    dp[i] = 1 + dp[prev_index];
+                    hash[i] = prev_index;
+                }
+            }
+        }
+        int ans = -1;
+        int lastIndex =-1;
+        for(int i=0; i<=n-1; i++){
+            if(dp[i]> ans){
+                ans = dp[i];
+                lastIndex = i;
+            }
+        }
+        ArrayList<Integer> temp=new ArrayList<>();
+        temp.add(arr[lastIndex]);
+        while(hash[lastIndex] != lastIndex){ // till not reach the initialization value
+            lastIndex = hash[lastIndex];
+            temp.add(arr[lastIndex]);
+        }
+        for(int i=temp.size()-1; i>=0; i--) System.out.print(temp.get(i)+" ");
+        return ans;
+    }
+    // Printing The Longest Increasing SubSequence Using Binary Search
+    public static int countPrintBinarySearch(int[] arr,int n){
+        int[] dp=new int[n];
+        Arrays.fill(dp,1);
+        int[] hash=new int[n];
+        Arrays.fill(hash,1);
+        for(int i=0; i<=n-1; i++){
             hash[i] = i;
             for(int prev_index = 0; prev_index <=i-1; prev_index ++){
                 if(arr[prev_index]<arr[i] && 1 + dp[prev_index] > dp[i]){
@@ -82,5 +114,6 @@ public class _37_Longest_Increasing_Subsequence {
         System.out.println(countTab(arr,n,dp));
         System.out.println(countSpace(arr,n));
         System.out.println(countPrint(arr,n));
+        System.out.println(countPrintBinarySearch(arr,n));
     }
 }
