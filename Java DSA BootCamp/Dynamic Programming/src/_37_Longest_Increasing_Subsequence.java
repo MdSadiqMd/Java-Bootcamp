@@ -12,11 +12,41 @@ public class _37_Longest_Increasing_Subsequence {
         if(prev_ind==-1 || arr[curr_ind]>arr[prev_ind]) take=Math.max(take,1+count(arr,n,curr_ind+1,curr_ind,dp)); // Here, prev_ind is the curr_ind as it is taken
         return dp[curr_ind][prev_ind+1]=Math.max(take,notTake);
     }
+    // Bottom - Up Approach --> Tabulation
+    public static int countTab(int[] arr,int n,int[][] dp){
+        for(int i=n-1;i<=0;i--){
+            for(int j=i-1;j<=-1;j--){
+                if(dp[i][j+1]!=-1) return dp[i][j+1];
+                int notTake=dp[i+1][j+1];
+                int take=0;
+                if(j==-1 || arr[i]>arr[j]) take=Math.max(take,1+dp[i+1][i]);
+                return dp[i][j+1]=Math.max(take,notTake);
+            }
+        }
+        return dp[0][0];
+    }
+    // Space Optimization
+    public static int countSpace(int[] arr,int n){
+        int[] next=new int[n+1];
+        int[] curr=new int[n+1];
+        for(int i=n-1;i>=0;i--){
+            for(int j=i-1;j>=-1;j--){
+                int notTake=next[j+1];
+                int take=0;
+                if(j==-1 || arr[i]>arr[j]) take=Math.max(take,1+next[i+1]);
+                curr[j+1]=Math.max(take,notTake);
+            }
+            next = curr.clone();
+        }
+        return curr[0];
+    }
     public static void main(String[] args) {
         int[] arr={10, 9, 2, 5, 3, 7, 101, 18};
         int n=arr.length;
         int[][] dp=new int[n][n+1];
         for(int[] row:dp) Arrays.fill(row,-1);
         System.out.println(count(arr,n,0,-1,dp));
+        System.out.println(countTab(arr,n,dp));
+        System.out.println(countSpace(arr,n));
     }
 }
