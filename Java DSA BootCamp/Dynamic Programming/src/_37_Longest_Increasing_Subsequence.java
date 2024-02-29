@@ -105,6 +105,28 @@ public class _37_Longest_Increasing_Subsequence {
         for(int i=temp.size()-1; i>=0; i--) System.out.print(temp.get(i)+" ");
         return ans;
     }
+    public static int countLIS(int[] arr,int n){
+        int[] dp= new int[n];
+        int[] ct= new int[n];
+        Arrays.fill(dp,1);
+        Arrays.fill(ct,1);
+        int maxi = 1;
+        for(int i=0; i<=n-1; i++){
+            for(int prev_index = 0; prev_index <=i-1; prev_index ++){
+                if(arr[prev_index]<arr[i] && dp[prev_index]+1>dp[i]){
+                    dp[i] = dp[prev_index]+1;
+                    ct[i] = ct[prev_index]; // Inherit
+                }
+                else if(arr[prev_index]<arr[i] && dp[prev_index]+1==dp[i]) ct[i] = ct[i] + ct[prev_index];
+            }
+            maxi = Math.max(maxi,dp[i]);
+        }
+        int nos =0;
+        for(int i=0; i<=n-1; i++){
+            if(dp[i]==maxi) nos+=ct[i];
+        }
+        return nos;
+    }
     public static void main(String[] args) {
         int[] arr={10, 9, 2, 5, 3, 7, 101, 18};
         int n=arr.length;
@@ -115,5 +137,6 @@ public class _37_Longest_Increasing_Subsequence {
         System.out.println(countSpace(arr,n));
         System.out.println(countPrint(arr,n));
         System.out.println(countPrintBinarySearch(arr,n));
+        System.out.println(countLIS(arr,n));
     }
 }
