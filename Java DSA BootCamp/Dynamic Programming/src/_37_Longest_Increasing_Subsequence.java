@@ -17,7 +17,6 @@ public class _37_Longest_Increasing_Subsequence {
     public static int countTab(int[] arr,int n,int[][] dp){
         for(int i=n-1;i<=0;i--){
             for(int j=i-1;j<=-1;j--){
-                if(dp[i][j+1]!=-1) return dp[i][j+1];
                 int notTake=dp[i+1][j+1];
                 int take=0;
                 if(j==-1 || arr[i]>arr[j]) take=Math.max(take,1+dp[i+1][i]);
