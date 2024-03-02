@@ -17,6 +17,7 @@ public class _42_Minimum_Cost_to_Cut_the_Stick {
         }
         return dp[l][r]=min;
     }
+    // Bottom - Up Approach --> Tabulation
     public static void main(String[] args) {
         ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(3, 5, 1, 4));
         int n=7;
