@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class _37_Longest_Increasing_Subsequence {
     // Longest Increasing Sub-Sequence --> https://takeuforward.org/data-structure/longest-increasing-subsequence-dp-41/, https://takeuforward.org/data-structure/printing-longest-increasing-subsequence-dp-42/, https://takeuforward.org/data-structure/longest-increasing-subsequence-binary-search-dp-43/
@@ -39,6 +40,28 @@ public class _37_Longest_Increasing_Subsequence {
             next = curr.clone();
         }
         return curr[0];
+    }
+    // Patience Sorting
+    public static List<Integer> countSort(int[] arr, int n, List<Integer> ans) {
+        for (int i = 0; i < n; i++) {
+            int index = binarySearch(ans, arr[i]);
+            if (index == ans.size()) ans.add(arr[i]);
+            else ans.set(index, arr[i]);
+        }
+        return ans;
+    }
+    private static int binarySearch(List<Integer> ans, int target) {
+        int left = 0, right = ans.size();
+        int result = ans.size();
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (ans.get(mid) < target) left = mid + 1;
+            else {
+                result = mid;
+                right = mid;
+            }
+        }
+        return result;
     }
     // Printing The Longest Increasing SubSequence
     public static int countPrint(int[] arr,int n){
@@ -104,6 +127,7 @@ public class _37_Longest_Increasing_Subsequence {
         for(int i=temp.size()-1; i>=0; i--) System.out.print(temp.get(i)+" ");
         return ans;
     }
+    // Counting The Longest Increasing Sub-Sequence
     public static int countLIS(int[] arr,int n){
         int[] dp= new int[n];
         int[] ct= new int[n];
@@ -134,6 +158,7 @@ public class _37_Longest_Increasing_Subsequence {
         System.out.println(count(arr,n,0,-1,dp));
         System.out.println(countTab(arr,n,dp));
         System.out.println(countSpace(arr,n));
+        System.out.println(countSort(arr,n,new ArrayList<>()));
         System.out.println(countPrint(arr,n));
         System.out.println(countPrintBinarySearch(arr,n));
         System.out.println(countLIS(arr,n));
