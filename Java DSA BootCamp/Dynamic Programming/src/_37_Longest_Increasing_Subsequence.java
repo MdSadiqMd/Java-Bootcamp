@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class _37_Longest_Increasing_Subsequence {
-    // Longest Increasing Sub-Sequence --> https://takeuforward.org/data-structure/longest-increasing-subsequence-dp-41/, https://takeuforward.org/data-structure/printing-longest-increasing-subsequence-dp-42/, https://takeuforward.org/data-structure/longest-increasing-subsequence-binary-search-dp-43/
+    // Longest Increasing Sub-Sequence --> https://takeuforward.org/data-structure/longest-increasing-subsequence-dp-41/, https://takeuforward.org/data-structure/printing-longest-increasing-subsequence-dp-42/, https://takeuforward.org/data-structure/longest-increasing-subsequence-binary-search-dp-43/, Patience Sorting --> https://youtu.be/dWmh3O8uX8A?si=IiGkU3aw4YgaFCKk
 
     // Top - Down Approach --> Memoization
     public static int count(int[] arr,int n,int curr_ind,int prev_ind,int[][] dp){
