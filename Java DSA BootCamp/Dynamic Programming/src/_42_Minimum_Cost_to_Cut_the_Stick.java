@@ -18,6 +18,20 @@ public class _42_Minimum_Cost_to_Cut_the_Stick {
         return dp[l][r]=min;
     }
     // Bottom - Up Approach --> Tabulation
+    public static int countTab(List<Integer> arr, int l, int r,int[][] dp){
+        if(l>=r-1) return 0;
+        if(dp[l][r]!=-1) return dp[l][r];
+        int min=Integer.MAX_VALUE;
+        for(int i=0;i<=arr.size();i++){
+            for(int j=i;j>=1;j--){
+                for(int k=l+1;k<r;k++){
+                    int ans=(arr.get(r)-arr.get(l))+dp[l][k]+dp[k][r];
+                    min=Math.min(min,ans);
+                }
+            }
+        }
+        return min;
+    }
     public static void main(String[] args) {
         ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(3, 5, 1, 4));
         int n=7;
@@ -27,5 +41,6 @@ public class _42_Minimum_Cost_to_Cut_the_Stick {
         int[][] dp=new int[arr.size()+1][arr.size()+1];
         for(int[] row:dp) Arrays.fill(row,-1);
         System.out.println(count(arr,0,arr.size()-1,dp));
+        System.out.println(countTab(arr,0,arr.size()-1,dp));
     }
 }
