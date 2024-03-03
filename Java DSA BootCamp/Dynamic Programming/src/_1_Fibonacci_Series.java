@@ -11,6 +11,7 @@ Now after finding the recurrence relation, and we write the code using recursion
                                            To convert memoization to tabulation follow these steps
                                            1. Declare base case
                                            2. Express all the states in for loop
+                                              While Writing the loops follow this steps if the function call in recursion or Memoization is like f(1,n) then the loops will be like "i" from 1 --> n and "j" from n --> 1 it is because the process is of bottom up we are replacing the recursion with tables
                                            3. Copy the recurrence and write
 3. Space Optimization --> Here we take the advantage that we don't need to store the whole array we just need to store few set of previous computed values, and we just store them for computation and garbage collector will clean it after computation, this approach reduces the space complexity by large extent
                           To do space Optimization in multidimensional Array see if there are using previous n computed values take the advantage of it and swap with that make to compute the values.
@@ -31,7 +32,7 @@ public class _1_Fibonacci_Series {
         int n=7;
         int[] dp=new int[n+1];
         Arrays.fill(dp,-1);
-        System.out.println("Top - Down Approach --> Memoization "+fibonacci(n,dp));
+        System.out.println("Top - Down Approach --> Memoization --> "+fibonacci(n,dp));
 
         // Bottom - Up Approach --> Tabulation --> Here we already hard-code the base case condition and reduce the base case condition computation time --> Time and Space Complexity --> O(N)
         dp[0]=0;
@@ -39,7 +40,7 @@ public class _1_Fibonacci_Series {
         for(int i=2;i<=n;i++){
             dp[i]=dp[i-1]+dp[i-2];
         }
-        System.out.println("Bottom - Up Approach --> Tabulation "+dp[n]);
+        System.out.println("Bottom - Up Approach --> Tabulation --> "+dp[n]);
 
         // Space Optimization --> If we see we only need the value of prev two and for the next the prev two will be updated
         int prev2=0;
@@ -49,7 +50,7 @@ public class _1_Fibonacci_Series {
             prev2=prev1;
             prev1=curr;
         }
-        System.out.println("Space Optimization Approach "+prev1);
+        System.out.println("Space Optimization Approach --> "+prev1);
 
     }
 }
