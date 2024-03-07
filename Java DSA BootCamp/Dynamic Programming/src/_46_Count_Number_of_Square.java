@@ -14,6 +14,22 @@ public class _46_Count_Number_of_Square {
         return dp[i][j]=curr+minAdjacent;
     }
     // Bottom - Up Approach --> Tabulation
+    public static int countTab(int[][] arr,int n,int m,int[][] dp) {
+        int ans=0;
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                if (arr[i][j]==1) {
+                    int right=(j==m-1 || arr[i][j+1]==0)?0:dp[i][j+1];
+                    int bottom=(i==n-1 || arr[i+1][j]==0)?0:dp[i+1][j];
+                    int bottomRight=(i==n-1 || j==m-1 || arr[i+1][j+1]==0)?0:dp[i+1][j+1];
+                    int curr=1+Math.min(right,Math.min(bottom,bottomRight));
+                    dp[i][j]=curr;
+                    ans+=curr;
+                }
+            }
+        }
+        return ans;
+    }
     public static void main(String[] args) {
         int[][] arr={{0, 1, 1, 1}, {1, 1, 1, 1}, {0, 1, 1, 1}};
         int n=3,m=4;
@@ -26,5 +42,6 @@ public class _46_Count_Number_of_Square {
             }
         }
         System.out.println(ans);
+        System.out.println(countTab(arr,n,m,dp));
     }
 }
