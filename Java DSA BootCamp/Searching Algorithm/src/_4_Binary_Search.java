@@ -19,59 +19,32 @@ Interview Question : return the index of first infinite
                     then low =4 and high =7 and again mid-value =5
                     now index -5 infinite so, return it and for it is first infinite or not tally if the before element is integer or not
  */
-public class _2_Binary_Search {
-    public static int binarySearch(int[] arr, int target) {
-        int low = 0;
-        int high = arr.length - 1;
-        // If array is sorted in Descending Order
+public class _4_Binary_Search {
+    public static int binarySearchIterative(int[] arr, int target) {
+        int low = 0,high = arr.length - 1;
         if(arr[low]>arr[high]){
             while (low <= high) {
                 int mid = low + (high - low) / 2;
-                if (arr[mid] == target) {
-                    return mid;
-                } else if (arr[mid] < target) {
-                    high = mid - 1;
-                } else if (arr[mid] > target) {
-                    low = mid + 1;
-                }
+                if (arr[mid] == target) return mid;
+                else if (arr[mid] < target) high = mid - 1;
+                else low = mid + 1;
             }
         }
-        // If array is sorted in Ascending Order
         else {
             while (low <= high) {
                 int mid = low + (high - low) / 2;
-                if (arr[mid] == target) {
-                    return mid;
-                } else if (arr[mid] > target) {
-                    high = mid - 1;
-                } else if (arr[mid] < target) {
-                    low = mid + 1;
-                }
+                if (arr[mid] == target) return mid;
+                else if (arr[mid] > target) high = mid - 1;
+                else low = mid + 1;
             }
         }
         return -1;
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of elements of the array:");
-        int n = sc.nextInt();
-
-        System.out.println("Enter the elements in the array:");
-        int[] arr = new int[n];
-        for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
-        }
-
-        System.out.println("Enter the value to be searched in the array:");
-        int target = sc.nextInt();
-
-        int result = binarySearch(arr, target);
-        if (result != -1) {
-            System.out.println("Element found at index " + result);
-        } else {
-            System.out.println("Element not found");
-        }
+        int[] arr={1,2,3,4,5,6,7};
+        int k=3;
+        System.out.println(binarySearchIterative(arr,k));
     }
 }
 
