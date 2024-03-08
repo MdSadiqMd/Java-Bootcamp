@@ -1,4 +1,3 @@
-import java.util.Scanner;
 /*
 Binary Search is applicable when the array is ***Logically Sorted
 Working of Binary Search --> It will find Middle Index of the Array
@@ -9,10 +8,8 @@ Working of Binary Search --> It will find Middle Index of the Array
                                                 k=log N to the base 2
 Note : When Finding Middle Index we can face the problem of Overflow
       so, write it as mid= low + (high -low) / 2
-
 Order-Agnostic Binary Search: Binary Search is applied on a sorted array but Confirm the given array is Sorted in Ascending (or) Descending Order
                               For that, Compare the first and last Element
-
 Interview Question : return the index of first infinite
                     Array --> 2 1 7 10 12 infinite infinite infinite
                     first find the mid-value it's 10
@@ -22,7 +19,7 @@ Interview Question : return the index of first infinite
 public class _4_Binary_Search {
     public static int binarySearchIterative(int[] arr, int target) {
         int low = 0,high = arr.length - 1;
-        if(arr[low]>arr[high]){
+        if(arr[low]>arr[high]){ // Sorted in Descending Order
             while (low <= high) {
                 int mid = low + (high - low) / 2;
                 if (arr[mid] == target) return mid;
@@ -30,7 +27,7 @@ public class _4_Binary_Search {
                 else low = mid + 1;
             }
         }
-        else {
+        else{ // Sorted in Ascending Order
             while (low <= high) {
                 int mid = low + (high - low) / 2;
                 if (arr[mid] == target) return mid;
@@ -40,11 +37,18 @@ public class _4_Binary_Search {
         }
         return -1;
     }
-
+    public static int binarySearchRecursive(int[] arr,int k,int l,int h){
+        if(l>h) return -1;
+        int mid=l+(h-l)/2;
+        if(arr[mid]==k) return mid;
+        if(k>arr[mid]) return binarySearchRecursive(arr,k,mid,h);
+        else return binarySearchRecursive(arr,k,l,mid);
+    }
     public static void main(String[] args) {
         int[] arr={1,2,3,4,5,6,7};
         int k=3;
         System.out.println(binarySearchIterative(arr,k));
+        System.out.println(binarySearchRecursive(arr,k,0,arr.length-1));
     }
 }
 
