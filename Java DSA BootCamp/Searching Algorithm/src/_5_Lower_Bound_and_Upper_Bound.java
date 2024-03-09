@@ -1,5 +1,5 @@
 public class _5_Lower_Bound_and_Upper_Bound {
-    // Lower Bound and Upper Bound --> https://takeuforward.org/arrays/implement-lower-bound-bs-2/ , https://takeuforward.org/arrays/implement-upper-bound/
+    // Lower Bound (arr[mid]>=k) and Upper Bound (arr[mid]>k) --> https://takeuforward.org/arrays/implement-lower-bound-bs-2/ , https://takeuforward.org/arrays/implement-upper-bound/
     public static int lowerBound(int[] arr,int n,int k){
         int low=0,high=n-1,ans=n;
         while(low<=high){
