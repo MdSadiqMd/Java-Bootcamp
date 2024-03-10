@@ -57,7 +57,6 @@ public class _6_First_and_Last_Occurrence_in_Array {
         else if (arr[mid] < k) return firstOccurrenceHelperRecursive(arr, k, mid + 1, h);
         else return firstOccurrenceHelperRecursive(arr, k, l, mid - 1);
     }
-
     public static int lastOccurrenceHelperRecursive(int[] arr, int k, int l, int h) {
         if (l > h) return -1;
         int mid = l + (h - l) / 2;
