@@ -1,4 +1,5 @@
 public class _13_Sqrt_of_a_Number {
+    // Square Root of a Number --> https://takeuforward.org/binary-search/finding-sqrt-of-a-number-using-binary-search/
     public static int search(int n){
         int l=1,h=n,ans=0;
         while(l<=h){
