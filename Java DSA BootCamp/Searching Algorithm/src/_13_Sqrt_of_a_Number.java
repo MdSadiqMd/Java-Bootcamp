@@ -12,15 +12,10 @@ public class _13_Sqrt_of_a_Number {
         return ans;
     }
     public static int searchRecursive(int n,int l,int h){
-        int ans=0;
-        if(l<=h){
-            int mid=l+(h-l)/2;
-            if(mid*mid<=n){
-                ans=searchRecursive(n,mid+1,h);
-            }
-            else searchRecursive(n,l,mid-1);
-        }
-        return ans;
+        if(l>h) return h;
+        int mid=l+(h-l)/2;
+        if(mid*mid<=n) return searchRecursive(n,mid+1,h);
+        else return searchRecursive(n,l,mid-1);
     }
     public static void main(String[] args) {
         System.out.println(search(25));
