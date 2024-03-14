@@ -1,4 +1,5 @@
 public class _11_Single_Element_in_Sorted_Array {
+    // Single Element in Sorted Array --> https://takeuforward.org/data-structure/search-single-element-in-a-sorted-array/
     public static int search(int[] arr,int n){
         int l=0,h=n-1;
         if(n==1) return arr[0];
