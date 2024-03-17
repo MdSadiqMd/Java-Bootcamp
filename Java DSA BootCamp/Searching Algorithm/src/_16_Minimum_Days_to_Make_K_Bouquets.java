@@ -26,9 +26,19 @@ public class _16_Minimum_Days_to_Make_K_Bouquets {
         }
         return l;
     }
+    public static int daysRecursive(int[] arr,int n,int m,int k,int l,int h){
+        Arrays.sort(arr);
+        long val=(long) m*k;
+        if(val>n) return -1;
+        if(l>h) return l;
+        int mid=l+(h-l)/2;
+        if(helper(arr,mid,n,m,k)) return daysRecursive(arr,n,m,k,l,mid-1);
+        else return daysRecursive(arr,n,m,k,mid+1,h);
+    }
     public static void main(String[] args) {
         int[] arr={7,7,7,7,13,11,12,7};
         int n=arr.length,m=2,k=3;
         System.out.println(days(arr,n,m,k));
+        System.out.println(daysRecursive(arr,n,m,k,0,n-1));
     }
 }
