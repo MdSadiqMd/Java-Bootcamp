@@ -18,9 +18,18 @@ public class _17_Find_Smallest_Divisor_Given_Threshold {
         }
         return l;
     }
+    public static int sumRecursive(int[] arr,int n,int k,int l,int h){
+        if(l<=h){
+            int mid=l+(h-l)/2;
+            if(helper(arr,mid,n)<=k) return sumRecursive(arr,n,k,l,mid-1);
+            else return sumRecursive(arr,n,k,mid+1,h);
+        }
+        return l;
+    }
     public static void main(String[] args) {
         int[] arr={1,2,3,4,5};
         int n=arr.length,k=8;
         System.out.println(sum(arr,n,k));
+        System.out.println(sumRecursive(arr,n,k,0,5));
     }
 }
