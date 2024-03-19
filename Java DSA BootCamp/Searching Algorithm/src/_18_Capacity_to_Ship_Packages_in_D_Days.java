@@ -20,6 +20,14 @@ public class _18_Capacity_to_Ship_Packages_in_D_Days {
         }
         return l;
     }
+    public static int capacityRecursive(int[] arr,int n,int k,int l,int h){
+        if(l<=h){
+            int mid=l+(h-l)/2;
+            if(helper(arr,n,mid)<=k) return capacityRecursive(arr,n,k,l,mid-1);
+            else return capacityRecursive(arr,n,k,mid+1,h);
+        }
+        return l;
+    }
     public static void main(String[] args) {
         int[] arr={5, 4, 5, 2, 3, 4, 5, 6};
         Arrays.sort(arr);
@@ -27,5 +35,6 @@ public class _18_Capacity_to_Ship_Packages_in_D_Days {
         for(int i=0;i<=n-1;i++) sum+=arr[i];
         int h=sum;
         System.out.println(capacity(arr,n,k,l,h));
+        System.out.println(capacityRecursive(arr,n,k,l,h));
     }
 }
