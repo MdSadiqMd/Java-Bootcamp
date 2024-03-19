@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 public class _18_Capacity_to_Ship_Packages_in_D_Days {
+    // Capacity to Ship Packages in D Days --> https://takeuforward.org/arrays/capacity-to-ship-packages-within-d-days/
     public static int helper(int[] arr,int n,int k){
         int days=1,load=0;
         for(int i=0;i<=n-1;i++){
