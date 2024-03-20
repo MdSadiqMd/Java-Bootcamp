@@ -22,10 +22,19 @@ public class _20_Aggressive_Cows {
         }
         return h;
     }
+    public static int placeRecursive(int[] arr,int n,int k,int l,int h){
+        if(l<=h){
+            int mid=l+(h-l)/2;
+            if(helper(arr,n,mid,k)) return placeRecursive(arr,n,k,mid+1,h);
+            else return placeRecursive(arr,n,k,l,mid-1);
+        }
+        return h;
+    }
     public static void main(String[] args) {
         int[] arr={0,3,4,7,10,9};
         int n=arr.length,k=4;
         Arrays.sort(arr);
         System.out.println(place(arr,n,k));
+        System.out.println(placeRecursive(arr,n,k,0,arr[n-1]-arr[0]));
     }
 }
