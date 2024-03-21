@@ -28,9 +28,19 @@ public class _21_Book_Allocation {
         }
         return l;
     }
+    public static int countRecursive(ArrayList<Integer> arr,int n,int m,int l,int h){
+        if(m>n) return -1;
+        if(l<=h){
+            int mid=l+(h-l)/2;
+            if(helper(arr,n,mid)>m) return countRecursive(arr,n,m,mid+1,h);
+            else return countRecursive(arr,n,m,l,mid-1);
+        }
+        return l;
+    }
     public static void main(String[] args) {
         ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(25, 46, 28, 49, 24));
         int n=arr.size(),m=4;
         System.out.println(count(arr,n,m));
+        System.out.println(countRecursive(arr,n,m,Collections.max(arr),arr.stream().mapToInt(Integer::intValue).sum()));
     }
 }
