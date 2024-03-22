@@ -24,9 +24,18 @@ public class _22_Painters_Partition {
         }
         return l;
     }
+    public static int partitionRecursive(ArrayList<Integer> arr,int k,int l,int h){
+        if(l<=h){
+            int mid=l+(h-l)/2;
+            if(helper(arr,mid)>k) return partitionRecursive(arr,k,mid+1,h);
+            else return partitionRecursive(arr,k,l,mid-1);
+        }
+        return l;
+    }
     public static void main(String[] args) {
         ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(10,20,30,40));
-        int n=arr.size(),k=2;
+        int k=2;
         System.out.println(partition(arr,k));
+        System.out.println(partitionRecursive(arr,k,Collections.max(arr),arr.stream().mapToInt(Integer::intValue).sum()));
     }
 }
