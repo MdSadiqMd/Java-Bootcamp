@@ -5,12 +5,12 @@ import java.util.Collections;
 public class _22_Painters_Partition {
     // Painters Partition --> https://takeuforward.org/arrays/painters-partition-problem/
     public static int helper(ArrayList<Integer> arr,int time){
-        int n=arr.size(),painters=1,board=0;
-        for(int i=0;i<n;i++){
-            if(board+arr.get(i)<=time) board+=arr.get(i);
+        int painters=1,board=0;
+        for (Integer index:arr) {
+            if (board+index<=time) board+=index;
             else{
                 painters++;
-                board=arr.get(i);
+                board=index;
             }
         }
         return painters;
