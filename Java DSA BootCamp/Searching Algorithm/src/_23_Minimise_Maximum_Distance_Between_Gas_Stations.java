@@ -24,12 +24,29 @@ public class _23_Minimise_Maximum_Distance_Between_Gas_Stations {
         }
         return (long)(pq.peek()!=null?pq.peek().first:0);
     }
-    public static long count(int[] arr,int n,int k){
-
+    public static int helper(int[] arr,double mid){
+        int count=0;
+        for(int i=1;i<arr.length;i++){
+            int cut=(int)((arr[i]-arr[i-1])/mid);
+            if(arr[i]-arr[i-1]==(mid*cut)) cut--;
+            count+=cut;
+        }
+        return count;
+    }
+    public static double count(int[] arr,int n,int k){
+        double l=0,h=0;
+        for(int i=0;i<n-1;i++) h=Math.max(h,arr[i+1]-arr[i]);
+        while(h-l>Math.pow(10,-6)){
+            double mid=l+(h-l)/2;
+            if(helper(arr,mid)>k) l=mid;
+            else h=mid;
+        }
+        return h;
     }
     public static void main(String[] args) {
         int[] arr={1, 2, 3, 4, 5};
         int n=arr.length,k=4;
         System.out.println(countPriority(arr,n,k));
+        System.out.println(count(arr,n,k));
     }
 }
