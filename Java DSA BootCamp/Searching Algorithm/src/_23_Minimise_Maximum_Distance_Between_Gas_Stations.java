@@ -24,6 +24,9 @@ public class _23_Minimise_Maximum_Distance_Between_Gas_Stations {
         }
         return (long)(pq.peek()!=null?pq.peek().first:0);
     }
+    public static long count(int[] arr,int n,int k){
+
+    }
     public static void main(String[] args) {
         int[] arr={1, 2, 3, 4, 5};
         int n=arr.length,k=4;

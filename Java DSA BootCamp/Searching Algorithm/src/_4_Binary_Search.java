@@ -15,6 +15,7 @@ Interview Question : return the index of first infinite
                     first find the mid-value it's 10
                     then low =4 and high =7 and again mid-value =5
                     now index -5 infinite so, return it and for it is first infinite or not tally if the before element is integer or not
+*** If you get a Question Like Minimum of Maximum or Maximum of Minimum there is a change of using the Binary Search Explore More in Binary Search on Answers and the Maximum/Minimum Kind of problems
  */
 public class _4_Binary_Search {
     public static int binarySearchIterative(int[] arr, int target) {
