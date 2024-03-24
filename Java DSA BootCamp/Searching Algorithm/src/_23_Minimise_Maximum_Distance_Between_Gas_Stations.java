@@ -10,7 +10,7 @@ public class _23_Minimise_Maximum_Distance_Between_Gas_Stations {
             this.second=second;
         }
     }
-    public static double countPriority(int[] arr,int n,int k){
+    public static long countPriority(int[] arr,int n,int k){
         int[] cache=new int[n-1];
         PriorityQueue<pair> pq=new PriorityQueue<>((a,b)->Double.compare(b.first,a.first));
         for(int i=0;i<n-1;i++) pq.add(new pair(arr[i+1]-arr[i],i));
@@ -22,7 +22,7 @@ public class _23_Minimise_Maximum_Distance_Between_Gas_Stations {
             double newDifference=initialDifference/(double)(cache[ind]+1);
             pq.add(new pair(newDifference,ind));
         }
-        return (double)(pq.peek()!=null?pq.peek().first:0);
+        return (long)(pq.peek()!=null?pq.peek().first:0);
     }
     public static void main(String[] args) {
         int[] arr={1, 2, 3, 4, 5};
