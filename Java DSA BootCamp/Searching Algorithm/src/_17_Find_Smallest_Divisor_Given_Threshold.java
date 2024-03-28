@@ -4,7 +4,7 @@ public class _17_Find_Smallest_Divisor_Given_Threshold {
     // Find the Smallest Divisor with Given Threshold --> https://takeuforward.org/arrays/find-the-smallest-divisor-given-a-threshold/
     public static int helper(int[] arr,int mid,int n){
         int sum=0;
-        for(int i=0;i<n;i++)sum+=Math.ceil((double)(arr[i]/(double)(mid)));
+        for(int i=0;i<n;i++) sum+=Math.ceil(arr[i]/(double)(mid));
         return sum;
     }
     public static int sum(int[] arr,int n,int k){
