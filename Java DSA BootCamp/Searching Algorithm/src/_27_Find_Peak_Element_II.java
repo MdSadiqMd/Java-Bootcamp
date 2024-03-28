@@ -25,6 +25,18 @@ public class _27_Find_Peak_Element_II {
         }
         return new int[][]{{-1,-1}};
     }
+    public static int[][] peakRecursive(ArrayList<ArrayList<Integer>> arr,int l,int h){
+        if(l<=h){
+            int mid=l+(h-l)/2;
+            int row=helper(arr,mid);
+            int left=mid-1>=0 ? arr.get(row).get(mid-1) : -1;
+            int right=mid+1<0 ? arr.get(row).get(mid+1) : -1;
+            if(arr.get(row).get(mid)>left && (arr.get(row).get(mid)>right)) return new int[][]{{row,mid}};
+            else if(arr.get(row).get(mid)<left) return peakRecursive(arr,l,mid-1);
+            else return peakRecursive(arr,mid+1,h);
+        }
+        return new int[][]{{-1,-1}};
+    }
     public static void main(String[] args) {
         ArrayList<ArrayList<Integer>> arr=new ArrayList<>();
         arr.add(new ArrayList<>(Arrays.asList(4,2,5,1,4,5)));
@@ -32,5 +44,6 @@ public class _27_Find_Peak_Element_II {
         arr.add(new ArrayList<>(Arrays.asList(1,7,6,0,1,3)));
         arr.add(new ArrayList<>(Arrays.asList(3,6,2,3,7,2)));
         System.out.println(Arrays.deepToString(peak(arr)));
+        System.out.println(Arrays.deepToString(peakRecursive(arr,0, arr.get(0).size()-1)));
     }
 }
