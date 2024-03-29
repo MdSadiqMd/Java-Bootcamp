@@ -9,8 +9,18 @@ public class _1_Basic_Operations {
         }
         System.out.println(ans);
     }
+    public static void binaryToDecimalString(String s){
+        int ans=0,ind=0;
+        for(int i=s.length()-1;i>=0;i--){
+            if(s.charAt(i)=='1') ans+=Math.pow(2,ind);
+            ind++;
+        }
+        System.out.println(ans);
+    }
     public static void main(String[] args) {
         int n=1010;
+        String m="1010";
         binaryToDecimalInt(n);
+        binaryToDecimalString(m);
     }
 }
