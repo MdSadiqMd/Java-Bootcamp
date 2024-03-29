@@ -17,10 +17,22 @@ public class _1_Basic_Operations {
         }
         System.out.println(ans);
     }
+    public static String decimalToBinary(int n){
+        int rem,quo=n;
+        String binary="";
+        while(quo>0){
+            rem=quo%2;
+            binary=Integer.toString(rem)+binary;
+            quo=quo/2;
+        }
+        return binary;
+    }
     public static void main(String[] args) {
         int n=1010;
         String m="1010";
+        int k=10;
         binaryToDecimalInt(n);
         binaryToDecimalString(m);
+        System.out.println(decimalToBinary(k));
     }
 }
