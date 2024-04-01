@@ -31,8 +31,11 @@ public class _1_Basic_Operations {
         int n=1010;
         String m="1010";
         int k=10;
+        int l=1;
         binaryToDecimalInt(n);
         binaryToDecimalString(m);
         System.out.println(decimalToBinary(k));
+        System.out.println("One's Complement: "+Integer.toBinaryString(~l));
+        System.out.println("Two's Complement: "+Integer.toBinaryString(~l+1));
     }
 }
