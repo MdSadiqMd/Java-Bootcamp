@@ -15,10 +15,16 @@ public class _3_Problems_on_Bit_Manipulation {
         }
         return ans;
     }
+    public static int singleNumber(int[] arr){
+        int ans=0;
+        for(int i=0;i<=arr.length-1;i++) ans=ans^arr[i];
+        return ans;
+    }
     public static void main(String[] args) {
         int a=1110,b=1010;
-        int[] arr={1,2,3};
+        int[] arr={1,2,2,3,3};
         System.out.println(Integer.toBinaryString(bitFlipsToConvertNumber(a,b)));
         System.out.println(powerSet(arr));
+        System.out.println(singleNumber(arr));
     }
 }
