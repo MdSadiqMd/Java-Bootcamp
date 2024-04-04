@@ -12,7 +12,7 @@ public class _7_Divide_Two_Integers {
             n=n-(m*(1L <<count));
         }
         if(ans>=(1L <<31)&&sign) return Integer.MAX_VALUE;
-        if(ans>=(1L <<31)&&!sign) return Integer.MIN_VALUE;
+        if(ans>= 1L <<31) return Integer.MIN_VALUE;
         return sign?ans:-ans;
     }
     public static void main(String[] args) {
