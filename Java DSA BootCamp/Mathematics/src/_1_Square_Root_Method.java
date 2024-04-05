@@ -19,6 +19,7 @@ public class _1_Square_Root_Method {
                 count++;
                 if((n/i)!=i) count++;
             }
+            if(n>2) break;
         }
         return count == 2;
     }
