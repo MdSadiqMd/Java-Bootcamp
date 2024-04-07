@@ -13,7 +13,6 @@ public class _3_Power_Exponential {
         return ans;
     }
     public static void main(String[] args) {
-        int n=3,m=5;
-        System.out.println(pow(n,m));
+        System.out.println(pow(3,5));
     }
 }
