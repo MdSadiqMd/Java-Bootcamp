@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class _4_Sieve_of_Eratosthenes_Algorithm {
+    // In this algorithm we declare an array of size n and set all indexes to 1, and we start iterating and set the bits to 0 of the index and multiples of the index less than n which are not prime at last we again iterate and return the bits which are set to 1 (prime)
     public static ArrayList<Integer> algorithm(int n){
         int[] primes=new int[n+1];
         Arrays.fill(primes,1);
