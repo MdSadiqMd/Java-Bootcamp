@@ -17,10 +17,8 @@ public class _5_Count_Primes_in_Range_L_R {
     public static int range(int l,int r){ // Using sieve of Eratosthenes
         int count=0;
         ArrayList<Integer> primes=helper(r);
-        for(int i=0;i<=primes.size()-1;i++){
-            for(int j=l;j<=r;j++){
-                if(primes.get(i)==1) count++;
-            }
+        for(int i=l;i<=r;i++){
+            if(i>=2 && primes.contains(i)) count++;
         }
         return count;
     }
