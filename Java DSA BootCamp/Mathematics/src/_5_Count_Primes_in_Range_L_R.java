@@ -23,7 +23,7 @@ public class _5_Count_Primes_in_Range_L_R {
         }
         return count;
     }
-    // Using Binary Search
+    // Using Binary Search and Sieve of Eratosthenes
     public static int rangeOptimised(int l,int r){
         ArrayList<Integer> primes=helper(r);
         int low=0,high=primes.size()-1,ans=0;
