@@ -13,7 +13,6 @@ public class _2_Prime_Factors {
         return ans;
     }
     public static void main(String[] args) {
-        int n=10;
-        System.out.println(factor(n));
+        System.out.println(factor(10));
     }
 }

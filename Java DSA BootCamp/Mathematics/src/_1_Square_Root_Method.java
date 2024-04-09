@@ -32,9 +32,8 @@ public class _1_Square_Root_Method {
         else return n;
     }
     public static void main(String[] args) {
-        int n=20,m=40;
-        System.out.println(divisors(n));
-        System.out.println(prime(n));
-        System.out.println(gcd(n,m));
+        System.out.println(divisors(20));
+        System.out.println(prime(20));
+        System.out.println(gcd(20,40));
     }
 }
