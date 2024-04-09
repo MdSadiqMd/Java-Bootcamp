@@ -29,7 +29,7 @@ public class _5_Count_Primes_in_Range_L_R {
         int low=0,high=primes.size()-1,ans=0;
         while(low<=high){
             int mid=low+(high-low)/2;
-            if(primes.get(mid)>l){
+            if(primes.get(mid)>=l){
                 ans=mid;
                 high=mid-1;
             }
@@ -38,7 +38,7 @@ public class _5_Count_Primes_in_Range_L_R {
         return primes.size()-ans;
     }
     public static void main(String[] args) {
-        System.out.println(range(4,10));
-        System.out.println(rangeOptimised(4,10));
+        System.out.println(range(5,10));
+        System.out.println(rangeOptimised(5,10));
     }
 }
