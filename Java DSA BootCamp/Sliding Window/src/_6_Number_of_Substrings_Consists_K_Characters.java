@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class _6_Number_of_Substrings_Consists_K_Characters {
     public static int count(String s){
         int[] memo={-1,-1,-1};
