@@ -19,6 +19,7 @@ public class _9_SubArray_With_K_Different_Integers {
         return count;
     }
     public static void main(String[] args) {
-        System.out.println(count(new ArrayList<>(Arrays.asList(1,2,3,1)),3));
+        System.out.println("SubArray with <=K Different Integers"+count(new ArrayList<>(Arrays.asList(1,2,3,1)),3));
+        System.out.println("SubArray with =K Different Integers"+(count(new ArrayList<>(Arrays.asList(1,2,3,1)),3)-count(new ArrayList<>(Arrays.asList(1,2,3,1)),2)));
     }
 }
