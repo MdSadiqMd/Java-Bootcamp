@@ -8,12 +8,12 @@ public class Buy_and_Sell_Stocks_I {
         }
         return profit;
     }
+    // Eliminating an extra for loop whose job is to check the min thus you can check min in this way also
     public static int maxProfitOptimise(int[] prices){ // TC:O(n),SC:O(1)
-        int profit=0,min=prices[0];
-        for(int i=0;i<=prices.length-1;i++){
-            int curr=prices[i]-min;
-            profit=Math.max(profit,curr);
-            min=Math.min(min,prices[i]);
+        int profit=0,buy=prices[0];
+        for(int sell=0;sell<=prices.length-1;sell++){
+            if(buy>prices[sell]) buy=prices[sell];
+            else profit=Math.max(profit,prices[sell]-buy);
         }
         return profit;
     }
