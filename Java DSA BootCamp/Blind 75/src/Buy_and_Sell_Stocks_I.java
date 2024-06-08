@@ -8,9 +8,18 @@ public class Buy_and_Sell_Stocks_I {
         }
         return profit;
     }
-
+    public static int maxProfitOptimise(int[] prices){ // TC:O(n),SC:O(1)
+        int profit=0,min=prices[0];
+        for(int i=0;i<=prices.length-1;i++){
+            int curr=prices[i]-min;
+            profit=Math.max(profit,curr);
+            min=Math.min(min,prices[i]);
+        }
+        return profit;
+    }
     public static void main(String[] args) {
         int[] arr={7,1,5,3,6,4};
         System.out.println(maxProfit(arr));
+        System.out.println(maxProfitOptimise(arr));
     }
 }
