@@ -7,7 +7,7 @@ public class Contains_Duplicate {
     public static boolean containsDuplicate(int[] nums) { // TC:O(N),SC:O(N)
         HashSet<Integer> set=new HashSet<>();
         for(int i=0;i<=nums.length-1;i++) set.add(nums[i]);
-        return nums.length-1==set.size();
+        return nums.length>set.size();
     }
     // If Arrays problem is Present first think of sorting
     public static boolean containsDuplicateSort(int[] nums){ // TC:O(N*logN),SC:O(1)
