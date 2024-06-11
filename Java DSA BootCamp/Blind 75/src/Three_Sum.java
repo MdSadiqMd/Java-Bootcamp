@@ -4,7 +4,7 @@ public class Three_Sum {
     // First it can be solved by using three for loops
 
     // Think of Hashset and make use of 13th line if statement property, and for the problems which need to answers to not be duplicate, sort them and add them into answers
-    public static List<List<Integer>> triplet(int[] nums) {
+    public static List<List<Integer>> triplet(int[] nums) { // TC:O(n^2 * log(number of unique triplets)),SC:O(2 * number of unique triplets)
         Set<List<Integer>> ans=new HashSet<>();
         for(int i=0;i<nums.length;i++){
             HashSet<Integer> temp=new HashSet<>();
