@@ -59,93 +59,63 @@ class Node23 {
 
 public class _28_Segment_Trees {
     static Node23 root;
-
     _28_Segment_Trees() {
         root = null;
     }
-
-    // Function to build a segment tree
     Node23 buildSegmentTree(int[] arr, int start, int end) {
-        if (start == end) {
-            return new Node23(start, end, arr[start]);
-        }
-
+        if (start == end) return new Node23(start, end, arr[start]);
         int mid = (start + end) / 2;
         Node23 leftChild = buildSegmentTree(arr, start, mid);
         Node23 rightChild = buildSegmentTree(arr, mid + 1, end);
-
         Node23 parentNode = new Node23(start, end, leftChild.data + rightChild.data);
         parentNode.left = leftChild;
         parentNode.right = rightChild;
-
         return parentNode;
     }
 
     // Code for Finding sum from  a to b Index Using Segment Trees
     int Sum(Node23 node, int queryStart, int queryEnd) {
         // If the node's interval is completely outside the query range
-        if (node.endInterval < queryStart || node.startInterval > queryEnd) {
-            return 0;
-        }
-
+        if (node.endInterval < queryStart || node.startInterval > queryEnd) return 0;
         // If the node's interval is completely inside the query range
-        if (node.startInterval >= queryStart && node.endInterval <= queryEnd) {
-            return node.data;
-        }
-
+        if (node.startInterval >= queryStart && node.endInterval <= queryEnd) return node.data;
         // Otherwise, we need to check both left and right children
-        int mid = (node.startInterval + node.endInterval) / 2;
         int leftSum = Sum(node.left, queryStart, queryEnd);
         int rightSum = Sum(node.right, queryStart, queryEnd);
-
         return leftSum + rightSum;
     }
-
     // Function to update a value at a specific index
     public static void updateValueAtIndex(Node23 currentNode, int index, int newValue) {
         if (currentNode.startInterval == index && currentNode.endInterval == index) {
             currentNode.data = newValue;
             return;
         }
-
         int mid = (currentNode.startInterval + currentNode.endInterval) / 2;
-
-        if (index <= mid) {
-            updateValueAtIndex(currentNode.left, index, newValue);
-        } else {
-            updateValueAtIndex(currentNode.right, index, newValue);
-        }
-
+        if (index <= mid) updateValueAtIndex(currentNode.left, index, newValue);
+        else updateValueAtIndex(currentNode.right, index, newValue);
         currentNode.data = currentNode.left.data + currentNode.right.data;
     }
-
     // In-Order traversal
     public static void Inorder(Node23 node){
-        if(node==null){
-            return;
-        }
+        if(node==null)return;
         Inorder(node.left);
-        System.out.println(node.data+" ");
+        System.out.print(node.data+" ");
         Inorder(node.right);
     }
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6};
-
         _28_Segment_Trees segmentTree = new _28_Segment_Trees();
         root = segmentTree.buildSegmentTree(arr, 0, arr.length - 1);
-
         // Calculate the sum from index 2 to index 4
         int queryStart = 2;
         int queryEnd = 4;
         int sum = segmentTree.Sum(root, queryStart, queryEnd);
         System.out.println("Sum between index " + queryStart + " and " + queryEnd + ": " + sum);
-
         System.out.println("Before Updating");
         Inorder(root);
-
         // Updating Value at Particular Index --> *** This will update the whole upward values
         updateValueAtIndex(root,3,7);
-
+        System.out.println();
         System.out.println("After Updating");
         Inorder(root);
     }
