@@ -1,5 +1,5 @@
 public class Minimum_in_Rotated_Sorted_Array {
-    public static int findMin(int[] arr) {
+    public static int findMin(int[] arr) { // Try to overcome taking an extra variable ans rather you can return arr[low]
         int low=0,high=arr.length-1;
         while(low<=high){
             int mid=low+(high-low)/2;
