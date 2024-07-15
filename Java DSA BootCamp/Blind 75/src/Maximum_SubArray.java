@@ -1,8 +1,8 @@
 public class Maximum_SubArray {
-    public static int maxSubArray(int[] arr){
-        int ans=0,sum=arr[0];
-        for(int i=1;i<arr.length;i++){
-            sum+=arr[i];
+    public static int maxSubArray(int[] arr){ // Target is Maximum so think a way to eliminate less than zero (second for loop) and keep variables concise with default values, There is also another way to keep up with max (first for loop)
+        int ans=Integer.MIN_VALUE,sum=0;
+        for(int j:arr){
+            sum+=j;
             if(sum>ans) ans=sum;
             if(sum<0) sum=0;
         }
