@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 class DynamicArray {
     private int size = 1;
-    private int a[] = new int[size];
+    private int[] a = new int[size];
     private int counter = 0;
 
     public void add(int element) {
