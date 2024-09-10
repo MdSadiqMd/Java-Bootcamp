@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+// https://youtu.be/co4_ahEDCho?si=J7l-kMO9cJxpthWy
 class HuffmanNode implements Comparable<HuffmanNode> {
     char character;
     int frequency;
